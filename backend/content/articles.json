@@ -1,0 +1,72 @@
+[
+  {
+    "id": "leclerc",
+    "nom": "Char Leclerc",
+    "slug": "char-leclerc",
+    "pays": "France",
+    "domaine": "Terrestre",
+    "type": "char de combat",
+    "tags": ["furtif", "blindé", "troisième génération"],
+    "image": "/images/leclerc.jpg",
+    "auteur": "Nom Auteur",
+    "date": "2025-06-16",
+    "resume": "Char de combat principal français, moderne et agile.",
+    "contenu": "leclerc.md"
+  },
+  {
+    "id": "mirage2000",
+    "nom": "Mirage 2000",
+    "slug": "mirage-2000",
+    "pays": "France",
+    "domaine": "Aérien",
+    "type": "chasseur multirôle",
+    "tags": ["rapide", "maniable", "quatrième génération"],
+    "image": "/images/mirage2000.jpg",
+    "auteur": "Nom Auteur",
+    "date": "2025-06-15",
+    "resume": "Avion de chasse multirôle français, efficace et polyvalent.",
+    "contenu": "mirage2000.md"
+  },
+  {
+    "id": "famas",
+    "nom": "FAMAS F1",
+    "slug": "famas-f1",
+    "pays": "France",
+    "domaine": "Infanterie",
+    "type": "fusil d'assaut",
+    "tags": ["léger", "polyvalent", "bullpup"],
+    "image": "/images/famas.jpg",
+    "auteur": "Nom Auteur",
+    "date": "2025-06-10",
+    "resume": "Fusil d’assaut français, utilisé par les forces armées depuis les années 70.",
+    "contenu": "famas.md"
+  },
+  {
+    "id": "fremm",
+    "nom": "FREMM Aquitaine",
+    "slug": "fremm-aquitaine",
+    "pays": "France",
+    "domaine": "Naval",
+    "type": "frégate multi-missions",
+    "tags": ["moderne", "polyvalent", "furtif"],
+    "image": "/images/fremm.jpg",
+    "auteur": "Nom Auteur",
+    "date": "2025-06-12",
+    "resume": "Frégate multi-missions française, à la pointe de la technologie navale.",
+    "contenu": "fremm.md"
+  },
+  {
+    "id": "t80",
+    "nom": "T-80",
+    "slug": "t-80",
+    "pays": "Russie",
+    "domaine": "Terrestre",
+    "type": "char de combat",
+    "tags": ["blindé", "rapide", "turbine à gaz"],
+    "image": "/images/t80.jpg",
+    "auteur": "Nom Auteur",
+    "date": "2025-06-17",
+    "resume": "Char de combat soviétique à turbine à gaz, connu pour sa mobilité.",
+    "contenu": "t80.md"
+  }
+]
