@@ -35,7 +35,7 @@ export default async function LearnSlugPage(ctx) {
       <p className="mb-8 italic text-sm text-gray-500">{article.resume}</p>
 
       <article
-        className="prose prose-invert"
+        className="prose prose-invert max-w-none"
         dangerouslySetInnerHTML={{ __html: article.htmlContent }}
       />
     </main>
