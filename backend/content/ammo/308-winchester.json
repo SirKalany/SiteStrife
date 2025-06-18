@@ -1,0 +1,14 @@
+{
+  "description": "La .308 Winchester est une munition polyvalente dérivée de la cartouche militaire 7.62x51mm OTAN. Elle est réputée pour sa précision, sa puissance contrôlable et sa large adoption dans le monde civil comme militaire.",
+  "caracteristiques": [
+    "Calibre : 7.62x51mm (.308 pouces)",
+    "Poids projectile : 147 à 180 grains",
+    "Vitesse initiale : ~850 m/s",
+    "Pression maximale : ~415 MPa (SAAMI)",
+    "Portée effective : jusqu’à 800-1000 mètres",
+    "Types : Ball, FMJ, Soft Point, Hollow Point, Match"
+  ],
+  "histoire": "Développée par Winchester en 1952 à partir de la cartouche militaire 7.62x51mm OTAN, la .308 Winchester a connu un succès immédiat. Très vite adoptée par les chasseurs pour sa puissance et sa précision, elle s’est aussi retrouvée dans de nombreuses applications militaires. Elle a été chambrée dans le M14, le FN FAL, le G3, et dans des fusils de précision comme le Remington 700. Bien que la version militaire ait des pressions légèrement réduites, les deux sont globalement interchangeables dans des armes modernes.",
+  "performances": "Très précise jusqu’à 1000 mètres, la .308 Winchester est souvent choisie pour le tir de précision, la chasse et les compétitions de tir. Son recul est modéré, ce qui la rend accessible à un large éventail de tireurs. Elle conserve une bonne puissance de frappe sur des distances moyennes et est compatible avec une grande variété de types de balles.",
+  "utilisation": "La .308 Winchester est utilisée dans des fusils semi-automatiques et de précision comme le M14, le FN FAL, le Remington 700, et de nombreux autres modèles civils. Elle reste aujourd’hui l’une des munitions les plus répandues au monde, aussi bien dans les armureries que sur les champs de tir."
+}

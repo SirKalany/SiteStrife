@@ -1,20 +1,23 @@
 import express from 'express';
 import cors from 'cors';
 import fs from 'fs';
+import { readFile } from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-// Setup chemins absolus
+// Résolution correcte des chemins
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const rootDir = path.resolve(__dirname); // backend/
 
 const app = express();
 app.use(cors());
 
-// Utilitaire pour charger un JSON depuis /data
+// Fonction pour charger les .json statiques depuis /backend/data
 function loadJSON(filename) {
   try {
-    const data = fs.readFileSync(path.resolve(__dirname, `./data/${filename}`), 'utf-8');
+    const filePath = path.join(rootDir, 'data', filename); // chemin absolu
+    const data = fs.readFileSync(filePath, 'utf-8');
     return JSON.parse(data);
   } catch (err) {
     console.error(`Erreur lecture ${filename}:`, err);
@@ -22,7 +25,7 @@ function loadJSON(filename) {
   }
 }
 
-// Chargement des fichiers de données
+// Chargement des fichiers JSON (data)
 const ammo = loadJSON('ammo.json');
 const air = loadJSON('air.json');
 const ground = loadJSON('ground.json');
@@ -30,7 +33,7 @@ const heavy = loadJSON('heavy.json');
 const infantry = loadJSON('infantry.json');
 const naval = loadJSON('naval.json');
 
-// Routes pour chaque domaine
+// Routes pour les listes de domaines
 app.get('/ammo', (req, res) => res.json(ammo));
 app.get('/air', (req, res) => res.json(air));
 app.get('/ground', (req, res) => res.json(ground));
@@ -38,21 +41,21 @@ app.get('/heavy', (req, res) => res.json(heavy));
 app.get('/infantry', (req, res) => res.json(infantry));
 app.get('/naval', (req, res) => res.json(naval));
 
-// Route dynamique pour charger un contenu HTML spécifique
-app.get('/content/:domain/:slug', async (req, res) => {
-  const { domain, slug } = req.params;
-  const filePath = path.resolve(__dirname, `./content/${domain}/${slug}.html`);
+// Route pour contenu détaillé d’un article (ex: /ammo/308-winchester)
+app.get('/:domaine/:slug', async (req, res) => {
+  const { domaine, slug } = req.params;
+  const filePath = path.join(rootDir, 'content', domaine, `${slug}.json`);
 
   try {
-    const html = await fs.promises.readFile(filePath, 'utf-8');
-    res.send(html);
+    const data = await readFile(filePath, 'utf-8');
+    res.json(JSON.parse(data));
   } catch (err) {
-    console.error(`Erreur chargement fichier HTML ${filePath}`, err);
-    res.status(404).send("Contenu introuvable");
+    res.status(404).json({ error: "Fichier non trouvé", details: err.message });
   }
 });
 
 // Lancement du serveur
-app.listen(4000, () => {
-  console.log('✅ Backend démarré sur http://localhost:4000');
+const PORT = 4000;
+app.listen(PORT, () => {
+  console.log(`✅ Backend démarré sur http://localhost:${PORT}`);
 });
