@@ -1,0 +1,72 @@
+[
+  {
+    "id": "fremm",
+    "nom": "FREMM Aquitaine",
+    "slug": "fremm-aquitaine",
+    "pays": "France",
+    "domaine": "Naval",
+    "type": "frégate multi-missions",
+    "tags": ["moderne", "polyvalent", "furtif"],
+    "image": "/images/fremm.jpg",
+    "auteur": "Nom Auteur",
+    "date": "2025-06-12",
+    "resume": "Frégate multi-missions française, à la pointe de la technologie navale.",
+    "contenu": "fremm.md"
+  },
+  {
+    "id": "arleighburke",
+    "nom": "USS Arleigh Burke (DDG-51)",
+    "slug": "arleigh-burke",
+    "pays": "United States",
+    "domaine": "Naval",
+    "type": "destroyer lance-missiles",
+    "tags": ["aegis", "missiles", "moderne"],
+    "image": "/images/arleighburke.jpg",
+    "auteur": "Nom Auteur",
+    "date": "2025-06-18",
+    "resume": "Destroyer américain équipé du système Aegis, spécialisé dans la défense aérienne et antimissile.",
+    "contenu": "arleighburke.md"
+  },
+  {
+    "id": "admiralgorshkov",
+    "nom": "Amiral Gorshkov",
+    "slug": "admiral-gorshkov",
+    "pays": "Russie",
+    "domaine": "Naval",
+    "type": "frégate lance-missiles",
+    "tags": ["polyvalent", "missiles", "modernisé"],
+    "image": "/images/gorshkov.jpg",
+    "auteur": "Nom Auteur",
+    "date": "2025-06-18",
+    "resume": "Frégate moderne russe capable de frapper des cibles terrestres et navales avec précision.",
+    "contenu": "admiralgorshkov.md"
+  },
+  {
+    "id": "charlesdegaulle",
+    "nom": "Charles de Gaulle",
+    "slug": "charles-de-gaulle",
+    "pays": "France",
+    "domaine": "Naval",
+    "type": "porte-avions nucléaire",
+    "tags": ["porte-avions", "nucléaire", "aéronavale"],
+    "image": "/images/charlesdegaulle.jpg",
+    "auteur": "Nom Auteur",
+    "date": "2025-06-18",
+    "resume": "Porte-avions nucléaire français, seul bâtiment de ce type en service en Europe.",
+    "contenu": "charlesdegaulle.md"
+  },
+  {
+    "id": "type212",
+    "nom": "Type 212A",
+    "slug": "type-212a",
+    "pays": "Allemagne",
+    "domaine": "Naval",
+    "type": "sous-marin diesel-électrique",
+    "tags": ["furtif", "air-indépendant", "sous-marin"],
+    "image": "/images/type212.jpg",
+    "auteur": "Nom Auteur",
+    "date": "2025-06-18",
+    "resume": "Sous-marin allemand moderne à propulsion anaérobie, conçu pour des missions furtives côtières et océaniques.",
+    "contenu": "type212.md"
+  }
+]

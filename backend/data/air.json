@@ -1,0 +1,72 @@
+[
+  {
+    "id": "mirage2000",
+    "nom": "Mirage 2000",
+    "slug": "mirage-2000",
+    "pays": "France",
+    "domaine": "Aérien",
+    "type": "chasseur multirôle",
+    "tags": ["rapide", "maniable", "quatrième génération"],
+    "image": "/images/mirage2000.jpg",
+    "auteur": "Nom Auteur",
+    "date": "2025-06-15",
+    "resume": "Avion de chasse multirôle français, efficace et polyvalent.",
+    "contenu": "mirage2000.md"
+  },
+  {
+    "id": "f22",
+    "nom": "F-22 Raptor",
+    "slug": "f-22-raptor",
+    "pays": "États-Unis",
+    "domaine": "Aérien",
+    "type": "chasseur furtif",
+    "tags": ["furtif", "cinquième génération", "supercroisière"],
+    "image": "/images/f22.jpg",
+    "auteur": "Nom Auteur",
+    "date": "2025-06-18",
+    "resume": "Chasseur furtif américain de cinquième génération, connu pour sa maniabilité et sa technologie avancée.",
+    "contenu": "f22.md"
+  },
+  {
+    "id": "su57",
+    "nom": "Sukhoi Su-57",
+    "slug": "sukhoi-su-57",
+    "pays": "Russie",
+    "domaine": "Aérien",
+    "type": "chasseur furtif",
+    "tags": ["furtif", "multirôle", "cinquième génération"],
+    "image": "/images/su57.jpg",
+    "auteur": "Nom Auteur",
+    "date": "2025-06-18",
+    "resume": "Premier chasseur furtif russe, conçu pour affronter les menaces modernes sur tous les fronts.",
+    "contenu": "su57.md"
+  },
+  {
+    "id": "rafale",
+    "nom": "Dassault Rafale",
+    "slug": "dassault-rafale",
+    "pays": "France",
+    "domaine": "Aérien",
+    "type": "avion de chasse multirôle",
+    "tags": ["polyvalent", "bimoteur", "combat air-sol"],
+    "image": "/images/rafale.jpg",
+    "auteur": "Nom Auteur",
+    "date": "2025-06-18",
+    "resume": "Chasseur multirôle français capable de missions air-air, air-sol et de reconnaissance.",
+    "contenu": "rafale.md"
+  },
+  {
+    "id": "b2spirit",
+    "nom": "B-2 Spirit",
+    "slug": "b-2-spirit",
+    "pays": "États-Unis",
+    "domaine": "Aérien",
+    "type": "bombardier furtif",
+    "tags": ["furtif", "longue portée", "stratégique"],
+    "image": "/images/b2.jpg",
+    "auteur": "Nom Auteur",
+    "date": "2025-06-18",
+    "resume": "Bombardier stratégique américain à faible observabilité, utilisé pour des frappes de précision à longue distance.",
+    "contenu": "b2spirit.md"
+  }
+]

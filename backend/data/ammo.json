@@ -1,0 +1,72 @@
+[
+  {
+    "id": "308winchester",
+    "nom": ".308 Winchester",
+    "slug": "308-winchester",
+    "pays": "United States",
+    "domaine": "Ammo",
+    "type": "rifle",
+    "tags": ["smokeless", "rimless"],
+    "image": "/images/308winchester.jpg",
+    "auteur": "Nom Auteur",
+    "date": "2025-06-16",
+    "resume": "Munition de fusil très répandue, utilisée aussi bien pour la chasse que dans le domaine militaire.",
+    "contenu": "308winchester.html"
+  },
+  {
+    "id": "762x39",
+    "nom": "7.62×39mm",
+    "slug": "762x39",
+    "pays": "URSS",
+    "domaine": "Ammo",
+    "type": "rifle",
+    "tags": ["intermédiaire", "AK-47", "soviétique"],
+    "image": "/images/762x39.jpg",
+    "auteur": "Nom Auteur",
+    "date": "2025-06-16",
+    "resume": "Cartouche intermédiaire emblématique, conçue pour le fusil d'assaut AK-47.",
+    "contenu": "762x39.md"
+  },
+  {
+    "id": "556nato",
+    "nom": "5.56×45mm NATO",
+    "slug": "556x45-nato",
+    "pays": "OTAN",
+    "domaine": "Ammo",
+    "type": "rifle",
+    "tags": ["intermédiaire", "standard OTAN", "léger"],
+    "image": "/images/556nato.jpg",
+    "auteur": "Nom Auteur",
+    "date": "2025-06-16",
+    "resume": "Munition standard pour de nombreux fusils d'assaut modernes de l'OTAN, comme le M16 et le FAMAS.",
+    "contenu": "556nato.md"
+  },
+  {
+    "id": "50bmg",
+    "nom": ".50 BMG",
+    "slug": "50-bmg",
+    "pays": "United States",
+    "domaine": "Ammo",
+    "type": "heavy machine gun / anti-materiel",
+    "tags": ["puissant", "longue portée", "anti-matériel"],
+    "image": "/images/50bmg.jpg",
+    "auteur": "Nom Auteur",
+    "date": "2025-06-16",
+    "resume": "Munition lourde utilisée pour les mitrailleuses lourdes et les fusils anti-matériels comme le Barrett M82.",
+    "contenu": "50bmg.md"
+  },
+  {
+    "id": "9mm",
+    "nom": "9×19mm Parabellum",
+    "slug": "9mm-parabellum",
+    "pays": "Allemagne",
+    "domaine": "Ammo",
+    "type": "pistol",
+    "tags": ["pistolet", "léger", "standard"],
+    "image": "/images/9mm.jpg",
+    "auteur": "Nom Auteur",
+    "date": "2025-06-16",
+    "resume": "Cartouche de pistolet très répandue, utilisée dans les forces de l'ordre et les armées du monde entier.",
+    "contenu": "9mm.md"
+  }
+]

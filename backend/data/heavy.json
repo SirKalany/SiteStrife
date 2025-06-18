@@ -1,0 +1,72 @@
+[
+  {
+    "id": "at4spigot",
+    "nom": "9K111 Fagot (AT-4 Spigot)",
+    "slug": "9k111-fagot",
+    "pays": "URSS",
+    "domaine": "Heavy",
+    "type": "missile antichar",
+    "tags": ["guidé", "filoguidé", "équipage nécessaire"],
+    "image": "/images/at4spigot.jpg",
+    "auteur": "Nom Auteur",
+    "date": "2025-06-18",
+    "resume": "Missile antichar soviétique utilisé à partir des années 1970, nécessitant un poste de tir.",
+    "contenu": "at4spigot.md"
+  },
+  {
+    "id": "m777",
+    "nom": "M777 Howitzer",
+    "slug": "m777-howitzer",
+    "pays": "United States",
+    "domaine": "Heavy",
+    "type": "obusier tracté",
+    "tags": ["artillerie", "longue portée", "tir indirect"],
+    "image": "/images/m777.jpg",
+    "auteur": "Nom Auteur",
+    "date": "2025-06-18",
+    "resume": "Obusier léger de 155mm utilisé par les forces américaines et leurs alliés.",
+    "contenu": "m777.md"
+  },
+  {
+    "id": "s400",
+    "nom": "S-400 Triumf",
+    "slug": "s-400",
+    "pays": "Russie",
+    "domaine": "Heavy",
+    "type": "système de défense aérienne",
+    "tags": ["SAM", "radar", "missile sol-air"],
+    "image": "/images/s400.jpg",
+    "auteur": "Nom Auteur",
+    "date": "2025-06-18",
+    "resume": "Système russe de missiles sol-air à longue portée, capable de cibler des avions et missiles balistiques.",
+    "contenu": "s400.md"
+  },
+  {
+    "id": "flak88",
+    "nom": "Flak 88",
+    "slug": "flak-88",
+    "pays": "Allemagne",
+    "domaine": "Heavy",
+    "type": "canon antiaérien / antichar",
+    "tags": ["seconde guerre", "polyvalent", "historique"],
+    "image": "/images/flak88.jpg",
+    "auteur": "Nom Auteur",
+    "date": "2025-06-18",
+    "resume": "Célèbre canon allemand de 88mm utilisé contre avions et chars pendant la Seconde Guerre mondiale.",
+    "contenu": "flak88.md"
+  },
+  {
+    "id": "d30",
+    "nom": "D-30 Howitzer",
+    "slug": "d-30-howitzer",
+    "pays": "URSS",
+    "domaine": "Heavy",
+    "type": "obusier tracté",
+    "tags": ["artillerie", "122mm", "URSS"],
+    "image": "/images/d30.jpg",
+    "auteur": "Nom Auteur",
+    "date": "2025-06-18",
+    "resume": "Obusier soviétique de 122 mm, largement utilisé dans de nombreux conflits à travers le monde.",
+    "contenu": "d30.md"
+  }
+]

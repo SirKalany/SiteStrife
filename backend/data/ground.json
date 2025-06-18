@@ -1,0 +1,72 @@
+[
+  {
+    "id": "leclerc",
+    "nom": "Char Leclerc",
+    "slug": "char-leclerc",
+    "pays": "France",
+    "domaine": "Terrestre",
+    "type": "char de combat",
+    "tags": ["furtif", "blindé", "troisième génération"],
+    "image": "/images/leclerc.jpg",
+    "auteur": "Nom Auteur",
+    "date": "2025-06-16",
+    "resume": "Char de combat principal français, moderne et agile.",
+    "contenu": "leclerc.md"
+  },
+  {
+    "id": "abrams",
+    "nom": "M1 Abrams",
+    "slug": "m1-abrams",
+    "pays": "United States",
+    "domaine": "Terrestre",
+    "type": "char de combat",
+    "tags": ["blindé", "turbine", "moderne"],
+    "image": "/images/abrams.jpg",
+    "auteur": "Nom Auteur",
+    "date": "2025-06-17",
+    "resume": "Char de combat américain puissant, reconnu pour sa durabilité et sa puissance de feu.",
+    "contenu": "abrams.md"
+  },
+  {
+    "id": "t90",
+    "nom": "T-90",
+    "slug": "t-90",
+    "pays": "Russie",
+    "domaine": "Terrestre",
+    "type": "char de combat",
+    "tags": ["blindé", "post-soviétique", "électronique embarquée"],
+    "image": "/images/t90.jpg",
+    "auteur": "Nom Auteur",
+    "date": "2025-06-17",
+    "resume": "Char de combat russe moderne, évolution du T-72 avec une meilleure protection active.",
+    "contenu": "t90.md"
+  },
+  {
+    "id": "challenger2",
+    "nom": "Challenger 2",
+    "slug": "challenger-2",
+    "pays": "United Kingdom",
+    "domaine": "Terrestre",
+    "type": "char de combat",
+    "tags": ["blindé", "blindage Chobham", "précis"],
+    "image": "/images/challenger2.jpg",
+    "auteur": "Nom Auteur",
+    "date": "2025-06-17",
+    "resume": "Char de combat britannique connu pour son blindage avancé et sa précision.",
+    "contenu": "challenger2.md"
+  },
+  {
+    "id": "k2blackpanther",
+    "nom": "K2 Black Panther",
+    "slug": "k2-black-panther",
+    "pays": "South Korea",
+    "domaine": "Terrestre",
+    "type": "char de combat",
+    "tags": ["technologique", "blindé", "sud-coréen"],
+    "image": "/images/k2.jpg",
+    "auteur": "Nom Auteur",
+    "date": "2025-06-17",
+    "resume": "Char de combat sud-coréen de haute technologie, parmi les plus avancés au monde.",
+    "contenu": "k2blackpanther.md"
+  }
+]

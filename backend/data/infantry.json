@@ -1,0 +1,72 @@
+[
+  {
+    "id": "famas",
+    "nom": "FAMAS F1",
+    "slug": "famas-f1",
+    "pays": "France",
+    "domaine": "Infantry",
+    "type": "fusil d'assaut",
+    "tags": ["léger", "polyvalent", "bullpup"],
+    "image": "/images/famas.jpg",
+    "auteur": "Nom Auteur",
+    "date": "2025-06-10",
+    "resume": "Fusil d’assaut français, utilisé par les forces armées depuis les années 70.",
+    "contenu": "famas.md"
+  },
+  {
+    "id": "ak47",
+    "nom": "AK-47",
+    "slug": "ak-47",
+    "pays": "URSS",
+    "domaine": "Infantry",
+    "type": "fusil d'assaut",
+    "tags": ["robuste", "fiable", "7.62mm"],
+    "image": "/images/ak47.jpg",
+    "auteur": "Nom Auteur",
+    "date": "2025-06-18",
+    "resume": "L'un des fusils d'assaut les plus produits et utilisés au monde.",
+    "contenu": "ak47.md"
+  },
+  {
+    "id": "bazooka",
+    "nom": "M1 Bazooka",
+    "slug": "m1-bazooka",
+    "pays": "United States",
+    "domaine": "Infantry",
+    "type": "arme antichar",
+    "tags": ["recoilless", "WWII", "portable"],
+    "image": "/images/bazooka.jpg",
+    "auteur": "Nom Auteur",
+    "date": "2025-06-18",
+    "resume": "Lance-roquettes portable américain utilisé pendant la Seconde Guerre mondiale.",
+    "contenu": "bazooka.md"
+  },
+  {
+    "id": "m67grenade",
+    "nom": "Grenade M67",
+    "slug": "grenade-m67",
+    "pays": "United States",
+    "domaine": "Infantry",
+    "type": "grenade à fragmentation",
+    "tags": ["explosif", "manuel", "standard OTAN"],
+    "image": "/images/m67.jpg",
+    "auteur": "Nom Auteur",
+    "date": "2025-06-18",
+    "resume": "Grenade à main de fragmentation standard des forces américaines.",
+    "contenu": "m67grenade.md"
+  },
+  {
+    "id": "mg42",
+    "nom": "MG 42",
+    "slug": "mg-42",
+    "pays": "Allemagne",
+    "domaine": "Infantry",
+    "type": "mitrailleuse légère",
+    "tags": ["seconde guerre", "rapide", "7.92mm"],
+    "image": "/images/mg42.jpg",
+    "auteur": "Nom Auteur",
+    "date": "2025-06-18",
+    "resume": "Mitrailleuse allemande célèbre pour sa cadence de tir élevée.",
+    "contenu": "mg42.md"
+  }
+]
