@@ -1,14 +1,38 @@
-export default async function AirPage() {
-  const res = await fetch("http://localhost:3000/air", { cache: "no-store" });
-  if (!res.ok) throw new Error("Erreur chargement domaine Air");
-  const articles = await res.json();
+import Link from "next/link";
+
+async function fetchAir() {
+  const res = await fetch("http://localhost:4000/air", { cache: "no-store" });
+  if (!res.ok) throw new Error("Échec du chargement des données");
+  return res.json();
+}
+
+export default async function Page() {
+  const airItems = await fetchAir();
 
   return (
-    <main>
-      <h1>Domaine Aérien</h1>
-      <ul>
-        {articles.map(({ id, nom }) => (
-          <li key={id}>{nom}</li>
+    <main className="min-h-screen bg-[#1b1b1b] text-white flex flex-col items-center px-4 py-10">
+      <h1 className="text-3xl font-semibold mb-8 text-green-400">
+        Air Power Catalog
+      </h1>
+      <ul className="space-y-4 w-full max-w-md">
+        {airItems.map(({ id, nom, slug, type, domaine, image }) => (
+          <li
+            key={id}
+            className="p-4 border border-gray-600 rounded-lg bg-[#2a2a2a] hover:bg-[#333] transition"
+          >
+            <Link href={`/air/${slug}`} className="block space-y-2">
+              {image && (
+                <img
+                  src={image}
+                  alt={nom}
+                  className="w-full h-auto rounded mb-2"
+                />
+              )}
+              <h2 className="text-xl font-bold">{nom}</h2>
+              <p className="text-sm text-gray-400">Type : {type}</p>
+              <p className="text-sm text-gray-400">Domaine : {domaine}</p>
+            </Link>
+          </li>
         ))}
       </ul>
     </main>
