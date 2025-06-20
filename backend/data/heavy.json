@@ -53,7 +53,7 @@
     "auteur": "Nom Auteur",
     "date": "2025-06-18",
     "resume": "Célèbre canon allemand de 88mm utilisé contre avions et chars pendant la Seconde Guerre mondiale.",
-    "contenu": "flak88.md"
+    "contenu": "flak88.json"
   },
   {
     "id": "d30",

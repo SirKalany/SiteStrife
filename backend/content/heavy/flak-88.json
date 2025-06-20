@@ -1,0 +1,15 @@
+{
+  "description": "Le Flak 88 est un canon antiaérien allemand célèbre pour sa polyvalence et son efficacité, utilisé massivement pendant la Seconde Guerre mondiale à la fois contre avions et blindés.",
+  "caracteristiques": [
+    "Type : Canon antiaérien et antichar",
+    "Calibre : 88 mm",
+    "Poids : ~7 tonnes",
+    "Vitesse initiale : 840 à 1 000 m/s",
+    "Portée antichar : jusqu’à 2 000 m en tir direct",
+    "Portée antiaérienne : plus de 10 000 m",
+    "Cadence de tir : ~15 coups/min"
+  ],
+  "histoire": "Conçu dans les années 1930, le canon 8,8 cm Flak fut initialement destiné à la défense antiaérienne. Rapidement, sa puissance le rend redoutable contre les chars. Utilisé sur tous les fronts par la Wehrmacht, il devient une pièce d’artillerie emblématique de la guerre.",
+  "performances": "Son obus puissant et sa grande vitesse initiale permettaient de percer les blindages les plus résistants de l’époque. Il était efficace à la fois en tir direct et indirect, et souvent monté sur des affûts mobiles ou des trains.",
+  "utilisation": "Déployé en Afrique du Nord, sur le front de l’Est et en France, le Flak 88 a marqué l’histoire militaire. Il a été utilisé aussi bien en batterie fixe que monté sur des véhicules ou camouflé comme antichar."
+}

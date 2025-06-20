@@ -1,0 +1,15 @@
+{
+  "description": "Le Leclerc est le char de combat principal de l’armée française, conçu pour remplacer l’AMX-30. Il est réputé pour son électronique avancée, sa mobilité et sa cadence de tir exceptionnelle.",
+  "caracteristiques": [
+    "Type : Char de combat principal (MBT)",
+    "Poids : 56 tonnes",
+    "Armement principal : Canon CN120-26 de 120 mm à âme lisse",
+    "Moteur : V8 diesel Hyperbar de 1 500 ch",
+    "Vitesse maximale : 72 km/h (sur route)",
+    "Autonomie : 550 km",
+    "Blindage : Composite modulaire + protection active Galix"
+  ],
+  "histoire": "Développé dans les années 1980 par GIAT Industries (Nexter aujourd'hui), le Leclerc entre en service en 1992. Il introduit de nombreuses innovations comme un chargeur automatique, un système de gestion de combat et une grande connectivité inter-véhicules. Exporté aux Émirats Arabes Unis, il y a été adapté aux environnements désertiques.",
+  "performances": "Le Leclerc offre une excellente puissance de feu et un temps de réaction très court grâce à son chargeur automatique. Sa mobilité, combinée à une électronique avancée, en fait un char très performant sur des terrains variés.",
+  "utilisation": "Utilisé par les forces françaises dans des missions OTAN et opérations extérieures, il reste un élément central de la cavalerie blindée. Des programmes de modernisation sont en cours pour le maintenir opérationnel jusqu’en 2040."
+}

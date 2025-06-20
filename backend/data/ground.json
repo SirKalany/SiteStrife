@@ -11,7 +11,7 @@
     "auteur": "Nom Auteur",
     "date": "2025-06-16",
     "resume": "Char de combat principal français, moderne et agile.",
-    "contenu": "leclerc.md"
+    "contenu": "leclerc.json"
   },
   {
     "id": "abrams",

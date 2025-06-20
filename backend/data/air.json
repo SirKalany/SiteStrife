@@ -11,7 +11,7 @@
     "auteur": "Nom Auteur",
     "date": "2025-06-15",
     "resume": "Avion de chasse multirôle français, efficace et polyvalent.",
-    "contenu": "mirage2000.md"
+    "contenu": "mirage2000.json"
   },
   {
     "id": "f22",
