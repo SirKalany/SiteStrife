@@ -36,6 +36,7 @@ app.get('/ground', (req, res) => res.json(ground));
 app.get('/heavy', (req, res) => res.json(heavy));
 app.get('/infantry', (req, res) => res.json(infantry));
 app.get('/naval', (req, res) => res.json(naval));
+app.use('/images', express.static(path.join(rootDir, 'images')));
 
 function setupContentRoute(domaine) {
   app.get(`/${domaine}/:slug`, async (req, res) => {

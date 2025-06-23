@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 
 export default async function DomaineArticlePage({ params }) {
-  const { slug } = params;
+  const { slug } = await params;
   const domaine = "ground";
 
   // Récupérer les métadonnées
@@ -12,7 +12,6 @@ export default async function DomaineArticlePage({ params }) {
   const item = meta.find((x) => x.slug === slug);
   if (!item) notFound();
 
-  // Récupérer le contenu détaillé
   const contentRes = await fetch(`http://localhost:4000/${domaine}/${slug}`, {
     cache: "no-store",
   });
@@ -21,42 +20,79 @@ export default async function DomaineArticlePage({ params }) {
 
   return (
     <main className="min-h-screen bg-[#1b1b1b] text-white px-10 py-12 flex flex-col items-center">
-      <article className="w-full max-w-4xl space-y-8">
-        <h1 className="text-4xl font-bold text-green-400">{item.nom}</h1>
+      <article className="w-full max-w-4xl space-y-10">
+        <h1 className="text-4xl font-bold text-green-400 text-center">
+          {item.nom}
+        </h1>
 
         {item.image && (
-          <img
-            src={item.image}
-            alt={item.nom}
-            className="w-full max-w-xl mx-auto rounded shadow"
-          />
+          <figure className="w-full">
+            <img
+              src={item.image}
+              alt={item.nom}
+              className="w-full rounded shadow"
+            />
+            <figcaption className="text-sm text-gray-400 text-center mt-2 italic">
+              {item.caption
+                ? item.caption
+                : `Photo of the ${item.nom}.`}
+            </figcaption>
+          </figure>
         )}
 
-        <p className="text-gray-300">{content.description}</p>
+        {content.description && (
+          <section>
+            <p className="text-gray-300 text-lg leading-relaxed">
+              {content.description}
+            </p>
+          </section>
+        )}
 
-        <section>
-          <h2 className="text-2xl text-green-300 mb-2">Caractéristiques</h2>
-          <ul className="list-disc list-inside text-gray-300 space-y-1">
-            {content.caracteristiques?.map((line, i) => (
-              <li key={i}>{line}</li>
+        {content.caracteristiques?.length > 0 && (
+          <section>
+            <h2 className="text-2xl text-green-300 mb-2">Characteristics</h2>
+            <ul className="list-disc list-inside text-gray-300 space-y-1">
+              {content.caracteristiques.map((line, i) => (
+                <li key={i}>{line}</li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {content.development && (
+          <section>
+            <h2 className="text-2xl text-green-300 mb-2">Development</h2>
+            {content.development.split("\n\n").map((para, i) => (
+              <p key={i} className="text-gray-300 leading-relaxed mb-4">
+                {para}
+              </p>
             ))}
-          </ul>
-        </section>
+          </section>
+        )}
 
-        <section>
-          <h2 className="text-2xl text-green-300 mb-2">Historique</h2>
-          <p className="text-gray-300 leading-relaxed">{content.histoire}</p>
-        </section>
+        {content.service && (
+          <section>
+            <h2 className="text-2xl text-green-300 mb-2">Service</h2>
+            {content.service.split("\n\n").map((para, i) => (
+              <p key={i} className="text-gray-300 leading-relaxed mb-4">
+                {para}
+              </p>
+            ))}
+          </section>
+        )}
 
-        <section>
-          <h2 className="text-2xl text-green-300 mb-2">Performances</h2>
-          <p className="text-gray-300 leading-relaxed">{content.performances}</p>
-        </section>
-
-        <section>
-          <h2 className="text-2xl text-green-300 mb-2">Utilisation</h2>
-          <p className="text-gray-300 leading-relaxed">{content.utilisation}</p>
-        </section>
+        {content.variants && (
+          <section>
+            <h2 className="text-2xl text-green-300 mb-2">
+              Models and variants
+            </h2>
+            {content.variants.split("\n\n").map((para, i) => (
+              <p key={i} className="text-gray-300 leading-relaxed mb-4">
+                {para}
+              </p>
+            ))}
+          </section>
+        )}
       </article>
     </main>
   );

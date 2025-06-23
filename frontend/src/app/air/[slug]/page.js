@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 
 export default async function DomaineArticlePage({ params }) {
-  const { slug } = params;
+  const { slug } = await params;
   const domaine = "air";
 
   // Récupérer les métadonnées

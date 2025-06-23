@@ -1,17 +1,18 @@
 [
   {
-    "id": "leclerc",
-    "nom": "Char Leclerc",
-    "slug": "char-leclerc",
-    "pays": "France",
-    "domaine": "Terrestre",
-    "type": "char de combat",
-    "tags": ["furtif", "blindé", "troisième génération"],
-    "image": "/images/leclerc.jpg",
+    "id": "a20",
+    "nom": "A20 heavy tank",
+    "slug": "a20",
+    "pays": "United Kingdom",
+    "domaine": "Ground",
+    "type": "Infantry Tank",
+    "tags": ["heavy", "WW2", "prototype"],
+    "image": "http://localhost:4000/images/a20.jpg",
+    "caption": "Prototype A20E1 during a mobility test, 1940.",
     "auteur": "Nom Auteur",
     "date": "2025-06-16",
     "resume": "Char de combat principal français, moderne et agile.",
-    "contenu": "leclerc.json"
+    "contenu": "a20.json"
   },
   {
     "id": "abrams",
