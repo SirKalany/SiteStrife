@@ -15,18 +15,19 @@
     "contenu": "a20.json"
   },
   {
-    "id": "abrams",
-    "nom": "M1 Abrams",
-    "slug": "m1-abrams",
-    "pays": "United States",
+    "id": "chi-nu",
+    "nom": "Type 3 medium tank Chi-Nu",
+    "slug": "chi-nu",
+    "pays": "Japan",
     "domaine": "Terrestre",
     "type": "char de combat",
     "tags": ["blindé", "turbine", "moderne"],
-    "image": "/images/abrams.jpg",
+    "image": "http://localhost:4000/images/chi-nu.jpg",
+    "caption": "Photograph of a Chi-Nu taken after the Japanese surrender.",
     "auteur": "Nom Auteur",
     "date": "2025-06-17",
     "resume": "Char de combat américain puissant, reconnu pour sa durabilité et sa puissance de feu.",
-    "contenu": "abrams.md"
+    "contenu": "chi-nu.json"
   },
   {
     "id": "t90",

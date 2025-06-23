@@ -1,0 +1,16 @@
+{
+  "description": "The Type 3 medium tank Chi-Nu was a medium tank used by the Empire of Japan during the Second World War, built on the existing Type 1 medium tank Chi-He. It was designed as a response to the poor performance of earlier Japanese tanks against Allied armor encountered during the Burma and Philippines campaigns.",
+  "caracteristiques": [
+    "Weight: 19 tons",
+    "Armor: 12–50 mm",
+    "Primary Armament: Type 3 75mm tank gun",
+    "Secondary Armament: 1x Hull-mounted 7.7mm Type 97 machine gun",
+    "Engine: Mitsubishi Type 100 V-12",
+    "Speed: 39 km/h",
+    "Crew: 5",
+    "Number built: 144–166"
+  ],
+  "development": "For a long time before the Second World War reached the Pacific, the Empire of Japan's armored forces primarily relied on light and medium tanks equipped with low-velocity guns such as the Type 97 Chi-Ha medium tank or Type 95 Ha-Go light tank. These vehicles were intended mostly for infantry support and engaging fortifications, as they were not expected to face enemy armor which was virtually nonexistent at the time.\n\nThis doctrine proved insufficient when the Japanese entered war with the Western Allies. Although the Burma and Philippines campaigns were initial successes, encounters with Allied tanks revealed the inadequacy of Japan’s armored firepower as the 57mm Type 97 tank gun on the Chi-Ha and the 37mm Type 94 on the Ha-Go struggled against American and British armor. To address this, Japan introduced the Type 1 47mm gun, which could deal with lighter tanks such as the M3 Stuart. However, the arrival of the M4 Sherman rendered the 47mm gun obsolete as an anti-tank weapon.\n\nA long-term solution was already underway in the form of the Type 4 Chi-To, but numerous delays pushed the Army Technical Bureau to develop an interim design. Thus the Chi-Nu was conceived. It used the hull of the Type 1 Chi-He and was armed with the Type 3 75mm tank gun, a tank adaptation of the Type 90 75mm field gun. Because of the larger gun, a new and enlarged turret had to be developed. Although designs were ready by late 1943, production was delayed until 1944 due to critical shortages in resources, with priority given to aircraft and naval programs. As a result, production remained limited despite the tank being relatively simple to build.",
+  "service": "Due to limited production and the expectation of an Allied invasion of the Japanese home islands, the Chi-Nu never saw combat. Instead, it was kept in reserve to defend the homeland against an anticipated landing. However, with the Japanese surrender following the atomic bombings of Hiroshima and Nagasaki, the invasion never took place and the Chi-Nu remained in storage.\n\nAlthough it was likely capable of engaging M4 Sherman tanks on relatively equal terms, its late entry and limited numbers meant it would have had little impact on the course of the war. None of the Chi-Nu tanks were exported or saw postwar use.",
+  "variants": "A single known variant of the Chi-Nu was developed: the Type 3 Chi-Nu Kai (also known as Chi-Nu II). This version would have mounted the turret of the Type 4 Chi-To, along with the new Type 5 75mm tank gun. The upgraded gun would have significantly improved anti-tank performance. However, with the end of the war, the Chi-Nu Kai remained at the prototype stage and was never mass-produced."
+}
