@@ -1,12 +1,11 @@
 import Link from "next/link";
 
 const domains = [
-  { name: "Air", path: "/air" },
-  { name: "Naval", path: "/naval" },
-  { name: "Ground", path: "/ground" },
-  { name: "Infantry", path: "/infantry" },
-  { name: "Heavy", path: "/heavy" },
-  { name: "Ammo", path: "/ammo" }
+  { name: "Air", path: "/Air" },
+  { name: "Naval", path: "/Naval" },
+  { name: "Ground", path: "/Ground" },
+  { name: "Infantry", path: "/Infantry" },
+  { name: "Heavy", path: "/Heavy" },
 ];
 
 export default function Home() {
