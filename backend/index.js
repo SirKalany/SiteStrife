@@ -30,7 +30,6 @@ const heavy = loadJSON('heavy.json');
 const infantry = loadJSON('infantry.json');
 const naval = loadJSON('naval.json');
 
-app.get('/ammo', (req, res) => res.json(ammo));
 app.get('/air', (req, res) => res.json(air));
 app.get('/ground', (req, res) => res.json(ground));
 app.get('/heavy', (req, res) => res.json(heavy));
