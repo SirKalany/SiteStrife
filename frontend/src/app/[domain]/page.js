@@ -10,7 +10,6 @@ export default async function DomainListPage({ params }) {
   const { domain } = await params;
   let items = await fetchItems(domain);
 
-  // Sort alphabetically by name (in English)
   items = items.sort((a, b) => a.name.localeCompare(b.name, 'en', { ignorePunctuation: true }));
 
   return (
