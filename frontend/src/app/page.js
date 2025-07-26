@@ -10,16 +10,21 @@ const domains = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#1b1b1b] text-white flex flex-col items-center px-4 py-10">
-      <h1 className="text-3xl font-semibold mb-12 text-green-400">Armement - Catalogue</h1>
+    <main className="min-h-screen bg-[#1b1b1b] text-white flex flex-col px-4 pt-10 pb-4">
+      {/* Titre en haut */}
+      <h1 className="text-3xl font-semibold text-green-400 text-center">
+        Armement - Catalogue
+      </h1>
 
-      <div className="flex flex-col items-center space-y-8">
-        <div className="flex space-x-6">
+      {/* Bloc centré verticalement */}
+      <div className="flex-1 flex flex-col justify-center items-center space-y-8">
+        {/* Ligne du haut : 3 boutons */}
+        <div className="flex flex-wrap justify-center gap-6">
           {domains.slice(0, 3).map(({ name, path, img }) => (
             <Link
               key={name}
               href={path}
-              className="relative w-70 h-40 rounded-lg shadow-lg overflow-hidden group"
+              className="relative w-[300px] h-40 rounded-lg shadow-lg overflow-hidden group"
             >
               <div
                 className="absolute inset-0 bg-center bg-cover transition-transform duration-300 group-hover:scale-110"
@@ -38,12 +43,13 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="flex space-x-6">
+        {/* Ligne du bas : 2 boutons */}
+        <div className="flex flex-wrap justify-center gap-6">
           {domains.slice(3).map(({ name, path, img }) => (
             <Link
               key={name}
               href={path}
-              className="relative w-70 h-40 rounded-lg shadow-lg overflow-hidden group"
+              className="relative w-[300px] h-40 rounded-lg shadow-lg overflow-hidden group"
             >
               <div
                 className="absolute inset-0 bg-center bg-cover transition-transform duration-300 group-hover:scale-110"

@@ -23,7 +23,6 @@ function loadJSON(filename) {
   }
 }
 
-const ammo = loadJSON('ammo.json');
 const air = loadJSON('air.json');
 const ground = loadJSON('ground.json');
 const heavy = loadJSON('heavy.json');
@@ -53,7 +52,7 @@ function setupContentRoute(domaine) {
   });
 }
 
-['ammo', 'air', 'ground', 'heavy', 'infantry', 'naval'].forEach(setupContentRoute);
+['air', 'ground', 'heavy', 'infantry', 'naval'].forEach(setupContentRoute);
 
 const PORT = 4000;
 app.listen(PORT, () => {
