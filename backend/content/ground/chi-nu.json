@@ -21,7 +21,7 @@
       }
     ]
   },
-  "users": ["Empire of Japan"],
+  "users": ["Empire of Japan - never used in combat."],
   "related": [
     {
       "title": "Type 97 Chi-Ha",
@@ -35,11 +35,11 @@
       "domain": "Ground",
       "text": "Type 1 Chi-He, the tank from which the Chi-Nu was developped"
     },
-    {
-      "title": "Type 3 Chi-Nu Kai",
-      "slug": "a20",
-      "domain": "Ground",
-      "text": "Type 3 Chi-Nu Kai, the prototype upgraded version of the Chi-Nu"
-    }
+{
+  "title": "Type 4 Chi-To",
+  "slug": "chi-to",
+  "domain": "Ground",
+  "text": "Type 4 Chi-To, the delayed response to Allied armor and the reason for the Chi-Nu's existence"
+}
   ]
 }

@@ -1,9 +1,9 @@
 import { notFound } from "next/navigation";
 
 export default async function ArticlePage({ params }) {
-  const { domain, slug } = await params;
+  const { domain, slug } = params;
 
-  // Fetch metadata
+  // Fetch list of all articles in the domain
   const metaRes = await fetch(`http://localhost:4000/${domain}`, {
     cache: "no-store",
   });
@@ -13,7 +13,7 @@ export default async function ArticlePage({ params }) {
   const item = meta.find((x) => x.slug === slug);
   if (!item) notFound();
 
-  // Fetch detailed content
+  // Fetch content of the article
   const contentRes = await fetch(`http://localhost:4000/${domain}/${slug}`, {
     cache: "no-store",
   });
@@ -69,24 +69,36 @@ export default async function ArticlePage({ params }) {
         )}
 
         {content.variants && (
-          <section className="border-t border-gray-700 pt-4 mt-6 space-y-3">
+          <section className="border-t border-gray-700 pt-4 mt-6">
             <h2 className="text-2xl text-green-300 mb-2">
               Variants and Modifications
             </h2>
-            {content.variants.text && (
-              <p className="text-gray-300">{content.variants.text}</p>
-            )}
-            {Array.isArray(content.variants.list) &&
-              content.variants.list.length > 0 && (
-                <ul className="list-disc list-inside text-gray-300 space-y-1">
-                  {content.variants.list.map((variant, i) => (
+            <p className="text-gray-300 mb-4">{content.variants.text}</p>
+            {Array.isArray(content.variants.list) && (
+              <ul className="list-disc list-inside text-gray-300 space-y-2">
+                {content.variants.list.map((variant, i) => {
+                  const match = meta.find(
+                    (item) =>
+                      item.name.toLowerCase() === variant.name.toLowerCase()
+                  );
+                  return (
                     <li key={i}>
-                      <strong className="text-white">{variant.name}:</strong>{" "}
-                      {variant.description}
+                      {match ? (
+                        <a
+                          href={`/${domain}/${match.slug}`}
+                          className="text-blue-400 underline hover:text-blue-300 font-semibold"
+                        >
+                          {variant.name}
+                        </a>
+                      ) : (
+                        <span className="font-semibold">{variant.name}</span>
+                      )}
+                      {`: ${variant.description}`}
                     </li>
-                  ))}
-                </ul>
-              )}
+                  );
+                })}
+              </ul>
+            )}
           </section>
         )}
 
@@ -101,7 +113,7 @@ export default async function ArticlePage({ params }) {
           </section>
         )}
 
-        {content.related && content.related.length > 0 && (
+        {Array.isArray(content.related) && content.related.length > 0 && (
           <section className="border-t border-gray-700 pt-4 mt-6">
             <h2 className="text-2xl text-green-300 mb-2">Related Articles</h2>
             <ul className="list-disc list-inside text-gray-300 space-y-1">

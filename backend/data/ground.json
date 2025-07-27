@@ -70,5 +70,19 @@
     "date": "2025-06-17",
     "description": "One of the most advanced main battle tanks in the world, developed by South Korea.",
     "content": "k2blackpanther.md"
+  },
+  {
+    "id": "chi-nu-kai",
+    "name": "Type 3 Chi-Nu Kai",
+    "slug": "chi-nu-kai",
+    "country": "Japan",
+    "domain": "Ground",
+    "type": "Medium Tank",
+    "tags": ["armored", "WW2", "Japanese"],
+    "picture": "/images/chi-nu-kai.jpg",
+    "author": "Author Name",
+    "date": "2025-06-17",
+    "description": "One of the most advanced main battle tanks in the world, developed by South Korea.",
+    "content": "chi-nu-kai.json"
   }
 ]
