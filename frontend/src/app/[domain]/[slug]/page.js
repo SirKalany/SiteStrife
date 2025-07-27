@@ -69,13 +69,35 @@ export default async function ArticlePage({ params }) {
         )}
 
         {content.variants && (
-          <section className="border-t border-gray-700 pt-4 mt-6">
+          <section className="border-t border-gray-700 pt-4 mt-6 space-y-3">
             <h2 className="text-2xl text-green-300 mb-2">
               Variants and Modifications
             </h2>
-            <p className="text-gray-300 leading-relaxed whitespace-pre-line">
-              {content.variants}
-            </p>
+            {content.variants.text && (
+              <p className="text-gray-300">{content.variants.text}</p>
+            )}
+            {Array.isArray(content.variants.list) &&
+              content.variants.list.length > 0 && (
+                <ul className="list-disc list-inside text-gray-300 space-y-1">
+                  {content.variants.list.map((variant, i) => (
+                    <li key={i}>
+                      <strong className="text-white">{variant.name}:</strong>{" "}
+                      {variant.description}
+                    </li>
+                  ))}
+                </ul>
+              )}
+          </section>
+        )}
+
+        {Array.isArray(content.users) && content.users.length > 0 && (
+          <section className="border-t border-gray-700 pt-4 mt-6">
+            <h2 className="text-2xl text-green-300 mb-2">Users</h2>
+            <ul className="list-disc list-inside text-gray-300 space-y-1">
+              {content.users.map((user, i) => (
+                <li key={i}>{user}</li>
+              ))}
+            </ul>
           </section>
         )}
 
