@@ -1,0 +1,49 @@
+{
+  "description": "The Type 4 Chi-To was a medium tank developed by the Empire of Japan during the Second World War. Intended as a response to the American M4 Sherman, the Chi-To featured improved firepower and armor. However, numerous delays and material shortages prevented it from reaching full-scale production before the war’s end.",
+  "caracteristiques": [
+    "Weight: 30 tons",
+    "Armor: 12–75 mm",
+    "Primary Armament: Type 5 57 mm Tank Gun",
+    "Secondary Armament: 1x Hull-mounted 7.7 mm Type 97 Heavy Tank Machine Gun, 1x Side Turret-mounted 7.7 mm Type 97 Heavy Tank Machine Gun",
+    "Engine: Mitsubishi Type 4 V-12 Diesel",
+    "Speed: 45 km/h",
+    "Crew: 5",
+    "Number Built: 2"
+  ],
+  "development": "In early 1942, Japan began work on a new medium tank design. At the time, most Japanese tanks were equipped with low-velocity guns, and their preferred anti-tank weapon was the 47 mm gun. By August 1942, the Army issued specifications for the new vehicle: it was to weigh around 20 tons, reach a top speed of 40 km/h, have armor ranging from 25 to 50 mm, and be armed with a 47 mm main gun.\n\nThe initial design was completed in early 1943, but by then, the specifications were already considered outdated and needed revision. While the 47 mm gun was effective against lightly armored vehicles like the American M3 Stuart, it became clear that modern Allied tanks would feature far superior protection. Japanese engineers recognized the need to improve anti-tank capabilities and began working with the new 57 mm gun, while also enhancing armor thickness. These upgrades inevitably increased the tank’s overall weight. However, even the 57 mm was soon viewed as inadequate. By late 1943, the engineers had already begun planning to mount a more powerful 75 mm gun to face emerging Allied threats. For the time being, though, the first prototypes continued with the 57 mm gun.\n\nThe prototype was built using the Type 2 Ho-I chassis with a newly designed turret to house the 57 mm weapon. Assembly was completed in early 1944, and testing began shortly thereafter. While the vehicle performed well in terms of mobility, the main armament proved insufficient. By that point, it was evident that the tank would need to be rearmed with a 75 mm gun to effectively counter modern Allied armor.",
+  "service": "The Type 4 Chi-To (Prototype I) never saw service and served primarily as a stepping stone in the development of later prototypes and the intended production model. Although not fundamentally flawed, its late development and Japan’s declining industrial capacity rendered the design obsolete before it could be fielded.",
+  "variants": {
+    "text": "The following variants were related to the Chi-To’s development:",
+    "list": [
+      {
+        "name": "Type 4 Chi-To (Prototype II)",
+        "description": "The second prototype, considered an early production model, featured the 75 mm gun and performance characteristics similar to the finalized version."
+      },
+      {
+        "name": "Type 4 Chi-To (Production)",
+        "description": "The final version of the Chi-To was the most advanced medium tank design built by Japan during the Second World War. Despite its improvements in firepower, protection, and mobility, it was never deployed in combat."
+      },
+      {
+        "name": "Ka-To 105mm Self-Propelled Anti-Tank Gun",
+        "description": "A self-propelled gun variant based on the Chi-To chassis, the Ka-To was designed to mount a powerful 105 mm tank gun intended for anti-tank use. However, the project never progressed beyond the design phase."
+      }
+    ]
+  },
+  "users": [
+    "Empire of Japan — Only 1 built; was reused for later prototypes."
+  ],
+  "related": [
+    {
+      "title": "Type 97 Chi-Ha",
+      "slug": "type-97-chi-ha",
+      "domain": "Ground",
+      "text": "Predecessor to the Chi-Nu and one of Japan’s most produced medium tanks."
+    },
+    {
+      "title": "Type 1 Chi-He",
+      "slug": "type-1-chi-he",
+      "domain": "Ground",
+      "text": "The base chassis used for the Chi-Nu design."
+    }
+  ]
+}
