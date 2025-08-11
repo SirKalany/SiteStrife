@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 
 export default async function ArticlePage({ params }) {
-  const { domain, slug } = params;
+  const { domain, slug } = await params;
 
   // Fetch list of all articles in the domain
   const metaRes = await fetch(`http://localhost:4000/${domain}`, {
@@ -50,18 +50,18 @@ export default async function ArticlePage({ params }) {
           </section>
         )}
 
-        {content.development && (
+        {content.design && (
           <section className="border-t border-gray-700 pt-4 mt-6">
-            <h2 className="text-2xl text-green-300 mb-2">Development</h2>
+            <h2 className="text-2xl text-green-300 mb-2">Design</h2>
             <p className="text-gray-300 leading-relaxed whitespace-pre-line">
-              {content.development}
+              {content.design}
             </p>
           </section>
         )}
 
         {content.service && (
           <section className="border-t border-gray-700 pt-4 mt-6">
-            <h2 className="text-2xl text-green-300 mb-2">Service History</h2>
+            <h2 className="text-2xl text-green-300 mb-2">Service</h2>
             <p className="text-gray-300 leading-relaxed whitespace-pre-line">
               {content.service}
             </p>

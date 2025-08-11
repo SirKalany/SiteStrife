@@ -84,5 +84,19 @@
     "date": "2025-06-17",
     "description": "One of the most advanced main battle tanks in the world, developed by South Korea.",
     "content": "chi-nu-kai.json"
+  },
+    {
+    "id": "jagdtiger-porsche",
+    "name": "Jagdtiger (Porsche)",
+    "slug": "jagdtiger-porsche",
+    "country": "Germany",
+    "domain": "Ground",
+    "type": "Tank Destroyer",
+    "tags": ["Tank Destroyer", "WW2", "Germany"],
+    "picture": "http://localhost:4000/images/jagdtiger-porsche.jpg",
+    "author": "Author Name",
+    "date": "2025-06-17",
+    "description": "The heaviest armored fighting vehicle that saw service in the Second World War",
+    "content": "porsche-jagdtiger.json"
   }
 ]
