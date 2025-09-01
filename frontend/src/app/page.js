@@ -1,11 +1,11 @@
 import Link from "next/link";
 
 const domains = [
-  { name: "Air", path: "/Air", img: "/airimage.jpg" },
-  { name: "Naval", path: "/Naval", img: "/navalimage.jpg" },
-  { name: "Ground", path: "/Ground", img: "/groundimage.jpg" },
-  { name: "Infantry", path: "/Infantry", img: "/infantryimage.jpg" },
-  { name: "Heavy", path: "/Heavy", img: "/heavyimage.jpg" },
+  { name: "Air", path: "/air", img: "/airimage.jpg" },
+  { name: "Naval", path: "/naval", img: "/navalimage.jpg" },
+  { name: "Ground", path: "/ground", img: "/groundimage.jpg" },
+  { name: "Infantry", path: "/infantry", img: "/infantryimage.jpg" },
+  { name: "Heavy", path: "/heavy", img: "/heavyimage.jpg" },
 ];
 
 export default function Home() {

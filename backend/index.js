@@ -12,47 +12,66 @@ const rootDir = path.resolve(__dirname);
 const app = express();
 app.use(cors());
 
-function loadJSON(filename) {
+// ⚡ Charger la liste des pays dispo
+app.get('/countries', (req, res) => {
   try {
-    const filePath = path.join(rootDir, 'data', filename);
-    const data = fs.readFileSync(filePath, 'utf-8');
-    return JSON.parse(data);
+    const countries = fs.readdirSync(path.join(rootDir, 'data'))
+      .filter((f) => fs.lstatSync(path.join(rootDir, 'data', f)).isDirectory());
+    res.json(countries);
   } catch (err) {
-    console.error(`❌ Erreur lecture ${filename}:`, err);
-    return [];
+    res.status(500).json({ error: 'Impossible de lire les pays', details: err.message });
   }
-}
+});
 
-const air = loadJSON('air.json');
-const ground = loadJSON('ground.json');
-const heavy = loadJSON('heavy.json');
-const infantry = loadJSON('infantry.json');
-const naval = loadJSON('naval.json');
+// ⚡ Route: /:country/:domain → liste des véhicules
+app.get('/:country/:domain', async (req, res) => {
+  const { country, domain } = req.params;
+  const filePath = path.join(rootDir, 'data', country, `${domain}.json`);
 
-app.get('/air', (req, res) => res.json(air));
-app.get('/ground', (req, res) => res.json(ground));
-app.get('/heavy', (req, res) => res.json(heavy));
-app.get('/infantry', (req, res) => res.json(infantry));
-app.get('/naval', (req, res) => res.json(naval));
+  try {
+    const data = await readFile(filePath, 'utf-8');
+    res.json(JSON.parse(data));
+  } catch (err) {
+    res.status(404).json({
+      error: `Fichier data/${country}/${domain}.json introuvable`,
+      details: err.message,
+    });
+  }
+});
+
+// ⚡ Nouvelle route /vehicles pour filtrer facilement depuis le front
+app.get('/vehicles', async (req, res) => {
+  const { country, domain } = req.query;
+  if (!country || !domain) return res.status(400).json({ error: 'Missing country or domain' });
+
+  const filePath = path.join(rootDir, 'data', country, `${domain}.json`);
+  try {
+    const data = await readFile(filePath, 'utf-8');
+    const parsed = JSON.parse(data);
+    res.json(parsed);
+  } catch (err) {
+    res.json([]); // si fichier introuvable, on renvoie un tableau vide
+  }
+});
+
+// ⚡ Route: /:country/:domain/:slug → contenu détaillé
+app.get('/:country/:domain/:slug', async (req, res) => {
+  const { country, domain, slug } = req.params;
+  const filePath = path.join(rootDir, 'content', country, domain, `${slug}.json`);
+
+  try {
+    const data = await readFile(filePath, 'utf-8');
+    res.json(JSON.parse(data));
+  } catch (err) {
+    res.status(404).json({
+      error: `Fichier content/${country}/${domain}/${slug}.json introuvable`,
+      details: err.message,
+    });
+  }
+});
+
+// ⚡ Images
 app.use('/images', express.static(path.join(rootDir, 'images')));
-
-function setupContentRoute(domaine) {
-  app.get(`/${domaine}/:slug`, async (req, res) => {
-    const { slug } = req.params;
-    const filePath = path.join(rootDir, 'content', domaine, `${slug}.json`);
-    try {
-      const data = await readFile(filePath, 'utf-8');
-      res.json(JSON.parse(data));
-    } catch (err) {
-      res.status(404).json({
-        error: `Fichier ${domaine}/${slug}.json non trouvé`,
-        details: err.message,
-      });
-    }
-  });
-}
-
-['air', 'ground', 'heavy', 'infantry', 'naval'].forEach(setupContentRoute);
 
 const PORT = 4000;
 app.listen(PORT, () => {
