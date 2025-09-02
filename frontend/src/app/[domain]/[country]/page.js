@@ -84,14 +84,14 @@ export default function CountryDomainPage({ params }) {
         </div>
       )}
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-7xl">
+      <div className="flex flex-wrap justify-center gap-6 w-full max-w-7xl">
         {filteredItems.map(({ id, name, nom, slug, picture, type }) => (
           <Link
             key={id}
             href={`/${encodeURIComponent(domain)}/${encodeURIComponent(
               country
             )}/${encodeURIComponent(slug)}`}
-            className="p-4 border border-gray-600 rounded-lg bg-[#2a2a2a] hover:bg-[#333]"
+            className="p-4 border border-gray-600 rounded-lg bg-[#2a2a2a] hover:bg-[#333] w-72"
           >
             {picture && (
               <img

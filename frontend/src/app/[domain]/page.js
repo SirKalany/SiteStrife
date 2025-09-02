@@ -58,14 +58,14 @@ export default function DomainPage({ params }) {
       ) : countries.length === 0 ? (
         <p className="text-gray-400 mt-8">No countries available.</p>
       ) : (
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 w-full max-w-7xl">
+        <div className="flex flex-wrap justify-center gap-6 max-w-7xl mx-auto">
           {countries.map((country) => (
             <Link
               key={country}
               href={`/${encodeURIComponent(domain)}/${encodeURIComponent(
                 country
               )}`}
-              className="p-6 border border-gray-600 rounded-lg bg-[#2a2a2a] hover:bg-[#333] text-center font-bold text-green-400 transition"
+              className="p-6 w-40 border border-gray-600 rounded-lg bg-[#2a2a2a] hover:bg-[#333] text-center font-bold text-green-400 transition"
             >
               {decodeURIComponent(country)}
             </Link>
