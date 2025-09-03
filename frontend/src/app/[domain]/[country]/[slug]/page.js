@@ -2,9 +2,9 @@
 
 import { use } from "react";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 export default function VehiclePage({ params }) {
-  // ⚡ unwrap params
   const { domain, country, slug } = use(params);
 
   const [item, setItem] = useState(null);
@@ -15,7 +15,7 @@ export default function VehiclePage({ params }) {
   useEffect(() => {
     async function fetchData() {
       try {
-        // Liste des véhicules du domaine pour ce pays
+        // Métadonnées des véhicules du pays/domain
         const metaRes = await fetch(
           `http://localhost:4000/${country}/${domain}`
         );
@@ -25,7 +25,7 @@ export default function VehiclePage({ params }) {
         if (!foundItem) throw new Error("Vehicle not found");
         setItem(foundItem);
 
-        // Contenu détaillé du véhicule
+        // Contenu détaillé
         const contentRes = await fetch(
           `http://localhost:4000/${country}/${domain}/${slug}`
         );
@@ -44,6 +44,49 @@ export default function VehiclePage({ params }) {
   if (error) return <p className="text-red-500">{error}</p>;
   if (!item || !content) return null;
 
+  // ⚡ Rendu "famille"
+  if (content.kind === "family") {
+    return (
+      <main className="min-h-screen bg-[#1b1b1b] text-white px-10 py-12 flex flex-col items-center">
+        <article className="w-full max-w-4xl space-y-8">
+          <h1 className="text-4xl font-bold text-green-400">{content.title}</h1>
+
+          {content.description && (
+            <p className="text-gray-300">{content.description}</p>
+          )}
+
+          {content.history && (
+            <section className="border-t border-gray-700 pt-4 mt-6">
+              <h2 className="text-2xl text-green-300 mb-2">History</h2>
+              <p className="text-gray-300 whitespace-pre-line">
+                {content.history}
+              </p>
+            </section>
+          )}
+
+          {content.variants && (
+            <section className="border-t border-gray-700 pt-4 mt-6">
+              <h2 className="text-2xl text-green-300 mb-2">Variants</h2>
+              <ul className="flex flex-wrap gap-4">
+                {content.variants.map((v) => (
+                  <li key={v.slug}>
+                    <Link
+                      href={`/${domain}/${country}/${v.slug}`}
+                      className="px-4 py-2 bg-[#2a2a2a] border border-gray-600 rounded hover:bg-[#333] text-green-400"
+                    >
+                      {v.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+        </article>
+      </main>
+    );
+  }
+
+  // ⚡ Rendu "modèle"
   return (
     <main className="min-h-screen bg-[#1b1b1b] text-white px-10 py-12 flex flex-col items-center">
       <article className="w-full max-w-4xl space-y-8">
