@@ -1,0 +1,10 @@
+{
+  "kind": "family",
+  "title": "AMX-13",
+  "description": "The AMX-13 was a French light tank produced from 1952 to 1987.",
+  "history": "It served with the French Army and was exported widely. It featured a unique oscillating turret.",
+  "variants": [
+    { "slug": "amx-13-dca-40", "name": "AMX-13 DCA 40" },
+    { "slug": "amx-13-hot", "name": "AMX-13 (HOT)" }
+  ]
+}

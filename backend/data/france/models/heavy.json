@@ -1,0 +1,72 @@
+[
+  {
+    "id": "at4spigot",
+    "name": "9K111 Fagot (AT-4 Spigot)",
+    "slug": "9k111-fagot",
+    "country": "USSR",
+    "domain": "Heavy",
+    "type": "anti-tank missile",
+    "tags": ["guided", "wire-guided", "requires crew"],
+    "picture": "/images/at4spigot.jpg",
+    "author": "Author Name",
+    "date": "2025-06-18",
+    "description": "Soviet anti-tank missile introduced in the 1970s, operated from a launcher with manual guidance.",
+    "content": "at4spigot.md"
+  },
+  {
+    "id": "m777",
+    "name": "M777 Howitzer",
+    "slug": "m777-howitzer",
+    "country": "United States",
+    "domain": "Heavy",
+    "type": "towed howitzer",
+    "tags": ["artillery", "long-range", "indirect fire"],
+    "picture": "/images/m777.jpg",
+    "author": "Author Name",
+    "date": "2025-06-18",
+    "description": "Lightweight 155mm howitzer used by the U.S. military and allied forces for mobile artillery support.",
+    "content": "m777.md"
+  },
+  {
+    "id": "s400",
+    "name": "S-400 Triumf",
+    "slug": "s-400",
+    "country": "Russia",
+    "domain": "Heavy",
+    "type": "air defense system",
+    "tags": ["SAM", "radar", "surface-to-air missile"],
+    "picture": "/images/s400.jpg",
+    "author": "Author Name",
+    "date": "2025-06-18",
+    "description": "Russian long-range SAM system capable of targeting aircraft, cruise missiles, and ballistic missiles.",
+    "content": "s400.md"
+  },
+  {
+    "id": "flak88",
+    "name": "Flak 88",
+    "slug": "flak-88",
+    "country": "Germany",
+    "domain": "Heavy",
+    "type": "anti-aircraft / anti-tank gun",
+    "tags": ["WW2", "versatile", "historic"],
+    "picture": "/images/flak88.jpg",
+    "author": "Author Name",
+    "date": "2025-06-18",
+    "description": "Famous German 88mm gun used effectively against both aircraft and tanks during World War II.",
+    "content": "flak88.json"
+  },
+  {
+    "id": "d30",
+    "name": "D-30 Howitzer",
+    "slug": "d-30-howitzer",
+    "country": "USSR",
+    "domain": "Heavy",
+    "type": "towed howitzer",
+    "tags": ["artillery", "122mm", "Soviet"],
+    "picture": "/images/d30.jpg",
+    "author": "Author Name",
+    "date": "2025-06-18",
+    "description": "122mm Soviet howitzer widely exported and used in various global conflicts since the Cold War.",
+    "content": "d30.md"
+  }
+]

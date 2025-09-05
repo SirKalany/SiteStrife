@@ -4,112 +4,217 @@ import { use } from "react";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
-export default function CountryDomainPage({ params }) {
-  const { domain, country } = use(params); // ⚡ unwrap params
+export default function CountryPage({ params }) {
+  const { domain, country } = use(params);
 
-  const [items, setItems] = useState([]);
-  const [search, setSearch] = useState("");
-  const [filterVisible, setFilterVisible] = useState(false);
-  const [selectedType, setSelectedType] = useState("");
+  const [families, setFamilies] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  // ⚡ fetch véhicules pour ce domaine et ce pays
   useEffect(() => {
-    async function fetchItems() {
+    async function fetchFamilies() {
       try {
+        setLoading(true);
+        setError(null);
+
+        // ⚡ Récupérer les familles pour ce pays/domaine
+        // Nouveau format: /domain/country
         const res = await fetch(
-          `http://localhost:4000/${encodeURIComponent(
-            country
-          )}/${encodeURIComponent(domain)}`
+          `http://localhost:4000/${encodeURIComponent(domain)}/${encodeURIComponent(country)}`
         );
-        if (!res.ok) throw new Error("Failed to load data");
-        const data = await res.json();
-        setItems(data);
+        
+        if (!res.ok) {
+          throw new Error(`Failed to load families for ${country}/${domain}`);
+        }
+
+        const familiesData = await res.json();
+        setFamilies(familiesData);
       } catch (err) {
-        console.error(err);
+        console.error("Erreur lors du chargement des familles:", err);
+        setError(err.message);
+      } finally {
+        setLoading(false);
       }
     }
-    fetchItems();
+
+    fetchFamilies();
   }, [domain, country]);
 
-  const types = [...new Set(items.map((i) => i.type))].sort();
-
-  const filteredItems = items
-    .filter((i) =>
-      (i.name || i.nom).toLowerCase().includes(search.toLowerCase())
-    )
-    .filter((i) => (selectedType ? i.type === selectedType : true))
-    .sort((a, b) => (a.name || a.nom).localeCompare(b.name || b.nom));
-
-  return (
-    <main className="min-h-screen bg-[#1b1b1b] text-white px-4 py-10 flex flex-col items-center">
-      <h1 className="text-3xl font-semibold mb-8 text-green-400 capitalize">
-        {decodeURIComponent(domain)} - {decodeURIComponent(country)}
-      </h1>
-
-      <div className="w-full max-w-5xl flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-2 sm:gap-0">
-        <input
-          type="text"
-          placeholder="Search by name..."
-          className="px-4 py-2 rounded bg-[#2a2a2a] text-white flex-1 min-w-0 focus:outline-none border border-gray-600 sm:mr-2"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
-        <button
-          onClick={() => setFilterVisible(!filterVisible)}
-          className="px-4 py-2 bg-green-700 hover:bg-green-600 rounded text-white"
-        >
-          {filterVisible ? "Hide Filters" : "Show Filters"}
-        </button>
-      </div>
-
-      {filterVisible && (
-        <div className="w-full max-w-4xl mb-8 flex flex-col gap-4 sm:flex-row sm:gap-6">
-          <div className="flex-1">
-            <label className="block text-sm mb-2 text-gray-300">
-              Filter by Type
-            </label>
-            <select
-              value={selectedType}
-              onChange={(e) => setSelectedType(e.target.value)}
-              className="w-full px-4 py-2 rounded bg-[#2a2a2a] text-white border border-gray-600"
-            >
-              <option value="">All types</option>
-              {types.map((t) => (
-                <option key={t} value={t}>
-                  {t}
-                </option>
-              ))}
-            </select>
+  if (loading) {
+    return (
+      <main className="min-h-screen bg-[#1b1b1b] text-white px-4 py-10 flex flex-col items-center">
+        <div className="text-center">
+          <h1 className="text-3xl font-semibold mb-8 text-green-400 capitalize">
+            {decodeURIComponent(country)} - {decodeURIComponent(domain)}
+          </h1>
+          
+          <div className="flex flex-col items-center space-y-4 mt-16">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-green-400"></div>
+            <p className="text-gray-400">Loading vehicle families...</p>
           </div>
         </div>
-      )}
+      </main>
+    );
+  }
 
-      <div className="flex flex-wrap justify-center gap-6 w-full max-w-7xl">
-        {filteredItems.map(({ id, name, nom, slug, picture, type }) => (
-          <Link
-            key={id}
-            href={`/${encodeURIComponent(domain)}/${encodeURIComponent(
-              country
-            )}/${encodeURIComponent(slug)}`}
-            className="p-4 border border-gray-600 rounded-lg bg-[#2a2a2a] hover:bg-[#333] w-72"
+  if (error) {
+    return (
+      <main className="min-h-screen bg-[#1b1b1b] text-white px-4 py-10 flex flex-col items-center">
+        <div className="text-center">
+          <h1 className="text-3xl font-semibold mb-8 text-green-400 capitalize">
+            {decodeURIComponent(country)} - {decodeURIComponent(domain)}
+          </h1>
+          
+          <div className="text-center mt-16">
+            <p className="text-red-400 mb-4">⚠️ Erreur de chargement</p>
+            <p className="text-gray-400 mb-6">{error}</p>
+            <button 
+              onClick={() => window.location.reload()} 
+              className="px-4 py-2 bg-green-600 hover:bg-green-700 rounded-lg transition mr-4"
+            >
+              Réessayer
+            </button>
+            <Link 
+              href={`/${domain}`}
+              className="px-4 py-2 bg-gray-600 hover:bg-gray-700 rounded-lg transition"
+            >
+              Retour aux pays
+            </Link>
+          </div>
+        </div>
+      </main>
+    );
+  }
+
+  return (
+    <main className="min-h-screen bg-[#1b1b1b] text-white px-4 py-10">
+      {/* En-tête */}
+      <div className="text-center mb-12">
+        <div className="flex items-center justify-center space-x-4 mb-4">
+          <Link 
+            href="/" 
+            className="text-gray-400 hover:text-green-400 transition"
           >
-            {picture && (
-              <img
-                src={picture}
-                alt={name || nom}
-                className="w-full h-48 object-cover rounded mb-2"
-              />
-            )}
-            <h2 className="text-xl font-bold mb-1">{name || nom}</h2>
-            <p className="text-sm text-gray-400">Type: {type}</p>
+            Home
           </Link>
-        ))}
+          <span className="text-gray-600">/</span>
+          <Link 
+            href={`/${domain}`}
+            className="text-gray-400 hover:text-green-400 transition capitalize"
+          >
+            {decodeURIComponent(domain)}
+          </Link>
+          <span className="text-gray-600">/</span>
+          <span className="text-green-400 capitalize font-medium">
+            {decodeURIComponent(country)}
+          </span>
+        </div>
+
+        <h1 className="text-4xl font-bold mb-4 text-green-400">
+          {decodeURIComponent(country).charAt(0).toUpperCase() + decodeURIComponent(country).slice(1)}
+        </h1>
+        <h2 className="text-2xl text-gray-300 capitalize mb-2">
+          {decodeURIComponent(domain)} Vehicle Families
+        </h2>
+        <p className="text-gray-400">
+          {families.length} famille{families.length > 1 ? 's' : ''} disponible{families.length > 1 ? 's' : ''}
+        </p>
       </div>
 
-      {filteredItems.length === 0 && (
-        <p className="text-gray-400 mt-8">
-          No vehicles found for this country.
-        </p>
+      {families.length === 0 ? (
+        <div className="text-center mt-16">
+          <p className="text-gray-400 text-lg mb-6">
+            No vehicle families found for {decodeURIComponent(country)} in {decodeURIComponent(domain)} domain.
+          </p>
+          <Link 
+            href={`/${domain}`}
+            className="inline-block px-6 py-3 bg-green-600 hover:bg-green-700 rounded-lg transition"
+          >
+            ← Back to countries
+          </Link>
+        </div>
+      ) : (
+        <>
+          {/* Grille des familles */}
+          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {families.map((family) => (
+              <Link
+                key={family.id || family.slug}
+                href={`/${encodeURIComponent(domain)}/${encodeURIComponent(country)}/${encodeURIComponent(family.slug)}`}
+                className="group block"
+              >
+                <div className="bg-[#2a2a2a] border border-gray-600 rounded-lg overflow-hidden h-full hover:bg-[#333] hover:border-green-400 transition-all duration-200 hover:shadow-lg hover:shadow-green-400/20">
+                  {/* Image */}
+                  {family.picture && (
+                    <div className="aspect-video w-full overflow-hidden">
+                      <img
+                        src={family.picture}
+                        alt={family.name}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                        onError={(e) => {
+                          e.target.src = '/placeholder-vehicle.jpg'; // fallback image
+                        }}
+                      />
+                    </div>
+                  )}
+                  
+                  {/* Contenu */}
+                  <div className="p-6">
+                    {/* Nom */}
+                    <h3 className="text-xl font-bold text-green-400 mb-2 group-hover:text-green-300 transition-colors">
+                      {family.name}
+                    </h3>
+                    
+                    {/* Type */}
+                    {family.type && (
+                      <div className="flex items-center space-x-2 mb-3">
+                        <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                        <span className="text-sm text-gray-400 uppercase tracking-wide">
+                          {family.type}
+                        </span>
+                      </div>
+                    )}
+                    
+                    {/* Caption/Description courte */}
+                    {family.caption && (
+                      <p className="text-gray-300 text-sm mb-4 line-clamp-2">
+                        {family.caption}
+                      </p>
+                    )}
+                    
+                    {/* Indicateur */}
+                    <div className="flex items-center justify-between mt-auto">
+                      <span className="text-xs text-gray-500 uppercase tracking-wide">
+                        Vehicle Family
+                      </span>
+                      <span className="text-sm text-gray-400 group-hover:text-green-400 transition-colors">
+                        Learn more →
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          {/* Navigation */}
+          <div className="flex justify-center space-x-4 mt-12">
+            <Link 
+              href={`/${domain}`}
+              className="inline-flex items-center space-x-2 px-6 py-3 bg-gray-700 hover:bg-gray-600 rounded-lg transition text-gray-300 hover:text-white"
+            >
+              <span>←</span>
+              <span>Back to countries</span>
+            </Link>
+            <Link 
+              href="/"
+              className="inline-flex items-center space-x-2 px-6 py-3 bg-green-700 hover:bg-green-600 rounded-lg transition text-white"
+            >
+              <span>🏠</span>
+              <span>Home</span>
+            </Link>
+          </div>
+        </>
       )}
     </main>
   );

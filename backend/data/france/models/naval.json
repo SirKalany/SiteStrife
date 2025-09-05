@@ -1,0 +1,72 @@
+[
+  {
+    "id": "fremm",
+    "name": "FREMM Aquitaine",
+    "slug": "fremm-aquitaine",
+    "country": "France",
+    "domain": "Naval",
+    "type": "multi-mission frigate",
+    "tags": ["modern", "versatile", "stealth"],
+    "picture": "/images/fremm.jpg",
+    "author": "Author Name",
+    "date": "2025-06-12",
+    "description": "French multi-mission frigate at the forefront of naval technology.",
+    "content": "fremm.json"
+  },
+  {
+    "id": "arleighburke",
+    "name": "USS Arleigh Burke (DDG-51)",
+    "slug": "arleigh-burke",
+    "country": "United States",
+    "domain": "Naval",
+    "type": "guided missile destroyer",
+    "tags": ["aegis", "missiles", "modern"],
+    "picture": "/images/arleighburke.jpg",
+    "author": "Author Name",
+    "date": "2025-06-18",
+    "description": "American destroyer equipped with the Aegis system, specialized in air and missile defense.",
+    "content": "arleighburke.md"
+  },
+  {
+    "id": "admiralgorshkov",
+    "name": "Admiral Gorshkov",
+    "slug": "admiral-gorshkov",
+    "country": "Russia",
+    "domain": "Naval",
+    "type": "guided missile frigate",
+    "tags": ["versatile", "missiles", "modernized"],
+    "picture": "/images/gorshkov.jpg",
+    "author": "Author Name",
+    "date": "2025-06-18",
+    "description": "Modern Russian frigate capable of striking both land and sea targets with precision.",
+    "content": "admiralgorshkov.md"
+  },
+  {
+    "id": "charlesdegaulle",
+    "name": "Charles de Gaulle",
+    "slug": "charles-de-gaulle",
+    "country": "France",
+    "domain": "Naval",
+    "type": "nuclear aircraft carrier",
+    "tags": ["aircraft carrier", "nuclear", "naval aviation"],
+    "picture": "/images/charlesdegaulle.jpg",
+    "author": "Author Name",
+    "date": "2025-06-18",
+    "description": "French nuclear-powered aircraft carrier, the only one of its kind in active service in Europe.",
+    "content": "charlesdegaulle.md"
+  },
+  {
+    "id": "type212",
+    "name": "Type 212A",
+    "slug": "type-212a",
+    "country": "Germany",
+    "domain": "Naval",
+    "type": "diesel-electric submarine",
+    "tags": ["stealth", "air-independent", "submarine"],
+    "picture": "/images/type212.jpg",
+    "author": "Author Name",
+    "date": "2025-06-18",
+    "description": "Modern German submarine with air-independent propulsion, designed for stealth missions in coastal and oceanic waters.",
+    "content": "type212.md"
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "description": "Le Mirage 2000 est un avion de chasse multirôle développé par Dassault Aviation à la fin des années 1970. Conçu comme un chasseur léger à aile delta, il est devenu un pilier des forces aériennes françaises et de nombreux pays étrangers.",
+  "caracteristiques": [
+    "Type : Avion de chasse multirôle",
+    "Envergure : 9.13 m",
+    "Longueur : 14.36 m",
+    "Vitesse maximale : Mach 2.2 (~2 336 km/h)",
+    "Plafond opérationnel : 17 000 m",
+    "Rayon d'action : ~1 550 km",
+    "Armement : missiles air-air, air-sol, bombes guidées, canon DEFA 30mm"
+  ],
+  "histoire": "Développé dans le contexte de la guerre froide, le Mirage 2000 fut introduit en service en 1984. Il remplaçait les anciens Mirage III et Mirage F1, et intégrait les dernières avancées en matière d’électronique et d’aérodynamique. Il a connu plusieurs versions : C (chasseur), D (attaque au sol), B (biplace), 2000-5 (version modernisée). Exporté vers des pays comme l'Inde, le Qatar, ou les Émirats Arabes Unis, il est encore en service dans plusieurs forces aériennes.",
+  "performances": "Très agile grâce à son aile delta, le Mirage 2000 offre de bonnes performances à haute altitude et à grande vitesse. Son radar et ses systèmes de tir modernisés lui permettent de remplir efficacement ses missions d’interception, de supériorité aérienne ou d’appui sol.",
+  "utilisation": "Utilisé par l’armée de l’Air française jusqu’au début des années 2020, il a servi dans de nombreux conflits : Kosovo, Afghanistan, Libye. Aujourd’hui, plusieurs pays continuent à le déployer pour des missions variées, souvent modernisé localement."
+}

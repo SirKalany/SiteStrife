@@ -1,0 +1,72 @@
+[
+  {
+    "id": "mirage2000",
+    "name": "Mirage 2000",
+    "slug": "mirage-2000",
+    "country": "France",
+    "domain": "Air",
+    "type": "Multirole fighter",
+    "tags": ["fast", "agile", "fourth generation"],
+    "picture": "/images/mirage2000.jpg",
+    "author": "Author Name",
+    "date": "2025-06-15",
+    "description": "French multirole fighter aircraft, efficient and versatile.",
+    "content": "mirage2000.json"
+  },
+  {
+    "id": "f22",
+    "name": "F-22 Raptor",
+    "slug": "f-22-raptor",
+    "country": "United States",
+    "domain": "Air",
+    "type": "Stealth fighter",
+    "tags": ["stealth", "fifth generation", "supercruise"],
+    "picture": "/images/f22.jpg",
+    "author": "Author Name",
+    "date": "2025-06-18",
+    "description": "American fifth-generation stealth fighter, known for its agility and advanced technology.",
+    "content": "f22.md"
+  },
+  {
+    "id": "su57",
+    "name": "Sukhoi Su-57",
+    "slug": "sukhoi-su-57",
+    "country": "Russia",
+    "domain": "Air",
+    "type": "Stealth multirole fighter",
+    "tags": ["stealth", "multirole", "fifth generation"],
+    "picture": "/images/su57.jpg",
+    "author": "Author Name",
+    "date": "2025-06-18",
+    "description": "Russia's first stealth fighter, designed to handle modern threats on all fronts.",
+    "content": "su57.md"
+  },
+  {
+    "id": "rafale",
+    "name": "Dassault Rafale",
+    "slug": "dassault-rafale",
+    "country": "France",
+    "domain": "Air",
+    "type": "Multirole fighter aircraft",
+    "tags": ["versatile", "twin-engine", "air-to-ground combat"],
+    "picture": "/images/rafale.jpg",
+    "author": "Author Name",
+    "date": "2025-06-18",
+    "description": "French multirole fighter capable of air-to-air, air-to-ground, and reconnaissance missions.",
+    "content": "rafale.md"
+  },
+  {
+    "id": "b2spirit",
+    "name": "B-2 Spirit",
+    "slug": "b-2-spirit",
+    "country": "United States",
+    "domain": "Air",
+    "type": "Stealth bomber",
+    "tags": ["stealth", "long-range", "strategic"],
+    "picture": "/images/b2.jpg",
+    "author": "Author Name",
+    "date": "2025-06-18",
+    "description": "American strategic stealth bomber designed for precision long-range strikes.",
+    "content": "b2spirit.md"
+  }
+]
