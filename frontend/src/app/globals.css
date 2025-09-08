@@ -29,3 +29,18 @@ body {
 p {
   text-align: justify;
 }
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: calc(400px * 8);
+  animation: marquee 40s linear infinite;
+}
