@@ -12,7 +12,7 @@ const rootDir = path.resolve(__dirname);
 const app = express();
 app.use(cors());
 
-// 🚀 Cache simple pour améliorer les performances
+// Cache simple pour améliorer les performances
 const cache = new Map();
 const getCachedData = async (key, filePath) => {
   if (cache.has(key)) {
@@ -29,7 +29,7 @@ const getCachedData = async (key, filePath) => {
   }
 };
 
-// ⚡ Charger la liste des pays disponibles
+// Charger la liste des pays disponibles
 app.get("/countries", (req, res) => {
   try {
     const countries = fs
@@ -37,7 +37,7 @@ app.get("/countries", (req, res) => {
       .filter((f) =>
         fs.lstatSync(path.join(rootDir, "content", f)).isDirectory()
       )
-      .map((c) => c.toLowerCase()); // garde en minuscules pour la cohérence
+      .map((c) => c.toLowerCase());
     res.json(countries);
   } catch (err) {
     res.status(500).json({
@@ -47,7 +47,7 @@ app.get("/countries", (req, res) => {
   }
 });
 
-// ⚡ Liste des domaines disponibles pour un pays
+// Liste des domaines disponibles pour un pays
 app.get("/countries/:country/domains", (req, res) => {
   const { country } = req.params;
   
@@ -72,7 +72,7 @@ app.get("/countries/:country/domains", (req, res) => {
   }
 });
 
-// ⚡ Liste des familles pour un domaine d'un pays
+// Liste des familles pour un domaine d'un pays
 app.get("/:domain/:country", async (req, res) => {
   const { country, domain } = req.params;
   const filePath = path.join(rootDir, "data", country, "family", `${domain}.json`);
@@ -88,7 +88,7 @@ app.get("/:domain/:country", async (req, res) => {
   }
 });
 
-// ⚡ Détails d'une famille (ex: /ground/france/amx-13)
+// Détails d'une famille (ex: /ground/france/amx-13)
 app.get("/:domain/:country/:slug", async (req, res) => {
   const { country, domain, slug } = req.params;
   
@@ -98,55 +98,88 @@ app.get("/:domain/:country/:slug", async (req, res) => {
   try {
     const familyData = await getCachedData(`family_${country}_${domain}_${slug}`, familyPath);
     
-    // Enrichir avec les modèles de cette famille
-    const modelsPath = path.join(rootDir, "data", country, "models", `${domain}.json`);
+    // Enrichir avec les modèles de cette famille - NOUVELLE STRUCTURE
+    const modelsDir = path.join(rootDir, "data", country, "models", domain, slug);
     try {
-      const allModels = await getCachedData(`models_${country}_${domain}`, modelsPath);
-      const familyModels = allModels.filter(model => model.family === slug);
-      familyData.models = familyModels;
+      if (fs.existsSync(modelsDir)) {
+        const modelFiles = fs.readdirSync(modelsDir).filter(f => f.endsWith('.json'));
+        const models = [];
+        
+        for (const file of modelFiles) {
+          const modelData = JSON.parse(await readFile(path.join(modelsDir, file), 'utf-8'));
+          models.push(modelData);
+        }
+        
+        familyData.models = models;
+      } else {
+        familyData.models = [];
+      }
     } catch (modelsErr) {
-      // Pas grave si pas de modèles
       familyData.models = [];
     }
     
     res.json(familyData);
   } catch (familyErr) {
     // Si ce n'est pas une famille, essayer comme modèle
-    const modelPath = path.join(rootDir, "content", country, "models", domain, `${slug}.json`);
-    
-    try {
-      const modelData = await getCachedData(`model_${country}_${domain}_${slug}`, modelPath);
-      
-      // Enrichir avec les données de la famille parente
-      if (modelData.family) {
-        const parentFamilyPath = path.join(rootDir, "content", country, "family", domain, `${modelData.family}.json`);
-        try {
-          const familyData = await getCachedData(`family_${country}_${domain}_${modelData.family}`, parentFamilyPath);
-          modelData.familyData = familyData;
-        } catch (parentErr) {
-          // Pas grave si pas de famille parente
-        }
-      }
-      
-      res.json(modelData);
-    } catch (modelErr) {
-      res.status(404).json({
-        error: `Article ${country}/${domain}/${slug} introuvable`,
-        details: `Ni famille ni modèle trouvé pour ce slug`
-      });
-    }
+    // Il faut deviner la famille du modèle pour la nouvelle structure
+    res.status(404).json({
+      error: `Article ${country}/${domain}/${slug} introuvable`,
+      details: `Famille non trouvée. Pour un modèle, utilisez /domain/country/family/model`
+    });
   }
 });
 
-// ⚡ Liste des modèles pour une famille spécifique
+// Détails d'un modèle spécifique (ex: /ground/france/amx-13/amx-13-dca-40)
+app.get("/:domain/:country/:family/:model", async (req, res) => {
+  const { country, domain, family, model } = req.params;
+  
+  const modelPath = path.join(rootDir, "content", country, "models", domain, family, `${model}.json`);
+  
+  try {
+    const modelData = await getCachedData(`model_${country}_${domain}_${family}_${model}`, modelPath);
+    
+    // Enrichir avec les données de la famille parente
+    const parentFamilyPath = path.join(rootDir, "content", country, "family", domain, `${family}.json`);
+    try {
+      const familyData = await getCachedData(`family_${country}_${domain}_${family}`, parentFamilyPath);
+      modelData.familyData = familyData;
+    } catch (parentErr) {
+      // Pas grave si pas de famille parente
+    }
+    
+    res.json(modelData);
+  } catch (err) {
+    res.status(404).json({
+      error: `Modèle ${country}/${domain}/${family}/${model} introuvable`,
+      details: err.message
+    });
+  }
+});
+
+// Liste des modèles pour une famille spécifique - NOUVELLE STRUCTURE
 app.get("/:domain/:country/:family/models", async (req, res) => {
   const { country, domain, family } = req.params;
-  const filePath = path.join(rootDir, "data", country, "models", `${domain}.json`);
-
+  
   try {
-    const allModels = await getCachedData(`models_${country}_${domain}`, filePath);
-    const familyModels = allModels.filter(model => model.family === family);
-    res.json(familyModels);
+    const modelsDir = path.join(rootDir, "data", country, "models", domain, family);
+    
+    if (!fs.existsSync(modelsDir)) {
+      return res.json([]);
+    }
+    
+    const modelFiles = fs.readdirSync(modelsDir).filter(f => f.endsWith('.json'));
+    const models = [];
+    
+    for (const file of modelFiles) {
+      try {
+        const modelData = JSON.parse(await readFile(path.join(modelsDir, file), 'utf-8'));
+        models.push(modelData);
+      } catch (fileErr) {
+        console.warn(`Erreur lecture ${file}:`, fileErr.message);
+      }
+    }
+    
+    res.json(models);
   } catch (err) {
     res.status(404).json({
       error: `Impossible de charger les modèles pour ${family}`,
@@ -155,7 +188,7 @@ app.get("/:domain/:country/:family/models", async (req, res) => {
   }
 });
 
-// 🔍 Recherche globale (optionnel)
+// Recherche globale - ADAPTÉE POUR LA NOUVELLE STRUCTURE
 app.get("/search", async (req, res) => {
   const { q, country, domain } = req.query;
   
@@ -190,21 +223,35 @@ app.get("/search", async (req, res) => {
           });
         }
         
-        // Chercher dans les modèles
-        const modelsPath = path.join(rootDir, "data", countryDir, "models", `${domainName}.json`);
-        if (fs.existsSync(modelsPath)) {
-          const models = JSON.parse(await readFile(modelsPath, "utf-8"));
-          models.forEach(model => {
-            if (model.name.toLowerCase().includes(searchTerm) || 
-                model.type.toLowerCase().includes(searchTerm)) {
-              results.push({
-                type: 'model',
-                country: countryDir,
-                domain: domainName,
-                ...model
-              });
+        // Chercher dans les modèles - NOUVELLE STRUCTURE
+        const modelsBasePath = path.join(rootDir, "data", countryDir, "models", domainName);
+        if (fs.existsSync(modelsBasePath)) {
+          const familyDirs = fs.readdirSync(modelsBasePath).filter(f => 
+            fs.lstatSync(path.join(modelsBasePath, f)).isDirectory()
+          );
+          
+          for (const familyDir of familyDirs) {
+            const familyModelsPath = path.join(modelsBasePath, familyDir);
+            const modelFiles = fs.readdirSync(familyModelsPath).filter(f => f.endsWith('.json'));
+            
+            for (const modelFile of modelFiles) {
+              try {
+                const model = JSON.parse(await readFile(path.join(familyModelsPath, modelFile), 'utf-8'));
+                if (model.name.toLowerCase().includes(searchTerm) || 
+                    model.type.toLowerCase().includes(searchTerm)) {
+                  results.push({
+                    type: 'model',
+                    country: countryDir,
+                    domain: domainName,
+                    family: familyDir,
+                    ...model
+                  });
+                }
+              } catch (fileErr) {
+                // Ignorer les fichiers corrompus
+              }
             }
-          });
+          }
         }
       }
     }
@@ -218,16 +265,16 @@ app.get("/search", async (req, res) => {
   }
 });
 
-// ⚡ Images statiques
+// Images statiques
 app.use("/images", express.static(path.join(rootDir, "images")));
 
-// 🧹 Clear cache endpoint (utile en dev)
+// Clear cache endpoint
 app.post("/clear-cache", (req, res) => {
   cache.clear();
   res.json({ message: "Cache vidé" });
 });
 
-// 📊 Stats endpoint (optionnel)
+// Stats endpoint - ADAPTÉ POUR LA NOUVELLE STRUCTURE
 app.get("/stats", (req, res) => {
   try {
     const stats = {
@@ -261,12 +308,19 @@ app.get("/stats", (req, res) => {
             stats.totalFamilies += families.length;
           }
           
-          // Compter modèles
-          const modelsFile = path.join(rootDir, "data", country, "models", `${domain}.json`);
-          if (fs.existsSync(modelsFile)) {
-            const models = JSON.parse(fs.readFileSync(modelsFile, 'utf-8'));
-            domainCounts[domain].models += models.length;
-            stats.totalModels += models.length;
+          // Compter modèles - NOUVELLE STRUCTURE
+          const modelsBasePath = path.join(rootDir, "data", country, "models", domain);
+          if (fs.existsSync(modelsBasePath)) {
+            const familyDirs = fs.readdirSync(modelsBasePath).filter(f => 
+              fs.lstatSync(path.join(modelsBasePath, f)).isDirectory()
+            );
+            
+            familyDirs.forEach(familyDir => {
+              const familyModelsPath = path.join(modelsBasePath, familyDir);
+              const modelFiles = fs.readdirSync(familyModelsPath).filter(f => f.endsWith('.json'));
+              domainCounts[domain].models += modelFiles.length;
+              stats.totalModels += modelFiles.length;
+            });
           }
         });
       }
@@ -289,7 +343,7 @@ app.get("/stats", (req, res) => {
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
-  console.log(`✅ Backend démarré sur http://localhost:${PORT}`);
-  console.log(`📊 Stats disponibles sur http://localhost:${PORT}/stats`);
-  console.log(`🔍 Recherche disponible sur http://localhost:${PORT}/search?q=amx`);
+  console.log(`Backend démarré sur http://localhost:${PORT}`);
+  console.log(`Stats disponibles sur http://localhost:${PORT}/stats`);
+  console.log(`Recherche disponible sur http://localhost:${PORT}/search?q=amx`);
 });

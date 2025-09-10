@@ -3,12 +3,12 @@
   "family": "amx-13",
   "name": "AMX-13 DCA 40",
   "picture": "/images/amx-13-dca-40.jpg",
-  "description": "Anti-aircraft variant of the AMX-13, equipped with twin 40 mm Bofors guns.",
+  "description": "Anti-aircraft variant of the AMX-13, equipped with a 40 mm Bofors gun.",
   "specifications": {
     "weight": "15.0 t",
     "length": "6.36 m",
     "crew": "3",
-    "armament": "2× 40 mm Bofors"
+    "armament": "40 mm Bofors"
   },
   "service": "Used mainly in the French Army for air defense during the 1960s–70s."
 }

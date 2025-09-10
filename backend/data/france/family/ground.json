@@ -5,6 +5,22 @@
     "slug": "amx-13",
     "type": "Light Tank",
     "picture": "/images/amx13.jpg",
-    "caption": "French light tank family."
+    "caption": "Light tank family."
+  },
+  {
+    "id": "char-2c",
+    "name": "Char 2C",
+    "slug": "char-2c",
+    "type": "Heavy Landship",
+    "picture": "/images/char2c.jpg",
+    "caption": "Super-heavy tank family."
+  },
+  {
+    "id": "renault-ft",
+    "name": "Renault FT",
+    "slug": "renault-ft",
+    "type": "Light Tank",
+    "picture": "/images/renaultft.jpg",
+    "caption": "Light tank family."
   }
 ]
