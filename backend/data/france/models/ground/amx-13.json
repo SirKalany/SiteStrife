@@ -6,5 +6,13 @@
     "family": "amx-13",
     "type": "SPAAG",
     "picture": "/images/amx13dca.jpg"
+  },
+  {
+    "id": "amx-13-hot",
+    "name": "AMX-13 HOT",
+    "slug": "amx-13-hot",
+    "family": "amx-13 (HOT)",
+    "type": "Missile Light Tank",
+    "picture": "/images/amx13hot.jpg"
   }
 ]

@@ -12,42 +12,51 @@ export default function DomainPage({ params }) {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    async function fetchCountriesWithContent() {
+    async function fetchCountriesWithDomain() {
       try {
         setLoading(true);
         setError(null);
 
-        // ⚡ Récupérer tous les pays disponibles
-        const countriesRes = await fetch(`http://localhost:4000/countries`);
-        if (!countriesRes.ok) {
-          throw new Error("Impossible de charger les pays");
-        }
+        // Récupérer tous les pays
+        const countriesRes = await fetch("http://localhost:4000/countries");
+        if (!countriesRes.ok) throw new Error("Impossible de charger les pays");
         const allCountries = await countriesRes.json();
 
-        // ⚡ Vérifier quels pays ont du contenu pour ce domaine
         const countriesWithContent = [];
-        
+
+        // ⚡ Vérifier pour chaque pays si le domaine existe
         for (const country of allCountries) {
           try {
-            const checkRes = await fetch(
-              `http://localhost:4000/${encodeURIComponent(domain)}/${encodeURIComponent(country)}`
+            const res = await fetch(
+              `http://localhost:4000/countries/${encodeURIComponent(
+                country
+              )}/domains`
             );
-            
-            if (checkRes.ok) {
-              const families = await checkRes.json();
+            if (!res.ok) continue;
+
+            const domains = await res.json();
+            if (domains.includes(domain)) {
+              // Ensuite → aller chercher les familles pour ce pays/domaine
+              const famRes = await fetch(
+                `http://localhost:4000/countries/${encodeURIComponent(
+                  country
+                )}/${encodeURIComponent(domain)}/families`
+              );
+              if (!famRes.ok) continue;
+
+              const families = await famRes.json();
               if (families && families.length > 0) {
                 countriesWithContent.push({
                   name: country,
-                  displayName: country.charAt(0).toUpperCase() + country.slice(1),
+                  displayName:
+                    country.charAt(0).toUpperCase() + country.slice(1),
                   familiesCount: families.length,
-                  // Prendre quelques familles pour un aperçu
-                  preview: families.slice(0, 3)
+                  preview: families.slice(0, 3),
                 });
               }
             }
-          } catch (countryError) {
-            // Si un pays spécifique échoue, on continue avec les autres
-            console.warn(`Erreur pour le pays ${country}:`, countryError.message);
+          } catch (e) {
+            console.warn(`Erreur pour ${country}:`, e.message);
           }
         }
 
@@ -60,7 +69,7 @@ export default function DomainPage({ params }) {
       }
     }
 
-    fetchCountriesWithContent();
+    fetchCountriesWithDomain();
   }, [domain]);
 
   if (loading) {
@@ -69,7 +78,6 @@ export default function DomainPage({ params }) {
         <h1 className="text-3xl font-semibold mb-8 text-green-400 capitalize">
           {decodeURIComponent(domain)}
         </h1>
-        
         <div className="flex flex-col items-center space-y-4 mt-16">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-green-400"></div>
           <p className="text-gray-400">Loading countries...</p>
@@ -84,12 +92,11 @@ export default function DomainPage({ params }) {
         <h1 className="text-3xl font-semibold mb-8 text-green-400 capitalize">
           {decodeURIComponent(domain)}
         </h1>
-        
         <div className="text-center mt-16">
           <p className="text-red-400 mb-4">⚠️ Erreur de chargement</p>
           <p className="text-gray-400 mb-6">{error}</p>
-          <button 
-            onClick={() => window.location.reload()} 
+          <button
+            onClick={() => window.location.reload()}
             className="px-4 py-2 bg-green-600 hover:bg-green-700 rounded-lg transition"
           >
             Réessayer
@@ -107,7 +114,8 @@ export default function DomainPage({ params }) {
           {decodeURIComponent(domain)} Armament
         </h1>
         <p className="text-gray-300 text-lg">
-          Select a country to explore {decodeURIComponent(domain)} vehicle families
+          Select a country to explore {decodeURIComponent(domain)} vehicle
+          families
         </p>
       </div>
 
@@ -116,20 +124,14 @@ export default function DomainPage({ params }) {
           <p className="text-gray-400 text-lg">
             No countries available for {decodeURIComponent(domain)} domain.
           </p>
-          <Link 
-            href="/" 
-            className="inline-block mt-6 px-6 py-3 bg-green-600 hover:bg-green-700 rounded-lg transition"
-          >
-            ← Back to domains
-          </Link>
         </div>
       ) : (
         <>
           {/* Stats rapides */}
           <div className="text-center mb-8">
             <p className="text-gray-400">
-              {countries.length} countries • {' '}
-              {countries.reduce((total, country) => total + country.familiesCount, 0)} families
+              {countries.length} countries •{" "}
+              {countries.reduce((t, c) => t + c.familiesCount, 0)} families
             </p>
           </div>
 
@@ -138,7 +140,9 @@ export default function DomainPage({ params }) {
             {countries.map((country) => (
               <Link
                 key={country.name}
-                href={`/${encodeURIComponent(domain)}/${encodeURIComponent(country.name)}`}
+                href={`/${encodeURIComponent(domain)}/${encodeURIComponent(
+                  country.name
+                )}`}
                 className="group block"
               >
                 <div className="bg-[#2a2a2a] border border-gray-600 rounded-lg p-6 h-full hover:bg-[#333] hover:border-green-400 transition-all duration-200 hover:shadow-lg hover:shadow-green-400/20">
@@ -146,13 +150,14 @@ export default function DomainPage({ params }) {
                   <h3 className="text-xl font-bold text-green-400 mb-3 group-hover:text-green-300">
                     {country.displayName}
                   </h3>
-                  
+
                   {/* Stats */}
                   <p className="text-gray-400 mb-4">
-                    {country.familiesCount} famille{country.familiesCount > 1 ? 's' : ''}
+                    {country.familiesCount} famille
+                    {country.familiesCount > 1 ? "s" : ""}
                   </p>
-                  
-                  {/* Aperçu des familles */}
+
+                  {/* Aperçu */}
                   <div className="space-y-2">
                     <p className="text-xs text-gray-500 uppercase tracking-wide">
                       Exemples :
@@ -168,15 +173,13 @@ export default function DomainPage({ params }) {
                         </span>
                       </div>
                     ))}
-                    
                     {country.familiesCount > 3 && (
                       <p className="text-xs text-gray-500 italic">
                         +{country.familiesCount - 3} autres...
                       </p>
                     )}
                   </div>
-                  
-                  {/* Indicateur hover */}
+
                   <div className="mt-4 pt-4 border-t border-gray-600 group-hover:border-green-400 transition-colors">
                     <p className="text-sm text-gray-400 group-hover:text-green-400 transition-colors">
                       Explore →
@@ -188,11 +191,11 @@ export default function DomainPage({ params }) {
           </div>
         </>
       )}
-      
-      {/* Navigation retour */}
+
+      {/* Navigation retour (UN SEUL bouton) */}
       <div className="text-center mt-12">
-        <Link 
-          href="/" 
+        <Link
+          href="/"
           className="inline-flex items-center space-x-2 px-6 py-3 bg-gray-700 hover:bg-gray-600 rounded-lg transition text-gray-300 hover:text-white"
         >
           <span>←</span>
