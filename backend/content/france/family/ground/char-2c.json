@@ -1,0 +1,10 @@
+{
+  "kind": "family",
+  "title": "Char 2C",
+  "description": "The Char 2C was a heavy landship tank produced before the Second World War",
+  "history": "It served with the French Army and featured a very large number of crew members",
+  "variants": [
+    { "slug": "amx-13-dca-40", "name": "AMX-13 DCA 40" },
+    { "slug": "amx-13-hot", "name": "AMX-13 (HOT)" }
+  ]
+}

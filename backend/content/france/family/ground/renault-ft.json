@@ -1,0 +1,10 @@
+{
+  "kind": "family",
+  "title": "Renault FT",
+  "description": "The Renault FT was a French light tank produced during the First World War, considered the first of the world",
+  "history": "It served with the French Army and was exported widely. It featured a simple one man turret.",
+  "variants": [
+    { "slug": "amx-13-dca-40", "name": "AMX-13 DCA 40" },
+    { "slug": "amx-13-hot", "name": "AMX-13 (HOT)" }
+  ]
+}
