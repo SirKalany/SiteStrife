@@ -8,11 +8,91 @@
     "picture": "/images/amx13dca.jpg"
   },
   {
+    "id": "amx-13-dca-30",
+    "name": "AMX-13 DCA 30",
+    "slug": "amx-13-dca-30",
+    "family": "amx-13",
+    "type": "SPAAG",
+    "picture": "/images/amx13dca.jpg"
+  },
+  {
     "id": "amx-13-hot",
     "name": "AMX-13 HOT",
     "slug": "amx-13-hot",
-    "family": "amx-13 (HOT)",
+    "family": "amx-13",
     "type": "Missile Light Tank",
     "picture": "/images/amx13hot.jpg"
+  },
+  {
+    "id": "amx-13-2a",
+    "name": "AMX-13 (2A)",
+    "slug": "amx-13-2a",
+    "family": "amx-13",
+    "type": "SPAAG",
+    "picture": "/images/amx132a.jpg"
+  },
+  {
+    "id": "amx-13-2b",
+    "name": "AMX-13 (2B)",
+    "slug": "amx-13-2b",
+    "family": "amx-13",
+    "type": "Missile Light Tank",
+    "picture": "/images/amx132b.jpg"
+  },
+  {
+    "id": "amx-13-2c",
+    "name": "AMX-13 (2C)",
+    "slug": "amx-13-2c",
+    "family": "amx-13",
+    "type": "SPAAG",
+    "picture": "/images/amx132c.jpg"
+  },
+  {
+    "id": "amx-13-2d",
+    "name": "AMX-13 (2D)",
+    "slug": "amx-13-2d",
+    "family": "amx-13",
+    "type": "Missile Light Tank",
+    "picture": "/images/amx132d.jpg"
+  },
+  {
+    "id": "amx-13-2e",
+    "name": "AMX-13 (2E)",
+    "slug": "amx-13-2e",
+    "family": "amx-13",
+    "type": "SPAAG",
+    "picture": "/images/amx132e.jpg"
+  },
+  {
+    "id": "amx-13-2f",
+    "name": "AMX-13 (2F)",
+    "slug": "amx-13-2f",
+    "family": "amx-13",
+    "type": "Missile Light Tank",
+    "picture": "/images/amx132f.jpg"
+  },
+  {
+    "id": "amx-13-75-51",
+    "name": "AMX-13/75 Modèle 1951",
+    "slug": "amx-13-75-51",
+    "family": "amx-13",
+    "type": "SPAAG",
+    "picture": "/images/amx13dca.jpg"
+  },
+  {
+    "id": "amx-chaffee",
+    "name": "AMX-Chaffee",
+    "slug": "amx-chaffee",
+    "family": "amx-13",
+    "type": "Missile Light Tank",
+    "picture": "/images/amxchaffee.jpg"
+  },
+  {
+    "id": "char-12t-fcm",
+    "name": "Char 12T FCM",
+    "slug": "amx-12t-fcm",
+    "family": "amx-13",
+    "type": "Missile Light Tank",
+    "picture": "/images/char12tfcm.jpg"
   }
 ]

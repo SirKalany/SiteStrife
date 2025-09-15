@@ -1,0 +1,14 @@
+{
+  "kind": "model",
+  "family": "amx-13",
+  "name": "AMX-13 (2F)",
+  "picture": "/images/amx-13-hot.jpg",
+  "description": "Variant equipped with HOT anti-tank guided missiles.",
+  "specifications": {
+    "weight": "15.2 t",
+    "length": "6.36 m",
+    "crew": "3",
+    "armament": "2×3 HOT ATGM"
+  },
+  "service": "Deployed by French armored units during the Cold War."
+}
