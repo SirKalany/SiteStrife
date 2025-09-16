@@ -1,0 +1,12 @@
+{
+  "kind": "family",
+  "title": "Mirage III",
+  "description": "The Mirage IIIB is the first production version Mirage jet.",
+  "history": "It served with the French Air Force and was exported widely.",
+  "variants": [
+    { "slug": "mirage-3b1", "name": "Mirage III-1" },
+    { "slug": "mirage-3b2", "name": "Mirage III-2(RV)" },
+    { "slug": "mirage-3be", "name": "Mirage IIIBE" },
+    { "slug": "mirage-3bj", "name": "Mirage IIIBJ" }
+  ]
+}

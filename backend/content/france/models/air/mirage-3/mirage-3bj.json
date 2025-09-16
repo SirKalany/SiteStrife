@@ -1,0 +1,14 @@
+{
+  "kind": "model",
+  "family": "mirage-3",
+  "name": "Mirage IIIBJ",
+  "picture": "/images/mirage3001.jpg",
+  "description": "Early version",
+  "specifications": {
+    "weight": "15.2 t",
+    "length": "6.36 m",
+    "crew": "3",
+    "armament": "2 x 30 mm DEFA 552 cannons"
+  },
+  "service": "Used by the French air force"
+}
