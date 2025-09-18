@@ -2,7 +2,11 @@
 
 import { use } from "react";
 import { useState, useEffect } from "react";
-import GroundContent from "@/components/content/groundcontent"; // pour l’instant, on n’a que lui
+import GroundContent from "@/components/content/groundcontent";
+import AirContent from "@/components/content/aircontent";
+import NavalContent from "@/components/content/navalcontent";
+import HeavyContent from "@/components/content/heavycontent";
+import InfantryContent from "@/components/content/infantrycontent";
 
 export default function ModelPage({ params: paramsPromise }) {
   const params = use(paramsPromise);
@@ -64,19 +68,19 @@ export default function ModelPage({ params: paramsPromise }) {
         );
       case "air":
         return (
-          <GroundContent content={content} domain={domain} country={country} />
+          <AirContent content={content} domain={domain} country={country} />
         );
       case "naval":
         return (
-          <GroundContent content={content} domain={domain} country={country} />
+          <NavalContent content={content} domain={domain} country={country} />
         );
       case "heavy":
         return (
-          <GroundContent content={content} domain={domain} country={country} />
+          <HeavyContent content={content} domain={domain} country={country} />
         );
       case "infantry":
         return (
-          <GroundContent content={content} domain={domain} country={country} />
+          <InfantryContent content={content} domain={domain} country={country} />
         );
       default:
         return (
