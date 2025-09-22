@@ -1,14 +1,113 @@
 {
   "kind": "model",
   "family": "mirage-3",
-  "name": "Mirage IIIBE",
-  "picture": "/images/mirage1.jpg",
-  "description": "Early version",
+  "name": "Dassault Mirage IIIBE",
+  "picture": "/images/mirage3be.jpg",
+  "description": "Two-seat trainer and strike variant of the Mirage III, equipped with attack avionics and capable of carrying a wide range of ordnance.",
   "specifications": {
-    "weight": "15.2 t",
-    "length": "6.36 m",
-    "crew": "3",
-    "armament": "2 x 30 mm DEFA 552 cannons"
+    "INFORMATIONS": {
+      "Name": "Dassault Mirage IIIBE",
+      "Type": "Multirole fighter / strike aircraft",
+      "Manufacturer": "Dassault Aviation",
+      "Design Period": "1950s",
+      "Manufacturing Period": "1960–1970s",
+      "Service Period": "1960s–1980s"
+    },
+    "DIMENSIONS": {
+      "Length": "15.55 m",
+      "Wingspan": "8.22 m",
+      "Wing Area": "34.8 m²",
+      "Height": "4.25 m",
+      "Crew": "2 (pilot + instructor/WSO)",
+      "Empty Weight": "7,000 kg",
+      "Loaded Weight": "10,000 kg",
+      "Max Takeoff Weight": "13,700 kg"
+    },
+    "ARMAMENT": {
+      "GUNS": [
+        {
+          "Name": "2× 30 mm DEFA 552 cannon",
+          "Ammunition": "30×113 mm B",
+          "Rate of Fire": "1,200 rpm each",
+          "Muzzle Velocity": "810 m/s"
+        }
+      ],
+      "BOMBS": [
+        {
+          "Name": "Conventional bombs",
+          "Loadout": "Up to 4,000 kg",
+          "Types": ["250 kg GP", "400 kg GP", "SAMP cluster bombs"]
+        }
+      ],
+      "ROCKETS": [
+        {
+          "Name": "Matra rocket pods",
+          "Loadout": "18× SNEB 68 mm rockets per pod",
+          "Pods": "Up to 4"
+        }
+      ],
+      "MISSILES": [
+        {
+          "Name": "AIM-9B Sidewinder / R.530",
+          "Role": "Air-to-air missile",
+          "Guidance": "Infrared (Sidewinder) / Semi-active radar (R.530)"
+        }
+      ]
+    },
+    "AVAILABLE AMMUNITION": [
+      {
+        "Name": "30 mm HEI",
+        "Type": "High-explosive incendiary",
+        "Velocity": "810 m/s",
+        "Mass": "275 g",
+        "Explosive Mass": "10 g",
+        "TNT Equivalent": "≈0.01 kg"
+      },
+      {
+        "Name": "SNEB 68 mm rocket",
+        "Type": "Unguided rocket",
+        "Velocity": "650 m/s",
+        "Warhead": "HE/HEAT options",
+        "Mass": "8–12 kg"
+      }
+    ],
+    "PROTECTION": {
+      "Armor": "Minimal armored cockpit protection",
+      "Countermeasures": ["Chaff", "Flares", "RWR (later retrofits)"]
+    },
+    "AUTOMOTIVE": {
+      "Powerplant": "1× SNECMA Atar 9C turbojet",
+      "Thrust": "6,000 kgf dry",
+      "Thrust w/Afterburner": "9,600 kgf",
+      "Fuel Type": "Jet fuel",
+      "Fuel Capacity": "Internal 3,000 L + external drop tanks"
+    },
+    "AVIONICS": [
+      {
+        "Name": "Radar",
+        "Type": "Thomson-CSF Cyrano II",
+        "Functions": ["Air-to-air interception", "Ground mapping", "Ranging"],
+        "Range": "≈40–50 km"
+      },
+      {
+        "Name": "Navigation suite",
+        "Type": "Inertial + TACAN",
+        "Functions": ["Route planning", "Bombing accuracy"]
+      },
+      {
+        "Name": "Electronic Warfare",
+        "Type": "RWR + chaff/flare dispensers",
+        "Functions": ["Missile warning", "Threat detection"]
+      }
+    ],
+    "PERFORMANCES": {
+      "Combat Range": "1,200 km",
+      "Ferry Range": "3,000 km with drop tanks",
+      "Climb Rate": "83 m/s",
+      "Service Ceiling": "17,000 m",
+      "Maximum Speed Sea Level": "Mach 1.1",
+      "Maximum Speed High Altitude": "Mach 2.0"
+    }
   },
-  "service": "Used by the French air force"
+  "service": "Served with the French Air Force as a two-seat trainer and strike variant of the Mirage III."
 }
