@@ -3,7 +3,7 @@
   "family": "amx-13",
   "name": "AMX-13 (HOT)",
   "picture": "/images/amx-13-hot.jpg",
-  "description": "Variant equipped with HOT anti-tank guided missiles and a 75 mm SA50 autoloading gun.",
+  "description": "Variant of the AMX-13 light tank equipped with HOT anti-tank guided missiles alongside its 75 mm SA50 autoloading gun.",
   "specifications": {
     "INFORMATIONS": {
       "Name": "AMX-13 (HOT)",
@@ -17,55 +17,59 @@
       "Mass": "15.2 t",
       "Crew": "3",
       "Ground Clearance": "0.4 m",
-      "Ground Preassure": "0.77 kg/cm²",
+      "Ground Pressure": "0.77 kg/cm²",
       "Length": "6.36 m",
       "Barrel Overhang": "0.9 m",
       "Width": "2.51 m",
       "Height": "2.35 m"
     },
-    "ARMAMENT": {
-      "Primary": {
+    "SENSORS": [
+      {
+        "Name": "Day/night sight (gunner)",
+        "Type": "Optical sight",
+        "Purpose": "Main gun and coaxial MG aiming"
+      },
+      {
+        "Name": "Missile guidance sight",
+        "Type": "Optical/IR guidance",
+        "Purpose": "HOT ATGM control and targeting"
+      }
+    ],
+    "ARMAMENT": [
+      {
+        "Category": "Gun",
         "Name": "75 mm SA50 L/57 (autoloader)",
         "Ammunition": "75×350R (AP, HE)",
         "Vertical Guidance": "-8° to +15°",
         "Horizontal Guidance": "360° (turret)",
-        "Optics": "Day/night sight (gunner)",
         "Stabilizer": "No (limited stabilization)"
       },
-      "Secondary": [
-        {
-          "Name": "7.5 mm MAC 31 coaxial machine gun",
-          "Ammunition": "7.5×54 mm",
-          "Vertical Guidance": "Coaxial mount (limited elevation)",
-          "Horizontal Guidance": "Mounted coaxially with main gun",
-          "Optics": "Gunner's sight",
-          "Stabilizer": "No"
-        },
-        {
-          "Name": "HOT anti-tank guided missile launcher",
-          "Ammunition": "HOT-1/HOT-2 missiles",
-          "Vertical Guidance": "-10° to +15°",
-          "Horizontal Guidance": "Turret traverse for aiming",
-          "Optics": "Missile guidance sight",
-          "Stabilizer": "No"
-        }
-      ]
-    },
+      {
+        "Category": "Machine Gun",
+        "Name": "7.5 mm MAC 31 coaxial MG",
+        "Ammunition": "7.5×54 mm",
+        "Mount": "Coaxial with main gun"
+      },
+      {
+        "Category": "Missile Launcher",
+        "Name": "HOT ATGM twin launcher",
+        "Ammunition": "HOT-1 / HOT-2",
+        "Vertical Guidance": "-10° to +15°",
+        "Horizontal Guidance": "Turret traverse"
+      }
+    ],
     "AVAILABLE AMMUNITION": [
       {
         "Name": "75 mm AP",
         "Type": "75×350R AP (Armor-piercing)",
         "Velocity": "860 m/s",
         "Penetration": "≈200–250 mm RHA",
-        "Mass": "6.5 kg",
-        "Explosive Mass": "N/A",
-        "TNT Equivalent": "N/A"
+        "Mass": "6.5 kg"
       },
       {
         "Name": "75 mm HE",
         "Type": "75×350R HE (High explosive)",
         "Velocity": "760 m/s",
-        "Penetration": "N/A",
         "Mass": "6.6 kg",
         "Explosive Mass": "0.6 kg",
         "TNT Equivalent": "≈0.6 kg"
@@ -83,8 +87,7 @@
     "PROTECTION": {
       "Armor": "Welded steel, 10–40 mm",
       "Appliqué Armor": "None",
-      "Passive Protection Devices": "None",
-      "Active Protection Devices": "Smoke dischargers"
+      "Protection Devices": "Smoke dischargers"
     },
     "AUTOMOTIVE": {
       "Engine": "SOFAM Model 8Gxb gasoline",
@@ -98,9 +101,9 @@
     },
     "PERFORMANCES": {
       "Operational Range": "400 km",
-      "Amphibious": "No",
       "On Road Speed": "60 km/h",
-      "Cross-Country Speed": "35 km/h"
+      "Cross-Country Speed": "35 km/h",
+      "Amphibious": "No"
     }
   },
   "service": "Deployed by French armored units during the Cold War."
