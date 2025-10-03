@@ -37,12 +37,7 @@
     ],
     "ARMAMENT": [
       {
-        "Category": "Gun",
-        "Name": "75 mm SA50 L/57 (autoloader)",
-        "Ammunition": "75×350R (AP, HE)",
-        "Vertical Guidance": "-8° to +15°",
-        "Horizontal Guidance": "360° (turret)",
-        "Stabilizer": "No (limited stabilization)"
+
       },
       {
         "Category": "Machine Gun",

@@ -2,9 +2,35 @@
 
 import Link from "next/link";
 
-export default function GroundContent({ content, domain, country }) {
+function InfoRow({ label, value }) {
+  if (value === undefined || value === null || value === "") return null;
   return (
-    <article className="max-w-4xl mx-auto space-y-8">
+    <div className="flex justify-between items-start p-3 bg-[#1f1f1f] rounded">
+      <div className="text-sm text-gray-300 font-medium">{label}</div>
+      <div className="text-sm text-green-300 text-right">{value}</div>
+    </div>
+  );
+}
+
+function SectionTitle({ children }) {
+  return (
+    <h3 className="text-sm tracking-widest text-gray-400 uppercase mb-3">
+      {children}
+    </h3>
+  );
+}
+
+export default function InfantryContent({ content, domain, country }) {
+  const specs = content?.specifications || {};
+
+  const informations = specs["INFORMATIONS"] || {};
+  const dimensions = specs["DIMENSIONS"] || {};
+  const mechanics = specs["MECHANICS"] || {};
+  const performances = specs["PERFORMANCES"] || {};
+  const attachments = specs["ATTACHMENTS"] || [];
+
+  return (
+    <article className="max-w-5xl mx-auto space-y-8">
       {/* Breadcrumb */}
       <nav className="flex items-center space-x-2 text-sm text-gray-400 mb-6">
         <Link href="/" className="hover:text-green-400 transition">
@@ -25,121 +51,108 @@ export default function GroundContent({ content, domain, country }) {
           {country}
         </Link>
         <span>/</span>
-        {content.family && (
-          <>
-            <Link
-              href={`/${domain}/${country}/${content.family}`}
-              className="hover:text-green-400 transition"
-            >
-              {content.familyData?.title || content.family}
-            </Link>
-            <span>/</span>
-          </>
-        )}
-        <span className="text-green-400">{content.name}</span>
+        <span className="text-green-400">
+          {informations.Name || content.title}
+        </span>
       </nav>
 
       {/* Header */}
       <header className="flex flex-col space-y-4">
         <div className="flex items-center space-x-4">
-          <div
-            className="px-3 py-1 bg-blue-600 text-white text-sm tracking-wide"
-            style={{
-              clipPath:
-                "polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%)",
-            }}
-          >
-            Model
+          <div className="px-3 py-1 bg-blue-600 text-white text-sm tracking-wide">
+            Infantry
           </div>
-          <div
-            className="px-3 py-1 bg-gray-700 text-gray-300 text-sm capitalize"
-            style={{
-              clipPath:
-                "polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%)",
-            }}
-          >
+          <div className="px-3 py-1 bg-gray-700 text-gray-300 text-sm capitalize">
             {domain}
           </div>
-          {content.family && (
-            <Link
-              href={`/${domain}/${country}/${content.family}`}
-              className="px-3 py-1 bg-green-700 hover:bg-green-600 text-white text-sm rounded-full transition"
-            >
-              Family: {content.familyData?.title || content.family}
-            </Link>
-          )}
         </div>
         <h1 className="text-4xl md:text-5xl font-bold text-green-400">
-          {content.name}
+          {informations.Name || content.title}
         </h1>
-      </header>
-
-      {/* Image */}
-      {content.picture && (
-        <div className="relative">
+        {content.picture && (
           <img
             src={content.picture}
             alt={content.name}
-            className="w-full h-64 md:h-80 object-cover rounded-lg shadow-lg"
+            className="w-full h-64 object-cover rounded-lg shadow-lg"
             onError={(e) => (e.target.style.display = "none")}
           />
-        </div>
-      )}
+        )}
+        {content.description && (
+          <p className="text-gray-300 text-lg">{content.description}</p>
+        )}
+      </header>
 
-      {/* Description */}
-      {content.description && (
-        <div className="prose prose-invert max-w-none">
-          <p className="text-gray-300 text-lg leading-relaxed">
-            {content.description}
-          </p>
+      {/* INFORMATIONS */}
+      <section>
+        <SectionTitle>INFORMATIONS</SectionTitle>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          {Object.entries(informations).map(([k, v]) => (
+            <InfoRow key={k} label={k} value={v} />
+          ))}
         </div>
-      )}
+      </section>
 
-      {/* Specifications */}
-      {content.specifications && (
-        <section className="border-t border-gray-700 pt-6">
-          <h2 className="text-2xl font-semibold text-green-300 mb-4">
-            Specifications
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {Object.entries(content.specifications).map(([key, value]) => (
+      {/* DIMENSIONS */}
+      <section>
+        <SectionTitle>DIMENSIONS</SectionTitle>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          {Object.entries(dimensions).map(([k, v]) => (
+            <InfoRow key={k} label={k} value={v} />
+          ))}
+        </div>
+      </section>
+
+      {/* MECHANICS */}
+      <section>
+        <SectionTitle>MECHANICS</SectionTitle>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          {Object.entries(mechanics).map(([k, v]) => (
+            <InfoRow key={k} label={k} value={v} />
+          ))}
+        </div>
+      </section>
+
+      {/* PERFORMANCES */}
+      <section>
+        <SectionTitle>PERFORMANCES</SectionTitle>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          {Object.entries(performances).map(([k, v]) => (
+            <InfoRow key={k} label={k} value={v} />
+          ))}
+        </div>
+      </section>
+
+      {/* ATTACHMENTS */}
+      {attachments.length > 0 && (
+        <section>
+          <SectionTitle>ATTACHMENTS</SectionTitle>
+          <div className="space-y-4">
+            {attachments.map((att, i) => (
               <div
-                key={key}
-                className="flex justify-between p-3 bg-[#2a2a2a] rounded-lg"
+                key={i}
+                className="p-4 bg-[#181818] rounded border border-gray-700"
               >
-                <span className="text-gray-400 capitalize font-medium">
-                  {key.replace(/([A-Z])/g, " $1").trim()}:
-                </span>
-                <span className="text-green-400 font-semibold">{value}</span>
+                <div className="text-sm text-gray-300 font-semibold mb-3">
+                  {att.Name || `Attachment ${i + 1}`}
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  <InfoRow label="Type" value={att.Type} />
+                  <InfoRow label="Description" value={att.Description} />
+                </div>
               </div>
             ))}
           </div>
         </section>
       )}
 
-      {/* Service */}
-      {content.service && (
-        <section className="border-t border-gray-700 pt-6">
-          <h2 className="text-2xl font-semibold text-green-300 mb-4">
-            Service History
-          </h2>
-          <div className="prose prose-invert max-w-none">
-            <p className="text-gray-300 whitespace-pre-line leading-relaxed">
-              {content.service}
-            </p>
-          </div>
-        </section>
-      )}
-
-      {/* Navigation buttons */}
+      {/* Navigation */}
       <div className="border-t border-gray-700 pt-8 flex flex-wrap gap-4 justify-center">
         <Link
-          href={`/${domain}/${country}/${content.family}`}
+          href={`/${domain}/${country}`}
           className="px-6 py-3 bg-green-700 hover:bg-green-600 rounded-lg transition text-white"
         >
-          ← Back to family
+          ← Back to {country}
         </Link>
-
         <Link
           href="/"
           className="px-6 py-3 bg-blue-700 hover:bg-blue-600 rounded-lg transition text-white"
