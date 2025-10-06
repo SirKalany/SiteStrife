@@ -114,7 +114,7 @@ export default function GroundContent({ content, domain, country }) {
       {/* SENSORS */}
       {sensors.length > 0 && (
         <section>
-          <SectionTitle>SENSORS</SectionTitle>
+          <SectionTitle>SENSORS & ELECTRONICS</SectionTitle>
           <div className="space-y-4">
             {sensors.map((s, i) => (
               <div
@@ -151,6 +151,7 @@ export default function GroundContent({ content, domain, country }) {
                   <InfoRow label="Category" value={a.Category} />
                   <InfoRow label="Mount" value={a.Mount} />
                   <InfoRow label="Ammunition" value={a.Ammunition} />
+                  <InfoRow label="Rate of Fire" value={a["Rate of Fire"]} />
                   <InfoRow
                     label="Vertical Guidance"
                     value={a["Vertical Guidance"]}
@@ -159,7 +160,6 @@ export default function GroundContent({ content, domain, country }) {
                     label="Horizontal Guidance"
                     value={a["Horizontal Guidance"]}
                   />
-                  <InfoRow label="Stabilizer" value={a.Stabilizer} />
                 </div>
               </div>
             ))}
@@ -182,11 +182,7 @@ export default function GroundContent({ content, domain, country }) {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   <InfoRow label="Type" value={a.Type} />
-                  <InfoRow label="Velocity" value={a.Velocity} />
-                  <InfoRow label="Penetration" value={a.Penetration} />
-                  <InfoRow label="Mass" value={a.Mass} />
-                  <InfoRow label="Explosive Mass" value={a["Explosive Mass"]} />
-                  <InfoRow label="TNT Equivalent" value={a["TNT Equivalent"]} />
+                  <InfoRow label="Caliber" value={a.Caliber} />
                 </div>
               </div>
             ))}
@@ -223,6 +219,20 @@ export default function GroundContent({ content, domain, country }) {
           ))}
         </div>
       </section>
+
+      {/* Service */}
+      {content.service && (
+        <section className="border-t border-gray-700 pt-6">
+          <h2 className="text-2xl font-semibold text-green-300 mb-4">
+            Service History
+          </h2>
+          <div className="prose prose-invert max-w-none">
+            <p className="text-gray-300 whitespace-pre-line leading-relaxed">
+              {content.service}
+            </p>
+          </div>
+        </section>
+      )}
 
       {/* Navigation */}
       <div className="border-t border-gray-700 pt-8 flex flex-wrap gap-4 justify-center">

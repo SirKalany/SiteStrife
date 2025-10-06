@@ -27,7 +27,6 @@ export default function InfantryContent({ content, domain, country }) {
   const dimensions = specs["DIMENSIONS"] || {};
   const mechanics = specs["MECHANICS"] || {};
   const performances = specs["PERFORMANCES"] || {};
-  const attachments = specs["ATTACHMENTS"] || [];
 
   return (
     <article className="max-w-5xl mx-auto space-y-8">
@@ -121,29 +120,6 @@ export default function InfantryContent({ content, domain, country }) {
           ))}
         </div>
       </section>
-
-      {/* ATTACHMENTS */}
-      {attachments.length > 0 && (
-        <section>
-          <SectionTitle>ATTACHMENTS</SectionTitle>
-          <div className="space-y-4">
-            {attachments.map((att, i) => (
-              <div
-                key={i}
-                className="p-4 bg-[#181818] rounded border border-gray-700"
-              >
-                <div className="text-sm text-gray-300 font-semibold mb-3">
-                  {att.Name || `Attachment ${i + 1}`}
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  <InfoRow label="Type" value={att.Type} />
-                  <InfoRow label="Description" value={att.Description} />
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
 
       {/* Navigation */}
       <div className="border-t border-gray-700 pt-8 flex flex-wrap gap-4 justify-center">

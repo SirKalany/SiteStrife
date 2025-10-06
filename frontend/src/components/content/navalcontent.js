@@ -28,6 +28,7 @@ export default function NavalContent({ content, domain, country }) {
   const propulsion = specs["PROPULSION"] || {};
   const sensors = specs["SENSORS"] || [];
   const armaments = specs["ARMAMENTS"] || [];
+  const aviationFacilities = specs["AVIATION FACILITIES"] || {};
   const service = specs["SERVICE"] || content.SERVICE;
 
   return (
@@ -156,6 +157,18 @@ export default function NavalContent({ content, domain, country }) {
                   ))}
                 </div>
               </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* AVIATION FACILITIES */}
+      {Object.keys(aviationFacilities).length > 0 && (
+        <section>
+          <SectionTitle>AVIATION FACILITIES</SectionTitle>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            {Object.entries(aviationFacilities).map(([k, v]) => (
+              <InfoRow key={k} label={k} value={v} />
             ))}
           </div>
         </section>

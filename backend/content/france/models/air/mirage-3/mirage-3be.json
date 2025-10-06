@@ -78,7 +78,6 @@
     "AUTOMOTIVE": {
       "Powerplant": "1× SNECMA Atar 9C turbojet",
       "Thrust": "6,000 kgf dry",
-      "Thrust w/Afterburner": "9,600 kgf",
       "Fuel Type": "Jet fuel",
       "Fuel Capacity": "Internal 3,000 L + external drop tanks"
     },
@@ -86,7 +85,7 @@
       {
         "Name": "Radar",
         "Type": "Thomson-CSF Cyrano II",
-        "Functions": ["Air-to-air interception", "Ground mapping", "Ranging"],
+        "Functions": "Air-to-air interception, Ground mapping, Ranging",
         "Range": "≈40–50 km"
       },
       {
