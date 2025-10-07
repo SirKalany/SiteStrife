@@ -1,0 +1,11 @@
+{
+  "kind": "family",
+  "title": "Suhkoi Su-57",
+  "description": "The Sukhoi Su-57, NATO reporting name: Felon, is a twin-engine stealth multirole fighter aircraft developed by Sukhoi.",
+  "history": "It is currently the most advanced jet fielded by the Russian air force.",
+  "variants": [
+    { "slug": "su-57", "name": "Suhkoi Su-57" },
+    { "slug": "su-57e", "name": "Suhkoi Su-57E" },
+    { "slug": "su-57m", "name": "Suhkoi Su-57M" }
+  ]
+}

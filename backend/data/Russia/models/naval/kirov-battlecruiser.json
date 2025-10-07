@@ -1,0 +1,34 @@
+[
+  {
+    "id": "kirov-ushakov",
+    "name": "Kirov / Admiral Ushakov",
+    "slug": "kirov-ushakov",
+    "family": "kirov-battlecruiser",
+    "type": "Guided-missile battlecruiser",
+    "picture": "/images/kirov-ushakov.jpg"
+  },
+  {
+    "id": "frunze-lazarev",
+    "name": "Frunze / Admiral Lazarev",
+    "slug": "frunze-lazarev",
+    "family": "kirov-battlecruiser",
+    "type": "Guided-missile battlecruiser",
+    "picture": "/images/frunze-lazarev.jpg"
+  },
+  {
+    "id": "kalinin-nakhimov",
+    "name": "Kalinin / Admiral Nakhimov",
+    "slug": "kalinin-nakhimov",
+    "family": "kirov-battlecruiser",
+    "type": "Guided-missile battlecruiser",
+    "picture": "/images/kalinin-nakhimov.jpg"
+  },
+  {
+    "id": "yuri-andropov",
+    "name": "Yuri Andropov / Pyotr Velikiy",
+    "slug": "yuri-andropov",
+    "family": "kirov-battlecruiser",
+    "type": "Guided-missile battlecruiser",
+    "picture": "/images/yuri-andropov.jpg"
+  }
+]

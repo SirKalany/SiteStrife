@@ -153,11 +153,7 @@ export default function AirContent({ content, domain, country }) {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   <InfoRow label="Type" value={a.Type} />
-                  <InfoRow label="Velocity" value={a.Velocity} />
-                  <InfoRow label="Penetration" value={a.Penetration} />
-                  <InfoRow label="Mass" value={a.Mass} />
-                  <InfoRow label="Explosive Mass" value={a["Explosive Mass"]} />
-                  <InfoRow label="TNT Equivalent" value={a["TNT Equivalent"]} />
+                  <InfoRow label="Caliber" value={a.Caliber} />
                 </div>
               </div>
             ))}

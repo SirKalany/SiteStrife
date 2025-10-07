@@ -1,0 +1,10 @@
+[
+  {
+    "id": "kirov-battlecruiser",
+    "name": "Kirov-class Battlecruiser",
+    "slug": "kirov-battlecruiser",
+    "type": "Light Tank",
+    "picture": "/images/kirov-battlecruiser.jpg",
+    "caption": "Guided-missile battlecruiser."
+  }
+]

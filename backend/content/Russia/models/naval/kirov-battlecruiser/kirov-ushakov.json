@@ -1,0 +1,150 @@
+{
+  "kind": "model",
+  "family": "kirov-battlecruiser",
+  "name": "Kirov / Admiral Ushakov",
+  "picture": "/images/kirov-ushakov.jpg",
+  "description": "First ship of the Kirov-class",
+  "specifications": {
+    "INFORMATIONS": {
+      "Name": "Kirov / Admiral Ushakov",
+      "Type": "Heavy guided-missile cruiser / Battlecruiser",
+      "Manufacturer": "Baltic Shipyard",
+      "Design Period": "N/A",
+      "Manufacturing Period": "1974 - 1998",
+      "Service Period": "1980 - Present"
+    },
+    "DIMENSIONS": {
+      "Complement": "710",
+      "Displacement Normal": "24,300 tons",
+      "Displacement Full Load": "28,000 tons",
+      "Length": "252 m",
+      "Beam": "28,5 m",
+      "Draught": "9,1 m"
+    },
+    "SENSORS & SYSTEMS": [
+      {
+        "Name": "Flag MR-800",
+        "Type": "3D Search radar",
+        "Role": "Provides ranging and direction in three dimensions"
+      },
+      {
+        "Name": "Fregat MR-710",
+        "Type": "3D Search radar",
+        "Role": "Provides ranging and direction in three dimensions"
+      },
+      {
+        "Name": "2 x MR-212 Vaygach-U",
+        "Type": "Navigation radar",
+        "Role": "Detects other ships and land hazards"
+      },
+      {
+        "Name": "Horse Jaw Low-Frequency Sonar",
+        "Type": "Sonar",
+        "Role": "Detects ships or obstacles under the surface"
+      },
+      {
+        "Name": "Horse Tail Variable Depth Sonar",
+        "Type": "Sonar",
+        "Role": "Detects ships or obstacles under the surface"
+      },
+      {
+        "Name": "2 x PK-2 Decoy dispenser",
+        "Type": "Decoy launcher",
+        "Role": "Countermeasure against enemy missiles"
+      }
+    ],
+    "ARMAMENT": [
+      {
+        "Name": "P-700 Granit",
+        "Category": "Anti-ship missile",
+        "Ammunition": "20"
+      },
+      {
+        "Name": "2 x RPK-3 Metel",
+        "Category": "Anti-submarine missile",
+        "Ammunition": "4"
+      },
+      {
+        "Name": "RPK-2 Vyuga",
+        "Category": "Anti-submarine missile",
+        "Ammunition": "N/A"
+      },
+      {
+        "Name": "12 x S-300F Fort",
+        "Category": "Surface-to-air missile",
+        "Ammunition": "8"
+      },
+      {
+        "Name": "2 x 9K33 Osa",
+        "Category": "Surface-to-air missile",
+        "Ammunition": "20"
+      },
+      {
+        "Name": "AK-100",
+        "Category": "Naval gun",
+        "Ammunition": "N/A"
+      },
+      {
+        "Name": "8 x AK-630",
+        "Category": "Close-in weapon system",
+        "Ammunition": "2,000"
+      },
+      {
+        "Name": "2 x RBU-1000 Smerch-3",
+        "Category": "Anti-submarine rocket",
+        "Ammunition": "6"
+      },
+      {
+        "Name": "RBU-12000",
+        "Category": "Anti-submarine rocket",
+        "Ammunition": "10"
+      },
+      {
+        "Name": "10 x 533 mm torpedo tubes",
+        "Category": "Torpedo tubes",
+        "Ammunition": "N/A"
+      }
+    ],
+    "AVAILABLE AMMUNITION": [
+      {
+        "Name": "A3-UOF-58",
+        "Type": "High explosive fragmentation round",
+        "Caliber": "100 mm"
+      },
+      {
+        "Name": "A3-UZS-58",
+        "Type": "High explosive anti aircraft timed fuze round",
+        "Caliber": "100 mm"
+      },
+      {
+        "Name": "A3-UZS-58R",
+        "Type": "High explosive anti aircraft proximity fuze round",
+        "Caliber": "100 mm"
+      },
+      {
+        "Name": "A3-UCh-58",
+        "Type": "Training round",
+        "Caliber": "100 mm"
+      }
+    ],
+    "PROTECTION": {
+      "Belt Armor": "76 mm",
+      "Main Deck": "N/A",
+      "Turret Armor": "130 mm",
+      "Bulkheads": "9"
+    },
+    "AUTOMOTIVE": {
+      "Installed Power": "140,000 shp",
+      "Propulsion": "2 x KN-3 nuclear marine propulsion with 2 x GT3A-688 steam turbines (2-shaft CONAS)"
+    },
+    "AVIATION FACILITIES": {
+      "Facilities": "Below-deck hangar",
+      "Aircraft Carried": "3 x Ka-25 / Ka-27 / Ka-28"
+    },
+    "PERFORMANCES": {
+      "Speed": "32 kn (59 km/h)",
+      "Range": "1,060 nmi at 32 kn using CONAS, Unlimited at 20 kn using nuclear only"
+    }
+  },
+  "service": "The Kirov, later renamed Admiral Ushakov, was laid down in 1974, launched in 1977, and commissioned in 1980 as part of the Soviet Northern Fleet. Her first major voyage took place in 1984 to the Mediterranean, but during her second deployment in 1989–1990 she suffered a reactor accident that forced her into reserve. Never repaired due to the collapse of the USSR and lack of funds, she was eventually cannibalized for spare parts. Renamed Admiral Ushakov in 1992, plans for her overhaul repeatedly stalled, and by the early 2000s she was slated for dismantlement. Although restoration was briefly reconsidered, her deteriorated state and the risks posed by her nuclear reactors made repairs unfeasible. Ultimately, Russia decided in 2019 to scrap the ship, with dismantling scheduled for 2021."
+}

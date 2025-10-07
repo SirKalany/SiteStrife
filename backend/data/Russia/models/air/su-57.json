@@ -1,0 +1,26 @@
+[
+  {
+    "id": "su-57",
+    "name": "Sukhoi Su-57",
+    "slug": "su-57",
+    "family": "su-57",
+    "type": "Stealth multirole fighter",
+    "picture": "/images/su-57.jpg"
+  },
+  {
+    "id": "su-57e",
+    "name": "Sukhoi Su-57E",
+    "slug": "su-57e",
+    "family": "su-57",
+    "type": "Export stealth multirole fighter",
+    "picture": "/images/su-57e.jpg"
+  },
+  {
+    "id": "su-57m",
+    "name": "Sukhoi Su-57M",
+    "slug": "su-57m",
+    "family": "su-57",
+    "type": "Upgraded stealth multirole fighter",
+    "picture": "/images/su-57m.jpg"
+  }
+]
