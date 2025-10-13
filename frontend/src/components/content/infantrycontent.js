@@ -121,6 +121,20 @@ export default function InfantryContent({ content, domain, country }) {
         </div>
       </section>
 
+      {/* Service */}
+      {content.service && (
+        <section className="border-t border-gray-700 pt-6">
+          <h2 className="text-2xl font-semibold text-green-300 mb-4">
+            Service History
+          </h2>
+          <div className="prose prose-invert max-w-none">
+            <p className="text-gray-300 whitespace-pre-line leading-relaxed">
+              {content.service}
+            </p>
+          </div>
+        </section>
+      )}
+
       {/* Navigation */}
       <div className="border-t border-gray-700 pt-8 flex flex-wrap gap-4 justify-center">
         <Link

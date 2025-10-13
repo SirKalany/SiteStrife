@@ -226,7 +226,7 @@ export default function NavalContent({ content, domain, country }) {
         </section>
       )}
 
-      {/* SERVICE HISTORY */}
+      {/* Service */}
       {service && (
         <section>
           <SectionTitle>SERVICE HISTORY</SectionTitle>
