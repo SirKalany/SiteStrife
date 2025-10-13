@@ -25,13 +25,19 @@ export default function AirContent({ content, domain, country }) {
 
   const informations = specs["INFORMATIONS"] || {};
   const dimensions = specs["DIMENSIONS"] || {};
-  const internalArmament = specs["INTERNAL ARMAMENT"] || [];
-  const internalAmmo = specs["AVAILABLE INTERNAL AMMUNITION"] || [];
-  const hardpointAmmo = specs["AVAILABLE HARDPOINTS AMMUNITION"] || [];
+  const armament = specs["ARMAMENT"] || {};
   const protection = specs["PROTECTION"] || {};
   const automotive = specs["AUTOMOTIVE"] || {};
   const avionics = specs["AVIONICS"] || [];
   const performances = specs["PERFORMANCES"] || {};
+
+  const armamentSections = [
+    { key: "Guns", color: "text-blue-400" },
+    { key: "Rockets", color: "text-blue-400" },
+    { key: "Missiles", color: "text-blue-400" },
+    { key: "Bombs", color: "text-blue-400" },
+    { key: "Others", color: "text-blue-400" },
+  ];
 
   return (
     <article className="max-w-5xl mx-auto space-y-8">
@@ -57,7 +63,7 @@ export default function AirContent({ content, domain, country }) {
         <span className="text-green-400">{content.name}</span>
       </nav>
 
-      {/* Header */}
+      {/* HEADER */}
       <header className="flex flex-col space-y-4">
         <div className="flex items-center space-x-4">
           <div className="px-3 py-1 bg-blue-600 text-white text-sm tracking-wide">
@@ -80,7 +86,7 @@ export default function AirContent({ content, domain, country }) {
         </h1>
       </header>
 
-      {/* Image */}
+      {/* IMAGE */}
       {content.picture && (
         <div className="relative">
           <img
@@ -92,7 +98,7 @@ export default function AirContent({ content, domain, country }) {
         </div>
       )}
 
-      {/* Description */}
+      {/* DESCRIPTION */}
       {content.description && (
         <div className="prose prose-invert max-w-none">
           <p className="text-gray-300 text-lg leading-relaxed">{content.description}</p>
@@ -119,67 +125,36 @@ export default function AirContent({ content, domain, country }) {
         </div>
       </section>
 
-      {/* INTERNAL ARMAMENT */}
-      {internalArmament.length > 0 && (
-        <section>
-          <SectionTitle>INTERNAL ARMAMENT</SectionTitle>
-          <div className="space-y-4">
-            {internalArmament.map((w, i) => (
-              <div key={i} className="p-4 bg-[#181818] rounded border border-gray-700">
-                <div className="text-sm text-gray-300 font-semibold mb-3">
-                  {w.Name || `Weapon ${i + 1}`}
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  <InfoRow label="Ammunition" value={w.Ammunition} />
-                  <InfoRow label="Rate Of Fire" value={w["Rate Of Fire"]} />
-                  <InfoRow label="Effective Range" value={w["Effective Range"]} />
-                  <InfoRow label="Feed System" value={w["Feed System"]} />
-                </div>
+      {/* ARMAMENT */}
+      <section>
+        <SectionTitle>ARMAMENT</SectionTitle>
+        {armamentSections.map(({ key, color }) => {
+          const items = armament[key] || [];
+          if (!items.length) return null;
+          return (
+            <div key={key} className="mb-6">
+              <h4 className={`text-md font-semibold mb-2 ${color}`}>{key}</h4>
+              <div className="space-y-4">
+                {items.map((w, i) => (
+                  <div
+                    key={i}
+                    className="p-4 bg-[#181818] rounded border border-gray-700"
+                  >
+                    <div className="text-sm text-gray-300 font-semibold mb-3">
+                      {w.Name || `${key.slice(0, -1)} ${i + 1}`}
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                      {Object.entries(w).map(([k, v]) =>
+                        v ? <InfoRow key={k} label={k} value={v} /> : null
+                      )}
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-        </section>
-      )}
-
-      {/* AVAILABLE INTERNAL AMMUNITION */}
-      {internalAmmo.length > 0 && (
-        <section>
-          <SectionTitle>AVAILABLE INTERNAL AMMUNITION</SectionTitle>
-          <div className="space-y-4">
-            {internalAmmo.map((a, i) => (
-              <div key={i} className="p-4 bg-[#181818] rounded border border-gray-700">
-                <div className="text-sm text-gray-300 font-semibold mb-3">
-                  {a.Name || `Ammo ${i + 1}`}
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  <InfoRow label="Type" value={a.Type} />
-                  <InfoRow label="Caliber" value={a.Caliber} />
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
-
-      {/* AVAILABLE HARDPOINTS AMMUNITION */}
-      {hardpointAmmo.length > 0 && (
-        <section>
-          <SectionTitle>AVAILABLE HARDPOINTS AMMUNITION</SectionTitle>
-          <div className="space-y-4">
-            {hardpointAmmo.map((a, i) => (
-              <div key={i} className="p-4 bg-[#181818] rounded border border-gray-700">
-                <div className="text-sm text-gray-300 font-semibold mb-3">
-                  {a.Name || `Hardpoint Ammo ${i + 1}`}
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  <InfoRow label="Type" value={a.Type} />
-                  <InfoRow label="Mass" value={a.Mass} />
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
+            </div>
+          );
+        })}
+      </section>
 
       {/* PROTECTION */}
       <section>
@@ -207,7 +182,10 @@ export default function AirContent({ content, domain, country }) {
           <SectionTitle>AVIONICS</SectionTitle>
           <div className="space-y-4">
             {avionics.map((a, i) => (
-              <div key={i} className="p-4 bg-[#181818] rounded border border-gray-700">
+              <div
+                key={i}
+                className="p-4 bg-[#181818] rounded border border-gray-700"
+              >
                 <div className="text-sm text-gray-300 font-semibold mb-3">
                   {a.Name || `Avionic ${i + 1}`}
                 </div>
@@ -231,7 +209,7 @@ export default function AirContent({ content, domain, country }) {
         </div>
       </section>
 
-      {/* Service */}
+      {/* SERVICE */}
       {content.service && (
         <section className="border-t border-gray-700 pt-6">
           <h2 className="text-2xl font-semibold text-green-300 mb-4">Service History</h2>
@@ -243,7 +221,7 @@ export default function AirContent({ content, domain, country }) {
         </section>
       )}
 
-      {/* Navigation */}
+      {/* NAVIGATION */}
       <div className="border-t border-gray-700 pt-8 flex flex-wrap gap-4 justify-center">
         {content.family && (
           <Link

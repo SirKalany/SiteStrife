@@ -26,15 +26,40 @@ export default function GroundContent({ content, domain, country }) {
   const informations = specs["INFORMATIONS"] || {};
   const dimensions = specs["DIMENSIONS"] || {};
   const sensors = specs["SENSORS"] || [];
-  const armament = specs["ARMAMENT"] || [];
-  const ammo = specs["AVAILABLE AMMUNITION"] || [];
+  const armament = specs["ARMAMENT"] || {};
   const protection = specs["PROTECTION"] || {};
   const automotive = specs["AUTOMOTIVE"] || {};
   const performances = specs["PERFORMANCES"] || {};
 
+  const renderArmamentCategory = (title, list) => {
+    if (!list || list.length === 0) return null;
+    return (
+      <div className="space-y-4">
+        <h4 className="text-md font-semibold text-blue-400 mb-2">{title}</h4>
+        {list.map((a, i) => (
+          <div
+            key={i}
+            className="p-4 bg-[#181818] rounded border border-gray-700"
+          >
+            <div className="text-sm text-gray-300 font-semibold mb-3">
+              {a.Name || `${title.slice(0, -1)} ${i + 1}`}
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              {Object.entries(a)
+                .filter(([_, v]) => v && v !== "")
+                .map(([k, v]) => (
+                  <InfoRow key={k} label={k} value={v} />
+                ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    );
+  };
+
   return (
     <article className="max-w-5xl mx-auto space-y-8">
-      {/* Breadcrumb */}
+      {/* BREADCRUM */}
       <nav className="flex items-center space-x-2 text-sm text-gray-400 mb-6">
         <Link href="/" className="hover:text-green-400 transition">
           Home
@@ -57,7 +82,7 @@ export default function GroundContent({ content, domain, country }) {
         <span className="text-green-400">{content.title || content.name}</span>
       </nav>
 
-      {/* Header */}
+      {/* HEADER */}
       <header className="flex flex-col space-y-4">
         <div className="flex items-center space-x-4">
           <div className="px-3 py-1 bg-blue-600 text-white text-sm tracking-wide">
@@ -76,20 +101,30 @@ export default function GroundContent({ content, domain, country }) {
           )}
         </div>
         <h1 className="text-4xl md:text-5xl font-bold text-green-400">
-          {content.name || content.title}
+          {content.name}
         </h1>
-        {content.picture && (
+      </header>
+
+      {/* IMAGE */}
+      {content.picture && (
+        <div className="relative">
           <img
             src={content.picture}
             alt={content.name}
-            className="w-full h-64 object-cover rounded-lg shadow-lg"
+            className="w-full h-64 md:h-80 object-cover rounded-lg shadow-lg"
             onError={(e) => (e.target.style.display = "none")}
           />
-        )}
-        {content.description && (
-          <p className="text-gray-300 text-lg">{content.description}</p>
-        )}
-      </header>
+        </div>
+      )}
+
+      {/* DESCRIPTION */}
+      {content.description && (
+        <div className="prose prose-invert max-w-none">
+          <p className="text-gray-300 text-lg leading-relaxed">
+            {content.description}
+          </p>
+        </div>
+      )}
 
       {/* INFORMATIONS */}
       <section>
@@ -135,57 +170,17 @@ export default function GroundContent({ content, domain, country }) {
       )}
 
       {/* ARMAMENT */}
-      {armament.length > 0 && (
+      {(armament.Guns?.length > 0 ||
+        armament.Rockets?.length > 0 ||
+        armament.Missiles?.length > 0 ||
+        armament.Others?.length > 0) && (
         <section>
           <SectionTitle>ARMAMENT</SectionTitle>
-          <div className="space-y-4">
-            {armament.map((a, i) => (
-              <div
-                key={i}
-                className="p-4 bg-[#181818] rounded border border-gray-700"
-              >
-                <div className="text-sm text-gray-300 font-semibold mb-3">
-                  {a.Name || `Weapon ${i + 1}`}
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  <InfoRow label="Category" value={a.Category} />
-                  <InfoRow label="Mount" value={a.Mount} />
-                  <InfoRow label="Ammunition" value={a.Ammunition} />
-                  <InfoRow label="Rate of Fire" value={a["Rate of Fire"]} />
-                  <InfoRow
-                    label="Vertical Guidance"
-                    value={a["Vertical Guidance"]}
-                  />
-                  <InfoRow
-                    label="Horizontal Guidance"
-                    value={a["Horizontal Guidance"]}
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
-
-      {/* AVAILABLE AMMUNITION */}
-      {ammo.length > 0 && (
-        <section>
-          <SectionTitle>AVAILABLE AMMUNITION</SectionTitle>
-          <div className="space-y-4">
-            {ammo.map((a, i) => (
-              <div
-                key={i}
-                className="p-4 bg-[#181818] rounded border border-gray-700"
-              >
-                <div className="text-sm text-gray-300 font-semibold mb-3">
-                  {a.Name || `Ammunition ${i + 1}`}
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  <InfoRow label="Type" value={a.Type} />
-                  <InfoRow label="Caliber" value={a.Caliber} />
-                </div>
-              </div>
-            ))}
+          <div className="space-y-6">
+            {renderArmamentCategory("Guns", armament.Guns)}
+            {renderArmamentCategory("Rockets", armament.Rockets)}
+            {renderArmamentCategory("Missiles", armament.Missiles)}
+            {renderArmamentCategory("Others", armament.Others)}
           </div>
         </section>
       )}
@@ -220,7 +215,7 @@ export default function GroundContent({ content, domain, country }) {
         </div>
       </section>
 
-      {/* Service */}
+      {/* SERVICE */}
       {content.service && (
         <section className="border-t border-gray-700 pt-6">
           <h2 className="text-2xl font-semibold text-green-300 mb-4">
@@ -234,7 +229,7 @@ export default function GroundContent({ content, domain, country }) {
         </section>
       )}
 
-      {/* Navigation */}
+      {/* NAVIGATION */}
       <div className="border-t border-gray-700 pt-8 flex flex-wrap gap-4 justify-center">
         {content.family && (
           <Link

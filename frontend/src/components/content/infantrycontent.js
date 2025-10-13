@@ -55,31 +55,49 @@ export default function InfantryContent({ content, domain, country }) {
         </span>
       </nav>
 
-      {/* Header */}
+      {/* HEADER */}
       <header className="flex flex-col space-y-4">
         <div className="flex items-center space-x-4">
           <div className="px-3 py-1 bg-blue-600 text-white text-sm tracking-wide">
-            Infantry
+            Model
           </div>
           <div className="px-3 py-1 bg-gray-700 text-gray-300 text-sm capitalize">
             {domain}
           </div>
+          {content.family && (
+            <Link
+              href={`/${domain}/${country}/${content.family}`}
+              className="px-3 py-1 bg-green-700 hover:bg-green-600 text-white text-sm rounded-full transition"
+            >
+              Family: {content.familyData?.title || content.family}
+            </Link>
+          )}
         </div>
         <h1 className="text-4xl md:text-5xl font-bold text-green-400">
-          {informations.Name || content.title}
+          {content.name}
         </h1>
-        {content.picture && (
+      </header>
+
+      {/* IMAGE */}
+      {content.picture && (
+        <div className="relative">
           <img
             src={content.picture}
             alt={content.name}
-            className="w-full h-64 object-cover rounded-lg shadow-lg"
+            className="w-full h-64 md:h-80 object-cover rounded-lg shadow-lg"
             onError={(e) => (e.target.style.display = "none")}
           />
-        )}
-        {content.description && (
-          <p className="text-gray-300 text-lg">{content.description}</p>
-        )}
-      </header>
+        </div>
+      )}
+
+      {/* DESCRIPTION */}
+      {content.description && (
+        <div className="prose prose-invert max-w-none">
+          <p className="text-gray-300 text-lg leading-relaxed">
+            {content.description}
+          </p>
+        </div>
+      )}
 
       {/* INFORMATIONS */}
       <section>
