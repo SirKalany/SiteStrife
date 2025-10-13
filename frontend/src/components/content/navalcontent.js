@@ -25,13 +25,43 @@ export default function NavalContent({ content, domain, country }) {
 
   const informations = specs["INFORMATIONS"] || {};
   const dimensions = specs["DIMENSIONS"] || {};
-  const propulsion = specs["PROPULSION"] || specs["AUTOMOTIVE"] || {};
-  const sensors = specs["SENSORS & SYSTEMS"] || specs["SENSORS"] || [];
-  const armaments = specs["ARMAMENT"] || specs["ARMAMENTS"] || [];
+  const automotive = specs["AUTOMOTIVE"] || {};
+  const sensors = specs["SENSORS"] || [];
+  const armaments = specs["ARMAMENT"] || {};
   const protection = specs["PROTECTION"] || {};
-  const ammunition = specs["AVAILABLE AMMUNITION"] || [];
   const aviationFacilities = specs["AVIATION FACILITIES"] || {};
-  const service = specs["SERVICE"] || content.SERVICE;
+  const performances = specs["PERFORMANCES"] || {};
+  const service = specs["SERVICE"] || content?.SERVICE;
+
+  const renderArmamentCategory = (title, list) => {
+    if (!list || list.length === 0) return null;
+    return (
+      <div>
+        <h4 className="text-blue-400 font-semibold mb-2">{title}</h4>
+        <div className="space-y-4">
+          {items.map((a, i) => (
+            <div
+              key={i}
+              className="p-4 bg-[#181818] rounded border border-gray-700"
+            >
+              {a.Name && (
+                <div className="text-sm text-gray-300 font-semibold mb-3">
+                  {a.Name}
+                </div>
+              )}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                {Object.entries(a)
+                  .filter(([k]) => k !== "Name")
+                  .map(([k, v]) => (
+                    <InfoRow key={k} label={k} value={v} />
+                  ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  };
 
   return (
     <article className="max-w-5xl mx-auto space-y-8">
@@ -79,57 +109,51 @@ export default function NavalContent({ content, domain, country }) {
           )}
         </div>
         <h1 className="text-4xl md:text-5xl font-bold text-green-400">
-          {content.name}
+          {content.name || content.title}
         </h1>
-      </header>
-
-      {/* IMAGE */}
-      {content.picture && (
-        <div className="relative">
+        {content.picture && (
           <img
             src={content.picture}
             alt={content.name}
             className="w-full h-64 md:h-80 object-cover rounded-lg shadow-lg"
-            onError={(e) => (e.target.style.display = "none")}
+            onError={(e) => (e.currentTarget.style.display = "none")}
           />
-        </div>
-      )}
-
-      {/* DESCRIPTION */}
-      {content.description && (
-        <div className="prose prose-invert max-w-none">
-          <p className="text-gray-300 text-lg leading-relaxed">
-            {content.description}
-          </p>
-        </div>
-      )}
+        )}
+        {content.description && (
+          <p className="text-gray-300 text-lg">{content.description}</p>
+        )}
+      </header>
 
       {/* INFORMATIONS */}
-      <section>
-        <SectionTitle>INFORMATIONS</SectionTitle>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-          {Object.entries(informations).map(([k, v]) => (
-            <InfoRow key={k} label={k} value={v} />
-          ))}
-        </div>
-      </section>
+      {Object.keys(informations).length > 0 && (
+        <section>
+          <SectionTitle>INFORMATIONS</SectionTitle>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            {Object.entries(informations).map(([k, v]) => (
+              <InfoRow key={k} label={k} value={v} />
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* DIMENSIONS */}
-      <section>
-        <SectionTitle>DIMENSIONS</SectionTitle>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-          {Object.entries(dimensions).map(([k, v]) => (
-            <InfoRow key={k} label={k} value={v} />
-          ))}
-        </div>
-      </section>
+      {Object.keys(dimensions).length > 0 && (
+        <section>
+          <SectionTitle>DIMENSIONS</SectionTitle>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            {Object.entries(dimensions).map(([k, v]) => (
+              <InfoRow key={k} label={k} value={v} />
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* PROPULSION */}
-      {Object.keys(propulsion).length > 0 && (
+      {Object.keys(automotive).length > 0 && (
         <section>
-          <SectionTitle>PROPULSION</SectionTitle>
+          <SectionTitle>AUTOMOTIVE</SectionTitle>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            {Object.entries(propulsion).map(([k, v]) => (
+            {Object.entries(automotive).map(([k, v]) => (
               <InfoRow key={k} label={k} value={v} />
             ))}
           </div>
@@ -139,83 +163,38 @@ export default function NavalContent({ content, domain, country }) {
       {/* SENSORS */}
       {sensors.length > 0 && (
         <section>
-          <SectionTitle>SENSORS & SYSTEMS</SectionTitle>
-          <div className="space-y-4">
-            {sensors.map((s, i) => (
-              <div
-                key={i}
-                className="p-4 bg-[#181818] rounded border border-gray-700"
-              >
-                {s.Name && (
-                  <div className="text-sm text-gray-300 font-semibold mb-3">
-                    {s.Name}
-                  </div>
-                )}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  {Object.entries(s)
-                    .filter(([k]) => k !== "Name")
-                    .map(([k, v]) => (
-                      <InfoRow key={k} label={k} value={v} />
-                    ))}
+          <SectionTitle>SENSORS</SectionTitle>
+          {sensors.map((s, i) => (
+            <div
+              key={i}
+              className="p-4 bg-[#181818] rounded border border-gray-700 mb-4"
+            >
+              {s.Name && (
+                <div className="text-sm text-gray-300 font-semibold mb-3">
+                  {s.Name}
                 </div>
+              )}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                {Object.entries(s)
+                  .filter(([k]) => k !== "Name")
+                  .map(([k, v]) => (
+                    <InfoRow key={k} label={k} value={v} />
+                  ))}
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </section>
       )}
 
       {/* ARMAMENTS */}
-      {armaments.length > 0 && (
+      {armaments && Object.keys(armaments).length > 0 && (
         <section>
           <SectionTitle>ARMAMENTS</SectionTitle>
-          <div className="space-y-4">
-            {armaments.map((a, i) => (
-              <div
-                key={i}
-                className="p-4 bg-[#181818] rounded border border-gray-700"
-              >
-                {a.Name && (
-                  <div className="text-sm text-gray-300 font-semibold mb-3">
-                    {a.Name}
-                  </div>
-                )}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  {Object.entries(a)
-                    .filter(([k]) => k !== "Name")
-                    .map(([k, v]) => (
-                      <InfoRow key={k} label={k} value={v} />
-                    ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
-
-      {/* AVAILABLE AMMUNITION */}
-      {ammunition.length > 0 && (
-        <section>
-          <SectionTitle>AVAILABLE AMMUNITION</SectionTitle>
-          <div className="space-y-4">
-            {ammunition.map((a, i) => (
-              <div
-                key={i}
-                className="p-4 bg-[#181818] rounded border border-gray-700"
-              >
-                {a.Name && (
-                  <div className="text-sm text-gray-300 font-semibold mb-3">
-                    {a.Name}
-                  </div>
-                )}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  {Object.entries(a)
-                    .filter(([k]) => k !== "Name")
-                    .map(([k, v]) => (
-                      <InfoRow key={k} label={k} value={v} />
-                    ))}
-                </div>
-              </div>
-            ))}
+          <div className="space-y-6">
+            {renderArmamentCategory("Guns", armaments.Guns || [])}
+            {renderArmamentCategory("Rockets", armaments.Rockets || [])}
+            {renderArmamentCategory("Missiles", armaments.Missiles || [])}
+            {renderArmamentCategory("Others", armaments.Others || [])}
           </div>
         </section>
       )}
@@ -244,7 +223,19 @@ export default function NavalContent({ content, domain, country }) {
         </section>
       )}
 
-      {/* Service */}
+      {/* PERFORMANCES */}
+      {Object.keys(performances).length > 0 && (
+        <section>
+          <SectionTitle>PERFORMANCES</SectionTitle>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            {Object.entries(performances).map(([k, v]) => (
+              <InfoRow key={k} label={k} value={v} />
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* SERVICE HISTORY */}
       {service && (
         <section>
           <SectionTitle>SERVICE HISTORY</SectionTitle>

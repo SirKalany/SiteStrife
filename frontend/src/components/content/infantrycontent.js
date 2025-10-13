@@ -27,10 +27,11 @@ export default function InfantryContent({ content, domain, country }) {
   const dimensions = specs["DIMENSIONS"] || {};
   const mechanics = specs["MECHANICS"] || {};
   const performances = specs["PERFORMANCES"] || {};
+  const service = specs["SERVICE"] || content.SERVICE;
 
   return (
     <article className="max-w-5xl mx-auto space-y-8">
-      {/* Breadcrumb */}
+      {/* BREADCRUM */}
       <nav className="flex items-center space-x-2 text-sm text-gray-400 mb-6">
         <Link href="/" className="hover:text-green-400 transition">
           Home
@@ -139,21 +140,21 @@ export default function InfantryContent({ content, domain, country }) {
         </div>
       </section>
 
-      {/* Service */}
-      {content.service && (
+      {/* SERVICE */}
+      {service && (
         <section className="border-t border-gray-700 pt-6">
           <h2 className="text-2xl font-semibold text-green-300 mb-4">
             Service History
           </h2>
           <div className="prose prose-invert max-w-none">
             <p className="text-gray-300 whitespace-pre-line leading-relaxed">
-              {content.service}
+              {service}
             </p>
           </div>
         </section>
       )}
 
-      {/* Navigation */}
+      {/* NAVIGATION */}
       <div className="border-t border-gray-700 pt-8 flex flex-wrap gap-4 justify-center">
         <Link
           href={`/${domain}/${country}`}

@@ -26,11 +26,11 @@ export default function HeavyContent({ content, domain, country }) {
   const informations = specs["INFORMATIONS"] || {};
   const dimensions = specs["DIMENSIONS"] || {};
   const performances = specs["PERFORMANCES"] || {};
-  const ammo = specs["AVAILABLE AMMUNITION"] || [];
+  const service = specs["SERVICE"] || content.SERVICE;
 
   return (
     <article className="max-w-5xl mx-auto space-y-8">
-      {/* Breadcrumb */}
+      {/* BREADCRUMB */}
       <nav className="flex items-center space-x-2 text-sm text-gray-400 mb-6">
         <Link href="/" className="hover:text-green-400 transition">
           Home
@@ -127,44 +127,21 @@ export default function HeavyContent({ content, domain, country }) {
         </div>
       </section>
 
-      {/* AVAILABLE AMMUNITION */}
-      {ammo.length > 0 && (
-        <section>
-          <SectionTitle>AVAILABLE AMMUNITION</SectionTitle>
-          <div className="space-y-4">
-            {ammo.map((a, i) => (
-              <div
-                key={i}
-                className="p-4 bg-[#181818] rounded border border-gray-700"
-              >
-                <div className="text-sm text-gray-300 font-semibold mb-3">
-                  {a.Name || `Ammunition ${i + 1}`}
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  <InfoRow label="Type" value={a.Type} />
-                  <InfoRow label="Caliber" value={a.Caliber} />
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
-
-      {/* Service */}
-      {content.service && (
+      {/* SERVICE */}
+      {service && (
         <section className="border-t border-gray-700 pt-6">
           <h2 className="text-2xl font-semibold text-green-300 mb-4">
             Service History
           </h2>
           <div className="prose prose-invert max-w-none">
             <p className="text-gray-300 whitespace-pre-line leading-relaxed">
-              {content.service}
+              {service}
             </p>
           </div>
         </section>
       )}
 
-      {/* Navigation */}
+      {/* NAVIGATION */}
       <div className="border-t border-gray-700 pt-8 flex flex-wrap gap-4 justify-center">
         <Link
           href={`/${domain}/${country}`}
