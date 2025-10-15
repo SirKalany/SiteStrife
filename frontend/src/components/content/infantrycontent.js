@@ -18,7 +18,7 @@ export default function InfantryContent({ content, domain, country }) {
     <article className="max-w-5xl mx-auto space-y-8">
       {/* HEADER */}
       <ContentHeader content={content} domain={domain} country={country} />
-      
+
       {/* INFORMATIONS */}
       <section>
         <SectionTitle>INFORMATIONS</SectionTitle>
@@ -68,6 +68,18 @@ export default function InfantryContent({ content, domain, country }) {
           <div className="prose prose-invert max-w-none">
             <p className="text-gray-300 whitespace-pre-line leading-relaxed">
               {service}
+            </p>
+          </div>
+        </section>
+      )}
+
+      {/* USERS */}
+      {content.users && (
+        <section className="border-t border-gray-700 pt-6">
+          <h2 className="text-2xl font-semibold text-green-300 mb-4">Users</h2>
+          <div className="prose prose-invert max-w-none">
+            <p className="text-gray-300 whitespace-pre-line leading-relaxed">
+              {content.users}
             </p>
           </div>
         </section>

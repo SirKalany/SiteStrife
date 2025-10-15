@@ -62,6 +62,18 @@ export default function HeavyContent({ content, domain, country }) {
         </section>
       )}
 
+      {/* USERS */}
+      {content.users && (
+        <section className="border-t border-gray-700 pt-6">
+          <h2 className="text-2xl font-semibold text-green-300 mb-4">Users</h2>
+          <div className="prose prose-invert max-w-none">
+            <p className="text-gray-300 whitespace-pre-line leading-relaxed">
+              {content.users}
+            </p>
+          </div>
+        </section>
+      )}
+
       {/* NAVIGATION */}
       <div className="border-t border-gray-700 pt-8 flex flex-wrap gap-4 justify-center">
         <Link
