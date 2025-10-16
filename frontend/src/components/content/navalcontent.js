@@ -7,7 +7,6 @@ import SectionTitle from "@/components/ui/SectionTitle";
 
 export default function NavalContent({ content, domain, country }) {
   const specs = content?.specifications || {};
-
   const informations = specs["INFORMATIONS"] || {};
   const dimensions = specs["DIMENSIONS"] || {};
   const automotive = specs["AUTOMOTIVE"] || {};
@@ -186,7 +185,7 @@ export default function NavalContent({ content, domain, country }) {
         </section>
       )}
 
-      {/* Navigation */}
+      {/* NAVIGATION */}
       <div className="border-t border-gray-700 pt-8 flex flex-wrap gap-4 justify-center">
         <Link
           href={`/${domain}/${country}`}

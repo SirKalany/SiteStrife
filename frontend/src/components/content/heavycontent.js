@@ -7,7 +7,6 @@ import SectionTitle from "@/components/ui/SectionTitle";
 
 export default function HeavyContent({ content, domain, country }) {
   const specs = content?.specifications || {};
-
   const informations = specs["INFORMATIONS"] || {};
   const dimensions = specs["DIMENSIONS"] || {};
   const performances = specs["PERFORMANCES"] || {};
