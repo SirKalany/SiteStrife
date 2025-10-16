@@ -62,13 +62,17 @@ export default function HeavyContent({ content, domain, country }) {
       )}
 
       {/* USERS */}
-      {content.users && (
-        <section className="border-t border-gray-700 pt-6">
-          <h2 className="text-2xl font-semibold text-green-300 mb-4">Users</h2>
-          <div className="prose prose-invert max-w-none">
-            <p className="text-gray-300 whitespace-pre-line leading-relaxed">
-              {content.users}
-            </p>
+      {users.length > 0 && (
+        <section>
+          <SectionTitle>USERS</SectionTitle>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            {users.map((user, index) => (
+              <InfoRow
+                key={index}
+                label={user.Country}
+                value={user.Description}
+              />
+            ))}
           </div>
         </section>
       )}

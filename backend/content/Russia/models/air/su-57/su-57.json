@@ -152,6 +152,20 @@
       "Service Ceiling": "20,000 m",
       "Maximum Speed Sea Level": "1,350 km/h",
       "Maximum Speed High Altitude": "2,135 km/h"
-    }
+    },
+    "USERS": [
+      {
+        "Country": "Russian Federation",
+        "Description": "Primary operator. Approximately 22 aircraft in service as of 2025, with an estimated total of 76 to be delivered by 2028. Entered service in 2020."
+      },
+      {
+        "Country": "India",
+        "Description": "Initially a co-developer under the FGFA project, later withdrew. As of 2025, India is evaluating a renewed partnership for potential future acquisition."
+      },
+      {
+        "Country": "Algeria",
+        "Description": "Unconfirmed reports suggest an order for 14 aircraft placed in 2021, deliveries expected between 2026 and 2030."
+      }
+    ]
   }
 }
