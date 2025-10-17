@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import ContentHeader from "@/components/ContentHeader";
-import InfoRow from "@/components/InfoRow";
-import SectionTitle from "@/components/SectionTitle";
+import InfoRow from "@/components/ui/InfoRow";
+import SectionTitle from "@/components/ui/SectionTitle";
 
 export default function GroundContent({ content, domain, country }) {
   const specs = content?.specifications || {};
@@ -14,6 +14,7 @@ export default function GroundContent({ content, domain, country }) {
   const protection = specs["PROTECTION"] || {};
   const automotive = specs["AUTOMOTIVE"] || {};
   const performances = specs["PERFORMANCES"] || {};
+  const users = specs["USERS"] || {};
 
   const renderArmamentCategory = (title, list) => {
     if (!list || list.length === 0) return null;

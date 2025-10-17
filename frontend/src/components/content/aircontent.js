@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import ContentHeader from "@/components/ContentHeader";
-import InfoRow from "@/components/InfoRow";
-import SectionTitle from "@/components/SectionTitle";
+import InfoRow from "@/components/ui/InfoRow";
+import SectionTitle from "@/components/ui/SectionTitle";
 
 export default function AirContent({ content, domain, country }) {
   const specs = content?.specifications || {};

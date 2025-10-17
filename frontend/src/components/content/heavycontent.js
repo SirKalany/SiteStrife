@@ -11,6 +11,7 @@ export default function HeavyContent({ content, domain, country }) {
   const dimensions = specs["DIMENSIONS"] || {};
   const performances = specs["PERFORMANCES"] || {};
   const service = specs["SERVICE"] || content.SERVICE;
+  const users = specs["USERS"] || {};
 
   return (
     <article className="max-w-5xl mx-auto space-y-8">

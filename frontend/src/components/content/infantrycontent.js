@@ -12,6 +12,7 @@ export default function InfantryContent({ content, domain, country }) {
   const mechanics = specs["MECHANICS"] || {};
   const performances = specs["PERFORMANCES"] || {};
   const service = specs["SERVICE"] || content.SERVICE;
+  const users = specs["USERS"] || {};
 
   return (
     <article className="max-w-5xl mx-auto space-y-8">

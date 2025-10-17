@@ -16,6 +16,7 @@ export default function NavalContent({ content, domain, country }) {
   const aviationFacilities = specs["AVIATION FACILITIES"] || {};
   const performances = specs["PERFORMANCES"] || {};
   const service = specs["SERVICE"] || content?.SERVICE;
+  const users = specs["USERS"] || {};
 
   const renderArmamentCategory = (title, list) => {
     if (!list || list.length === 0) return null;
