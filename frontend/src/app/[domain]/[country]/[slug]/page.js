@@ -131,24 +131,53 @@ export default function FamilyPage({ params: rawParams }) {
 
         {/* Variants */}
         {content.variants && content.variants.length > 0 && (
+          console.log("Variants data:", content.variants),
           <section className="border-t border-gray-700 pt-6">
             <h2 className="text-2xl font-semibold text-green-300 mb-4 flex items-center">
               <span className="w-1 h-6 bg-green-400 mr-3"></span>
               Variants
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {content.variants.map((variant) => (
-                <Link
-                  key={variant.slug}
-                  href={`/${domain}/${country}/${slug}/${variant.slug}`} // <- ajout du slug de la famille
-                  className="block p-4 bg-[#2a2a2a] border border-gray-600 rounded-lg hover:bg-[#333] hover:border-green-400 transition"
+
+            {/* Group variants by type */}
+            {["Model", "Prototype", "Modification"].map((type) => {
+              const variantsOfType = content.variants.filter(
+                (v) => v.type === type
+              );
+
+              if (variantsOfType.length === 0) return null;
+
+              return (
+                <details
+                  key={type}
+                  className="mb-6 bg-[#222] border border-gray-700 rounded-lg overflow-hidden"
+                  open
                 >
-                  <h3 className="font-semibold text-green-400 mb-2">
-                    {variant.name}
-                  </h3>
-                </Link>
-              ))}
-            </div>
+                  <summary className="cursor-pointer select-none px-4 py-3 text-lg font-semibold text-green-400 bg-[#2a2a2a] hover:bg-[#333] transition flex justify-between items-center">
+                    {type}s
+                    <span className="text-gray-400 text-sm">
+                      {variantsOfType.length}
+                    </span>
+                  </summary>
+
+                  <div className="divide-y divide-gray-700">
+                    {variantsOfType.map((variant) => (
+                      <Link
+                        key={variant.slug}
+                        href={`/${domain}/${country}/${slug}/${variant.slug}`}
+                        className="block px-4 py-3 hover:bg-[#333] transition"
+                      >
+                        <h3 className="font-semibold text-green-300 text-base mb-1">
+                          {variant.name}
+                        </h3>
+                        <p className="text-gray-400 text-sm leading-relaxed">
+                          {variant.description}
+                        </p>
+                      </Link>
+                    ))}
+                  </div>
+                </details>
+              );
+            })}
           </section>
         )}
 

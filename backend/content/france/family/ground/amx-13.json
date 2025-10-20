@@ -4,17 +4,18 @@
   "description": "The AMX-13 was a French light tank produced from 1952 to 1987.",
   "history": "It served with the French Army and was exported widely. It featured a unique oscillating turret.",
   "variants": [
-    { "slug": "amx-13-dca-40", "name": "AMX-13 DCA 40" },
-    { "slug": "amx-13-dca-30", "name": "AMX-13 DCA 30)" },
-    { "slug": "amx-13-hot", "name": "AMX-13 (HOT)" },
-    { "slug": "amx-13-2a", "name": "AMX-13 (2A)" },
-    { "slug": "amx-13-2b", "name": "AMX-13 (2B)" },
-    { "slug": "amx-13-2c", "name": "AMX-13 (2C)" },
-    { "slug": "amx-13-2d", "name": "AMX-13 (2D)" },
-    { "slug": "amx-13-2e", "name": "AMX-13 (2E)" },
-    { "slug": "amx-13-2f", "name": "AMX-13 (2F)" },
-    { "slug": "amx-13-75-51", "name": "AMX-13/75 Modèle 51" },
-    { "slug": "amx-chaffee", "name": "AMX-Chaffee" },
-    { "slug": "char-12t-fcm", "name": "Char 12T FCM" }
+    { "slug": "amx-13-dca-40", "type": "Modification", "name": "AMX-13 DCA 40", "description": "Anti-air variant using a 40 mm Bofors gun" },
+    { "slug": "amx-13-dca-30", "type": "Modification", "name": "AMX-13 DCA 30)", "description": "Anti-air variant using twin 30 mm cannons" },
+    { "slug": "amx-13-hot", "type": "Modification", "name": "AMX-13 (HOT)", "description": "Missile carrier version using two triple HOT missile launchers" },
+    { "slug": "amx-13-2a", "type": "Prototype", "name": "AMX-13 (2A)", "description": "Prototype with 4 roadwheels and trailing idler" },
+    { "slug": "amx-13-2b", "type": "Prototype", "name": "AMX-13 (2B)", "description": "Prototype with 5 roadwheels and raised idler" },
+    { "slug": "amx-13-2c", "type": "Prototype", "name": "AMX-13 (2C)", "description": "FL-10 turret and two support rollers" },
+    { "slug": "amx-13-2d", "type": "Prototype", "name": "AMX-13 (2D)", "description": "Prototype with 4 support rollers" },
+    { "slug": "amx-13-2e", "type": "Prototype", "name": "AMX-13 (2E)", "description": "Prototype with 3 support rollers and 90 mm gun" },
+    { "slug": "amx-13-2f", "type": "Prototype", "name": "AMX-13 (2F)", "description": "Prototype with 2 support rollers and, later, a thermal sleeve" },
+    { "slug": "amx-13-75-51", "type": "Model", "name": "AMX-13/75 Modèle 51", "description": "Model using the SA 50 75 mm cannon" },
+    { "slug": "amx-13-75-51-fl11", "type": "Model", "name": "AMX-13/75 Modèle 51 FL11", "description": "Model using the FL-11 turret" },
+    { "slug": "amx-13-90-c90", "type": "Model", "name": "AMX-13/90 C90", "description": "Model using the CN 90 F3 90 mm cannon" },
+    { "slug": "amx-chaffee", "type": "Model", "name": "AMX-Chaffee", "description": "Model using the turret of the M24 Chaffee" }
   ]
 }
