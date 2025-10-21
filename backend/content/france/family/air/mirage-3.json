@@ -4,9 +4,29 @@
   "description": "The Mirage IIIB is the first production version Mirage jet.",
   "history": "It served with the French Air Force and was exported widely.",
   "variants": [
-    { "slug": "mirage-3b1", "name": "Mirage III-1" },
-    { "slug": "mirage-3b2", "name": "Mirage III-2(RV)" },
-    { "slug": "mirage-3be", "name": "Mirage IIIBE" },
-    { "slug": "mirage-3bj", "name": "Mirage IIIBJ" }
+    {
+      "slug": "mirage-3b1",
+      "type": "Model",
+      "name": "Mirage III-1",
+      "description": "Anti-air variant using a 40 mm Bofors gun"
+    },
+    {
+      "slug": "mirage-3b2",
+      "type": "Model",
+      "name": "Mirage III-2(RV)",
+      "description": "Anti-air variant using a 40 mm Bofors gun"
+    },
+    {
+      "slug": "mirage-3be",
+      "type": "Model",
+      "name": "Mirage IIIBE",
+      "description": "Anti-air variant using a 40 mm Bofors gun"
+    },
+    {
+      "slug": "mirage-3bj",
+      "type": "Model",
+      "name": "Mirage IIIBJ",
+      "description": "Anti-air variant using a 40 mm Bofors gun"
+    }
   ]
 }
