@@ -1,0 +1,116 @@
+{
+  "kind": "family",
+  "title": "T-90",
+  "description": "The T-90 is a Russian third-generation main battle tank developed from the T-72 platform by Uralvagonzavod. It features a combination of modern fire control systems, explosive reactive armor, and advanced night-fighting capabilities.",
+  "history": "Developed in the late 1980s and officially entering service in 1992, the T-90 became Russia’s mainstay tank following the collapse of the Soviet Union. It has since evolved through multiple modernizations such as the T-90A, T-90AM, and T-90M 'Proryv-3', maintaining relevance through export success and continued upgrades.",
+  "variants": [
+    {
+      "slug": "t-90",
+      "type": "Model",
+      "name": "T-90 (Object 188)",
+      "description": "Original production version introduced in 1992, based on the T-72B chassis with improved armor and fire control."
+    },
+    {
+      "slug": "t-90k",
+      "type": "Model",
+      "name": "T-90K",
+      "description": "Command variant of the T-90 equipped with enhanced communications and navigation systems."
+    },
+    {
+      "slug": "t-90s",
+      "type": "Model",
+      "name": "T-90S",
+      "description": "Export version of the T-90, widely sold abroad, notably to India as the 'Bhishma'."
+    },
+    {
+      "slug": "t-90sk",
+      "type": "Model",
+      "name": "T-90SK",
+      "description": "Command version of the T-90S for export customers, fitted with upgraded communication systems."
+    },
+    {
+      "slug": "t-90a-a1",
+      "type": "Model",
+      "name": "T-90A (Object 188A)",
+      "description": "First major Russian modernization featuring a new welded turret and improved thermal sights."
+    },
+    {
+      "slug": "t-90ak-a1k",
+      "type": "Model",
+      "name": "T-90AK (Object 188A1K)",
+      "description": "Command version of the T-90A with advanced communication and command systems."
+    },
+    {
+      "slug": "t-90a-a2",
+      "type": "Model",
+      "name": "T-90A (Object 188A2)",
+      "description": "Upgraded T-90A with enhanced armor and improved sensor suite."
+    },
+    {
+      "slug": "t-90ak-a2k",
+      "type": "Model",
+      "name": "T-90AK (Object 188A2K)",
+      "description": "Command version of the upgraded T-90A (Object 188A2)."
+    },
+    {
+      "slug": "t-90sa",
+      "type": "Model",
+      "name": "T-90SA",
+      "description": "Desert-adapted export version of the T-90S, developed for Middle Eastern customers such as Algeria."
+    },
+    {
+      "slug": "t-90ska",
+      "type": "Model",
+      "name": "T-90SKA",
+      "description": "Command variant of the desert-configured T-90SA."
+    },
+    {
+      "slug": "t-90am",
+      "type": "Prototype",
+      "name": "T-90AM 'Proryv-2'",
+      "description": "Prototype modernization featuring the new 'Kalina' fire control system, advanced armor, and improved crew ergonomics."
+    },
+    {
+      "slug": "t-90amk",
+      "type": "Prototype",
+      "name": "T-90AMK",
+      "description": "Command version of the T-90AM prototype."
+    },
+    {
+      "slug": "t-90sm",
+      "type": "Model",
+      "name": "T-90SM",
+      "description": "Export variant of the T-90AM with modern electronics, improved protection, and optional climate adaptations."
+    },
+    {
+      "slug": "t-90smk",
+      "type": "Model",
+      "name": "T-90SMK",
+      "description": "Command variant of the T-90SM export model."
+    },
+    {
+      "slug": "t-90ms-tagil",
+      "type": "Model",
+      "name": "T-90MS 'Tagil'",
+      "description": "Export model of the T-90M featuring the 'Kalina' system and modular ERA armor; unveiled as 'Tagil' in 2011."
+    },
+    {
+      "slug": "t-90m",
+      "type": "Model",
+      "name": "T-90M 'Proryv-3'",
+      "description": "Latest Russian service version with a new welded turret, 2A46M-5 gun, improved 'Kalina' system, and enhanced situational awareness."
+    },
+    {
+      "slug": "t-90ms",
+      "type": "Model",
+      "name": "T-90MS",
+      "description": "Refined export derivative of the T-90M with similar systems adapted for foreign customers."
+    },
+    {
+      "slug": "t-90m2",
+      "type": "Prototype",
+      "name": "T-90M2 'Ryvok-1'",
+      "description": "Experimental modernization featuring further upgrades to armor, sensors, and mobility over the T-90M."
+    }
+  ]
+}

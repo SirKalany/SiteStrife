@@ -1,0 +1,146 @@
+[
+  {
+    "id": "t-90",
+    "name": "T-90",
+    "slug": "t-90",
+    "family": "t-90",
+    "type": "Main battle tank",
+    "picture": "/images/t-90.jpg"
+  },
+  {
+    "id": "t-90k",
+    "name": "T-90K",
+    "slug": "t-90k",
+    "family": "t-90",
+    "type": "Command main battle tank",
+    "picture": "/images/t-90k.jpg"
+  },
+  {
+    "id": "t-90s",
+    "name": "T-90S",
+    "slug": "t-90s",
+    "family": "t-90",
+    "type": "Main battle tank",
+    "picture": "/images/t-90s.jpg"
+  },
+  {
+    "id": "t-90sk",
+    "name": "T-90SK",
+    "slug": "t-90sk",
+    "family": "t-90",
+    "type": "Command main battle tank",
+    "picture": "/images/t-90sk.jpg"
+  },
+  {
+    "id": "t-90a-a1",
+    "name": "T-90A (188A)",
+    "slug": "t-90a-a1",
+    "family": "t-90",
+    "type": "Main battle tank",
+    "picture": "/images/t-90a-a1.jpg"
+  },
+  {
+    "id": "t-90ak-a1k",
+    "name": "T-90AK (188A1K)",
+    "slug": "t-90ak-a1k",
+    "family": "t-90",
+    "type": "Command main battle tank",
+    "picture": "/images/t-90ak-a1k.jpg"
+  },
+  {
+    "id": "t-90a-a2",
+    "name": "T-90A (188A2)",
+    "slug": "t-90a-a2",
+    "family": "t-90",
+    "type": "Main battle tank",
+    "picture": "/images/t-90a-a2.jpg"
+  },
+  {
+    "id": "t-90ak-a2k",
+    "name": "T-90AK (188A2K)",
+    "slug": "t-90ak-a2k",
+    "family": "t-90",
+    "type": "Command main battle tank",
+    "picture": "/images/t-90ak-a2k.jpg"
+  },
+  {
+    "id": "t-90sa",
+    "name": "T-90SA",
+    "slug": "t-90sa",
+    "family": "t-90",
+    "type": "Main battle tank",
+    "picture": "/images/t-90sa.jpg"
+  },
+  {
+    "id": "t-90ska",
+    "name": "T-90SKA",
+    "slug": "t-90ska",
+    "family": "t-90",
+    "type": "Command main battle tank",
+    "picture": "/images/t-90ska.jpg"
+  },
+  {
+    "id": "t-90am",
+    "name": "T-90AM",
+    "slug": "t-90am",
+    "family": "t-90",
+    "type": "Main battle tank",
+    "picture": "/images/t-90am.jpg"
+  },
+  {
+    "id": "t-90amk",
+    "name": "T-90AMK",
+    "slug": "t-90amk",
+    "family": "t-90",
+    "type": "Command main battle tank",
+    "picture": "/images/t-90amk.jpg"
+  },
+  {
+    "id": "t-90sm",
+    "name": "T-90SM",
+    "slug": "t-90sm",
+    "family": "t-90",
+    "type": "Main battle tank",
+    "picture": "/images/t-90sm.jpg"
+  },
+  {
+    "id": "t-90smk",
+    "name": "T-90SMK",
+    "slug": "t-90smk",
+    "family": "t-90",
+    "type": "Command main battle tank",
+    "picture": "/images/t-90smk.jpg"
+  },
+  {
+    "id": "t-90ms-tagil",
+    "name": "T-90MS 'Tagil'",
+    "slug": "t-90ms-tagil",
+    "family": "t-90",
+    "type": "Main battle tank",
+    "picture": "/images/t-90ms-tagil.jpg"
+  },
+  {
+    "id": "t-90m",
+    "name": "T-90M",
+    "slug": "t-90m",
+    "family": "t-90",
+    "type": "Main battle tank",
+    "picture": "/images/t-90m.jpg"
+  },
+  {
+    "id": "t-90ms",
+    "name": "T-90MS",
+    "slug": "t-90ms",
+    "family": "t-90",
+    "type": "Main battle tank",
+    "picture": "/images/t-90ms.jpg"
+  },
+  {
+    "id": "t-90m2",
+    "name": "T-90M2 'Ryvok-1'",
+    "slug": "t-90m2",
+    "family": "t-90",
+    "type": "Main battle tank",
+    "picture": "/images/t-90m2.jpg"
+  }
+]

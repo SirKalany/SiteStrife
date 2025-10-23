@@ -1,0 +1,10 @@
+[
+  {
+    "id": "t-90",
+    "name": "T-90",
+    "slug": "t-90",
+    "type": "Main battle tank",
+    "picture": "/images/t-90.jpg",
+    "caption": "Latest iteration of diesel powered Russian main battle tank"
+  }
+]
