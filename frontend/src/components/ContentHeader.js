@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import Breadcrumb from "@/components/breadcrumb";
 
 export default function ContentHeader({ content, domain, country }) {
@@ -11,11 +10,12 @@ export default function ContentHeader({ content, domain, country }) {
         <Breadcrumb
           domain={domain}
           country={country}
-          family={content.family}
-          familyTitle={content.familyData?.title}
-          variant={content.slug}
-          variantTitle={content.name}
+          family={content.family} // slug of the family
+          familyTitle={content.familyData?.title} // display title of the family
+          model={content.slug} // model slug (for URL)
+          modelTitle={content.name} // model name (displayed as last breadcrumb)
         />
+
         <h1 className="text-4xl md:text-5xl font-bold text-green-400">
           {content.name}
         </h1>

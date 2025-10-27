@@ -43,17 +43,28 @@ export default function ModelPage({ params: paramsPromise }) {
     fetchData();
   }, [country, domain, slug, model]);
 
+  const accentColor = "text-yellow-400";
+
   if (loading)
     return (
-      <main className="min-h-screen bg-[#1b1b1b] text-white px-10 py-12 flex items-center justify-center">
-        <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-green-400"></div>
+      <main className="min-h-screen bg-[#1b1b1b] text-white flex items-center justify-center px-4 py-10">
+        <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-yellow-400"></div>
       </main>
     );
 
   if (error)
     return (
-      <main className="min-h-screen bg-[#1b1b1b] text-white px-10 py-12 flex flex-col items-center justify-center">
+      <main className="min-h-screen bg-[#1b1b1b] text-white flex flex-col items-center justify-center px-4 py-10">
         <h1 className="text-2xl text-red-400 mb-4">{error}</h1>
+        <p className="text-gray-400">
+          Return to{" "}
+          <a
+            href={`/${domain}/${country}/${slug}`}
+            className="text-yellow-400 underline"
+          >
+            family page
+          </a>
+        </p>
       </main>
     );
 
@@ -80,7 +91,11 @@ export default function ModelPage({ params: paramsPromise }) {
         );
       case "infantry":
         return (
-          <InfantryContent content={content} domain={domain} country={country} />
+          <InfantryContent
+            content={content}
+            domain={domain}
+            country={country}
+          />
         );
       default:
         return (
@@ -90,8 +105,10 @@ export default function ModelPage({ params: paramsPromise }) {
   };
 
   return (
-    <main className="min-h-screen bg-[#1b1b1b] text-white px-4 md:px-10 py-12">
-      {renderContent()}
+    <main className="min-h-screen bg-[#1b1b1b] text-white px-4 py-10">
+      <div className="max-w-[90%] md:max-w-[70%] lg:max-w-[80%] mx-auto">
+        {renderContent()}
+      </div>
     </main>
   );
 }

@@ -7,8 +7,8 @@ export default function Breadcrumb({
   country,
   family,
   familyTitle,
-  variant,
-  variantTitle,
+  model,
+  modelTitle,
 }) {
   return (
     <nav className="flex items-center space-x-2 text-sm text-gray-400 mb-6">
@@ -21,7 +21,7 @@ export default function Breadcrumb({
       {domain && (
         <>
           <span>/</span>
-          {country || family || variant ? (
+          {country || family || model ? (
             <Link
               href={`/${encodeURIComponent(domain)}`}
               className="hover:text-green-400 transition capitalize"
@@ -40,7 +40,7 @@ export default function Breadcrumb({
       {country && (
         <>
           <span>/</span>
-          {family || variant ? (
+          {family || model ? (
             <Link
               href={`/${encodeURIComponent(domain)}/${encodeURIComponent(
                 country
@@ -61,7 +61,7 @@ export default function Breadcrumb({
       {family && (
         <>
           <span>/</span>
-          {variant ? (
+          {model || modelTitle ? (
             <Link
               href={`/${encodeURIComponent(domain)}/${encodeURIComponent(
                 country
@@ -78,13 +78,11 @@ export default function Breadcrumb({
         </>
       )}
 
-      {/* Variant */}
-      {variant && (
+      {/* Model */}
+      {modelTitle && (
         <>
           <span>/</span>
-          <span className="text-green-400">
-            {variantTitle || decodeURIComponent(variant)}
-          </span>
+          <span className="text-green-400">{modelTitle}</span>
         </>
       )}
     </nav>

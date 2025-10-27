@@ -6,7 +6,6 @@ import Link from "next/link";
 import Breadcrumb from "@/components/breadcrumb";
 
 export default function FamilyPage({ params: rawParams }) {
-  // Unwrap des params avec React.use() pour Next.js 14+
   const params = use(rawParams);
   const { country, domain, slug } = params;
 
@@ -41,10 +40,13 @@ export default function FamilyPage({ params: rawParams }) {
     fetchData();
   }, [country, domain, slug]);
 
+  const accentColor = "text-yellow-400";
+  const accentShadow = "hover:shadow-yellow-400/20";
+
   if (loading) {
     return (
-      <main className="min-h-screen bg-[#1b1b1b] text-white flex flex-col items-center justify-center">
-        <div className="animate-spin h-8 w-8 border-b-2 border-green-400 rounded-full mb-4"></div>
+      <main className="min-h-screen bg-[#1b1b1b] text-white flex flex-col items-center justify-center px-4 py-10">
+        <div className="animate-spin h-10 w-10 border-b-2 border-yellow-400 rounded-full mb-4"></div>
         <p className="text-gray-400">Loading family...</p>
       </main>
     );
@@ -52,12 +54,12 @@ export default function FamilyPage({ params: rawParams }) {
 
   if (error) {
     return (
-      <main className="min-h-screen bg-[#1b1b1b] text-white flex flex-col items-center justify-center">
+      <main className="min-h-screen bg-[#1b1b1b] text-white flex flex-col items-center justify-center px-4 py-10">
         <h1 className="text-2xl font-bold text-red-400 mb-4">⚠️ Error</h1>
         <p className="text-gray-400 mb-6">{error}</p>
         <Link
           href={`/${domain}/${country}`}
-          className="px-4 py-2 bg-gray-600 hover:bg-gray-700 rounded transition"
+          className="px-6 py-2 bg-yellow-400 hover:bg-yellow-500 rounded-lg transition text-black font-semibold"
         >
           Back to families
         </Link>
@@ -68,8 +70,8 @@ export default function FamilyPage({ params: rawParams }) {
   if (!content) return null;
 
   return (
-    <main className="min-h-screen bg-[#1b1b1b] text-white px-6 md:px-10 py-12">
-      <article className="max-w-4xl mx-auto space-y-8">
+    <main className="min-h-screen bg-[#1b1b1b] text-white px-4 py-10">
+      <div className="max-w-[90%] md:max-w-[90%] lg:max-w-[80%] mx-auto space-y-8">
         {/* Breadcrumb */}
         <Breadcrumb
           domain={domain}
@@ -79,15 +81,24 @@ export default function FamilyPage({ params: rawParams }) {
         />
 
         {/* Header */}
-        <header>
-          <h1 className="text-4xl md:text-5xl font-bold text-green-400 mb-4">
+        <header className="text-center space-y-4">
+          <h1 className={`text-4xl md:text-5xl font-bold mb-4 ${accentColor}`}>
             {content.title}
           </h1>
+
+          {/* Family picture */}
+          {content.picture && (
+            <img
+              src={`http://localhost:4000${content.picture}`}
+              alt={content.title}
+              className="w-full h-auto max-w-3xl mx-auto rounded-lg shadow-lg object-cover"
+            />
+          )}
         </header>
 
         {/* Description */}
         {content.description && (
-          <div className="prose prose-invert max-w-none">
+          <div className="prose prose-invert max-w-none text-center md:text-left">
             <p className="text-gray-300 text-lg leading-relaxed">
               {content.description}
             </p>
@@ -97,8 +108,10 @@ export default function FamilyPage({ params: rawParams }) {
         {/* History */}
         {content.history && (
           <section className="border-t border-gray-700 pt-6">
-            <h2 className="text-2xl font-semibold text-green-300 mb-4 flex items-center">
-              <span className="w-1 h-6 bg-green-400 mr-3"></span>
+            <h2
+              className={`text-2xl font-semibold ${accentColor} mb-4 flex items-center`}
+            >
+              <span className="w-1 h-6 bg-yellow-400 mr-3"></span>
               History
             </h2>
             <p className="text-gray-300 whitespace-pre-line leading-relaxed">
@@ -108,58 +121,54 @@ export default function FamilyPage({ params: rawParams }) {
         )}
 
         {/* Variants */}
-        {content.variants &&
-          content.variants.length > 0 &&
-          (console.log("Variants data:", content.variants),
-          (
-            <section className="border-t border-gray-700 pt-6">
-              <h2 className="text-2xl font-semibold text-green-300 mb-4 flex items-center">
-                <span className="w-1 h-6 bg-green-400 mr-3"></span>
-                Variants
-              </h2>
+        {content.variants?.length > 0 && (
+          <section className="border-t border-gray-700 pt-6">
+            <h2
+              className={`text-2xl font-semibold ${accentColor} mb-4 flex items-center`}
+            >
+              <span className="w-1 h-6 bg-yellow-400 mr-3"></span>
+              Variants
+            </h2>
 
-              {/* Group variants by type */}
-              {["Model", "Prototype", "Modification"].map((type) => {
-                const variantsOfType = content.variants.filter(
-                  (v) => v.type === type
-                );
+            {["Model", "Prototype", "Modification"].map((type) => {
+              const variantsOfType = content.variants.filter(
+                (v) => v.type === type
+              );
+              if (!variantsOfType.length) return null;
 
-                if (variantsOfType.length === 0) return null;
-
-                return (
-                  <details
-                    key={type}
-                    className="mb-6 bg-[#222] border border-gray-700 rounded-lg overflow-hidden"
-                    open
-                  >
-                    <summary className="cursor-pointer select-none px-4 py-3 text-lg font-semibold text-green-400 bg-[#2a2a2a] hover:bg-[#333] transition flex justify-between items-center">
-                      {type}s
-                      <span className="text-gray-400 text-sm">
-                        {variantsOfType.length}
-                      </span>
-                    </summary>
-
-                    <div className="divide-y divide-gray-700">
-                      {variantsOfType.map((variant) => (
-                        <Link
-                          key={variant.slug}
-                          href={`/${domain}/${country}/${slug}/${variant.slug}`}
-                          className="block px-4 py-3 hover:bg-[#333] transition"
-                        >
-                          <h3 className="font-semibold text-green-300 text-base mb-1">
-                            {variant.name}
-                          </h3>
-                          <p className="text-gray-400 text-sm leading-relaxed">
-                            {variant.description}
-                          </p>
-                        </Link>
-                      ))}
-                    </div>
-                  </details>
-                );
-              })}
-            </section>
-          ))}
+              return (
+                <details
+                  key={type}
+                  className="mb-6 bg-[#222] border border-gray-700 rounded-lg overflow-hidden"
+                  open
+                >
+                  <summary className="cursor-pointer select-none px-4 py-3 text-lg font-semibold bg-[#2a2a2a] hover:bg-[#333] transition flex justify-between items-center">
+                    <span className={accentColor}>{type}s</span>
+                    <span className="text-gray-400 text-sm">
+                      {variantsOfType.length}
+                    </span>
+                  </summary>
+                  <div className="divide-y divide-gray-700">
+                    {variantsOfType.map((variant) => (
+                      <Link
+                        key={variant.slug}
+                        href={`/${domain}/${country}/${slug}/${variant.slug}`}
+                        className="block px-4 py-3 hover:bg-[#333] transition"
+                      >
+                        <h3 className="font-semibold text-yellow-300 text-base mb-1">
+                          {variant.name}
+                        </h3>
+                        <p className="text-gray-400 text-sm leading-relaxed">
+                          {variant.description}
+                        </p>
+                      </Link>
+                    ))}
+                  </div>
+                </details>
+              );
+            })}
+          </section>
+        )}
 
         {/* Navigation back */}
         <div className="border-t border-gray-700 pt-8 flex gap-4 flex-wrap justify-center">
@@ -176,7 +185,7 @@ export default function FamilyPage({ params: rawParams }) {
             Home
           </Link>
         </div>
-      </article>
+      </div>
     </main>
   );
 }
