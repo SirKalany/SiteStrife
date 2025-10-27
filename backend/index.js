@@ -12,6 +12,8 @@ const rootDir = path.resolve(__dirname);
 const app = express();
 app.use(cors());
 
+app.use("/images", express.static(path.join(rootDir, "images")));
+
 // Cache simple pour améliorer les performances
 const cache = new Map();
 const getCachedData = async (key, filePath) => {
@@ -38,7 +40,9 @@ app.get("/countries", (req, res) => {
       .map((c) => c.toLowerCase());
     res.json(countries);
   } catch (err) {
-    res.status(500).json({ error: "Impossible de lire les pays", details: err.message });
+    res
+      .status(500)
+      .json({ error: "Impossible de lire les pays", details: err.message });
   }
 });
 
@@ -51,24 +55,43 @@ app.get("/countries/:country/domains", (req, res) => {
 
     const domains = fs
       .readdirSync(familyPath)
-      .filter(f => f.endsWith(".json"))
-      .map(f => f.replace(".json", ""));
+      .filter((f) => f.endsWith(".json"))
+      .map((f) => f.replace(".json", ""));
     res.json(domains);
   } catch (err) {
-    res.status(500).json({ error: `Impossible de lire les domaines pour ${country}`, details: err.message });
+    res
+      .status(500)
+      .json({
+        error: `Impossible de lire les domaines pour ${country}`,
+        details: err.message,
+      });
   }
 });
 
 // Liste des familles pour un domaine
 app.get("/countries/:country/:domain/families", async (req, res) => {
   const { country, domain } = req.params;
-  const filePath = path.join(rootDir, "data", country, "family", `${domain}.json`);
+  const filePath = path.join(
+    rootDir,
+    "data",
+    country,
+    "family",
+    `${domain}.json`
+  );
 
   try {
-    const families = await getCachedData(`families_${country}_${domain}`, filePath);
+    const families = await getCachedData(
+      `families_${country}_${domain}`,
+      filePath
+    );
     res.json(families);
   } catch (err) {
-    res.status(404).json({ error: `Aucune famille trouvée pour ${country}/${domain}`, details: err.message });
+    res
+      .status(404)
+      .json({
+        error: `Aucune famille trouvée pour ${country}/${domain}`,
+        details: err.message,
+      });
   }
 });
 
@@ -76,23 +99,46 @@ app.get("/countries/:country/:domain/families", async (req, res) => {
 app.get("/countries/:country/:domain/:family", async (req, res) => {
   const { country, domain, family } = req.params;
 
-  const familyPath = path.join(rootDir, "content", country, "family", domain, `${family}.json`);
+  const familyPath = path.join(
+    rootDir,
+    "content",
+    country,
+    "family",
+    domain,
+    `${family}.json`
+  );
   try {
-    const familyData = await getCachedData(`family_${country}_${domain}_${family}`, familyPath);
+    const familyData = await getCachedData(
+      `family_${country}_${domain}_${family}`,
+      familyPath
+    );
 
     // Charger les modèles liés
-    const modelsDir = path.join(rootDir, "data", country, "models", domain, family);
+    const modelsDir = path.join(
+      rootDir,
+      "data",
+      country,
+      "models",
+      domain,
+      family
+    );
     let models = [];
     if (fs.existsSync(modelsDir)) {
-      models = fs.readdirSync(modelsDir)
-        .filter(f => f.endsWith(".json"))
-        .map(f => f.replace(".json", ""));
+      models = fs
+        .readdirSync(modelsDir)
+        .filter((f) => f.endsWith(".json"))
+        .map((f) => f.replace(".json", ""));
     }
     familyData.models = models;
 
     res.json(familyData);
   } catch (err) {
-    res.status(404).json({ error: `Famille ${country}/${domain}/${family} introuvable`, details: err.message });
+    res
+      .status(404)
+      .json({
+        error: `Famille ${country}/${domain}/${family} introuvable`,
+        details: err.message,
+      });
   }
 });
 
@@ -100,14 +146,35 @@ app.get("/countries/:country/:domain/:family", async (req, res) => {
 app.get("/countries/:country/:domain/:family/:model", async (req, res) => {
   const { country, domain, family, model } = req.params;
 
-  const modelPath = path.join(rootDir, "content", country, "models", domain, family, `${model}.json`);
+  const modelPath = path.join(
+    rootDir,
+    "content",
+    country,
+    "models",
+    domain,
+    family,
+    `${model}.json`
+  );
   try {
-    const modelData = await getCachedData(`model_${country}_${domain}_${family}_${model}`, modelPath);
+    const modelData = await getCachedData(
+      `model_${country}_${domain}_${family}_${model}`,
+      modelPath
+    );
 
     // Ajouter la famille parente
-    const parentFamilyPath = path.join(rootDir, "content", country, "family", domain, `${family}.json`);
+    const parentFamilyPath = path.join(
+      rootDir,
+      "content",
+      country,
+      "family",
+      domain,
+      `${family}.json`
+    );
     try {
-      const familyData = await getCachedData(`family_${country}_${domain}_${family}`, parentFamilyPath);
+      const familyData = await getCachedData(
+        `family_${country}_${domain}_${family}`,
+        parentFamilyPath
+      );
       modelData.familyData = familyData;
     } catch {
       // Pas grave si la famille n'existe pas
@@ -115,7 +182,12 @@ app.get("/countries/:country/:domain/:family/:model", async (req, res) => {
 
     res.json(modelData);
   } catch (err) {
-    res.status(404).json({ error: `Modèle ${country}/${domain}/${family}/${model} introuvable`, details: err.message });
+    res
+      .status(404)
+      .json({
+        error: `Modèle ${country}/${domain}/${family}/${model} introuvable`,
+        details: err.message,
+      });
   }
 });
 
@@ -139,12 +211,14 @@ app.get("/stats", (req, res) => {
 
     const domainCounts = {};
 
-    countries.forEach(country => {
+    countries.forEach((country) => {
       const familyDir = path.join(rootDir, "data", country, "family");
       if (!fs.existsSync(familyDir)) return;
 
-      const domains = fs.readdirSync(familyDir).map(f => f.replace(".json", ""));
-      domains.forEach(domain => {
+      const domains = fs
+        .readdirSync(familyDir)
+        .map((f) => f.replace(".json", ""));
+      domains.forEach((domain) => {
         if (!domainCounts[domain]) {
           domainCounts[domain] = { families: 0, models: 0 };
         }
@@ -160,9 +234,13 @@ app.get("/stats", (req, res) => {
         // Modèles
         const modelsDir = path.join(rootDir, "data", country, "models", domain);
         if (fs.existsSync(modelsDir)) {
-          const familiesDirs = fs.readdirSync(modelsDir).filter(f => fs.lstatSync(path.join(modelsDir, f)).isDirectory());
-          familiesDirs.forEach(family => {
-            const familyModels = fs.readdirSync(path.join(modelsDir, family)).filter(f => f.endsWith(".json"));
+          const familiesDirs = fs
+            .readdirSync(modelsDir)
+            .filter((f) => fs.lstatSync(path.join(modelsDir, f)).isDirectory());
+          familiesDirs.forEach((family) => {
+            const familyModels = fs
+              .readdirSync(path.join(modelsDir, family))
+              .filter((f) => f.endsWith(".json"));
             domainCounts[domain].models += familyModels.length;
             stats.totalModels += familyModels.length;
           });
@@ -170,7 +248,7 @@ app.get("/stats", (req, res) => {
       });
     });
 
-    stats.domains = Object.keys(domainCounts).map(domain => ({
+    stats.domains = Object.keys(domainCounts).map((domain) => ({
       name: domain,
       families: domainCounts[domain].families,
       models: domainCounts[domain].models,
@@ -178,7 +256,9 @@ app.get("/stats", (req, res) => {
 
     res.json(stats);
   } catch (err) {
-    res.status(500).json({ error: "Erreur lors du calcul des stats", details: err.message });
+    res
+      .status(500)
+      .json({ error: "Erreur lors du calcul des stats", details: err.message });
   }
 });
 
@@ -207,7 +287,9 @@ app.get("/search", async (req, res) => {
       for (const domain of familyDomains) {
         const domainPath = path.join(countryPath, "family", domain);
 
-        const familyFiles = fs.readdirSync(domainPath).filter(f => f.endsWith(".json"));
+        const familyFiles = fs
+          .readdirSync(domainPath)
+          .filter((f) => f.endsWith(".json"));
         for (const file of familyFiles) {
           const slug = file.replace(".json", "");
           const filePath = path.join(domainPath, file);
@@ -239,13 +321,15 @@ app.get("/search", async (req, res) => {
       for (const domain of modelDomains) {
         const domainPath = path.join(modelsDomainsPath, domain);
 
-        const families = fs.readdirSync(domainPath).filter(f =>
-          fs.lstatSync(path.join(domainPath, f)).isDirectory()
-        );
+        const families = fs
+          .readdirSync(domainPath)
+          .filter((f) => fs.lstatSync(path.join(domainPath, f)).isDirectory());
 
         for (const family of families) {
           const familyPath = path.join(domainPath, family);
-          const modelFiles = fs.readdirSync(familyPath).filter(f => f.endsWith(".json"));
+          const modelFiles = fs
+            .readdirSync(familyPath)
+            .filter((f) => f.endsWith(".json"));
 
           for (const file of modelFiles) {
             const slug = file.replace(".json", "");
@@ -275,10 +359,11 @@ app.get("/search", async (req, res) => {
 
     res.json(results);
   } catch (err) {
-    res.status(500).json({ error: "Erreur lors de la recherche", details: err.message });
+    res
+      .status(500)
+      .json({ error: "Erreur lors de la recherche", details: err.message });
   }
 });
-
 
 // ----------------------
 //  SERVER START

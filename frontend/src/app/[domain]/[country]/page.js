@@ -3,6 +3,7 @@
 import { use } from "react";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Breadcrumb from "@/components/breadcrumb";
 
 export default function CountryPage({ params }) {
   const { domain, country } = use(params); // ✅ unwrap params
@@ -62,6 +63,7 @@ export default function CountryPage({ params }) {
   return (
     <main className="min-h-screen bg-[#1b1b1b] text-white px-4 md:px-10 py-12">
       <div className="text-center mb-12">
+        <Breadcrumb domain={domain} country={country} />
         <h1 className="text-4xl font-bold mb-4 text-green-400 capitalize">
           {country} - {domain} Families
         </h1>
@@ -93,7 +95,7 @@ export default function CountryPage({ params }) {
                 <p className="text-gray-400 mb-4">{family.type}</p>
                 {family.picture && (
                   <img
-                    src={family.picture}
+                    src={`http://localhost:4000${family.picture}`}
                     alt={family.name}
                     className="w-full h-40 object-cover rounded mb-3"
                   />

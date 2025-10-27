@@ -3,6 +3,7 @@
 import { use } from "react";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Breadcrumb from "@/components/breadcrumb";
 
 export default function DomainPage({ params }) {
   const { domain } = use(params);
@@ -24,7 +25,7 @@ export default function DomainPage({ params }) {
 
         const countriesWithContent = [];
 
-        // ⚡ Vérifier pour chaque pays si le domaine existe
+        // Vérifier pour chaque pays si le domaine existe
         for (const country of allCountries) {
           try {
             const res = await fetch(
@@ -109,6 +110,7 @@ export default function DomainPage({ params }) {
   return (
     <main className="min-h-screen bg-[#1b1b1b] text-white px-4 py-10">
       {/* En-tête */}
+      <Breadcrumb domain={domain} />
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold mb-4 text-green-400 capitalize">
           {decodeURIComponent(domain)} Armament
@@ -192,7 +194,7 @@ export default function DomainPage({ params }) {
         </>
       )}
 
-      {/* Navigation retour (UN SEUL bouton) */}
+      {/* Navigation retour */}
       <div className="text-center mt-12">
         <Link
           href="/"
