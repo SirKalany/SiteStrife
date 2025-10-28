@@ -16,7 +16,7 @@ export default function ContentHeader({ content, domain, country }) {
           modelTitle={content.name} // model name (displayed as last breadcrumb)
         />
 
-        <h1 className="text-4xl md:text-5xl font-bold text-green-400">
+        <h1 className="text-4xl md:text-5xl font-bold text-yellow-500">
           {content.name}
         </h1>
       </header>

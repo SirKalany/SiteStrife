@@ -13,7 +13,7 @@ export default function Breadcrumb({
   return (
     <nav className="flex items-center space-x-2 text-sm text-gray-400 mb-6">
       {/* Home */}
-      <Link href="/" className="hover:text-green-400 transition">
+      <Link href="/" className="hover:text-yellow-500 transition">
         Home
       </Link>
 
@@ -24,12 +24,12 @@ export default function Breadcrumb({
           {country || family || model ? (
             <Link
               href={`/${encodeURIComponent(domain)}`}
-              className="hover:text-green-400 transition capitalize"
+              className="hover:text-yellow-500 transition capitalize"
             >
               {decodeURIComponent(domain)}
             </Link>
           ) : (
-            <span className="text-green-400 capitalize">
+            <span className="text-yellow-500 capitalize">
               {decodeURIComponent(domain)}
             </span>
           )}
@@ -45,12 +45,12 @@ export default function Breadcrumb({
               href={`/${encodeURIComponent(domain)}/${encodeURIComponent(
                 country
               )}`}
-              className="hover:text-green-400 transition capitalize"
+              className="hover:text-yellow-500 transition capitalize"
             >
               {decodeURIComponent(country)}
             </Link>
           ) : (
-            <span className="text-green-400 capitalize">
+            <span className="text-yellow-500 capitalize">
               {decodeURIComponent(country)}
             </span>
           )}
@@ -66,12 +66,12 @@ export default function Breadcrumb({
               href={`/${encodeURIComponent(domain)}/${encodeURIComponent(
                 country
               )}/${encodeURIComponent(family)}`}
-              className="hover:text-green-400 transition"
+              className="hover:text-yellow-500 transition"
             >
               {familyTitle || decodeURIComponent(family)}
             </Link>
           ) : (
-            <span className="text-green-400">
+            <span className="text-yellow-500">
               {familyTitle || decodeURIComponent(family)}
             </span>
           )}
@@ -82,7 +82,7 @@ export default function Breadcrumb({
       {modelTitle && (
         <>
           <span>/</span>
-          <span className="text-green-400">{modelTitle}</span>
+          <span className="text-yellow-500">{modelTitle}</span>
         </>
       )}
     </nav>

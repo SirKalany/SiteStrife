@@ -13,6 +13,13 @@ export default function FamilyPage({ params: rawParams }) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  // State pour gérer l'ouverture des sections variantes
+  const [openSections, setOpenSections] = useState({
+    Model: false,
+    Prototype: false,
+    Modification: false,
+  });
+
   useEffect(() => {
     async function fetchData() {
       try {
@@ -40,29 +47,30 @@ export default function FamilyPage({ params: rawParams }) {
     fetchData();
   }, [country, domain, slug]);
 
-  const accentColor = "text-yellow-400";
-  const accentShadow = "hover:shadow-yellow-400/20";
+  const accentColor = "text-yellow-500";
+  const accentShadow = "hover:shadow-yellow-500/20";
 
   if (loading) {
     return (
-      <main className="min-h-screen bg-[#1b1b1b] text-white flex flex-col items-center justify-center px-4 py-10">
-        <div className="animate-spin h-10 w-10 border-b-2 border-yellow-400 rounded-full mb-4"></div>
-        <p className="text-gray-400">Loading family...</p>
+      <main className="min-h-screen bg-[#1b1b1b] text-white flex flex-col items-center justify-center font-mono">
+        <div className="animate-spin h-10 w-10 border-2 border-yellow-500 border-t-transparent rounded-full mb-4"></div>
+        <p className="text-gray-400 mt-4 uppercase tracking-widest text-sm">
+          Loading family...
+        </p>
       </main>
     );
   }
 
   if (error) {
     return (
-      <main className="min-h-screen bg-[#1b1b1b] text-white flex flex-col items-center justify-center px-4 py-10">
-        <h1 className="text-2xl font-bold text-red-400 mb-4">⚠️ Error</h1>
-        <p className="text-gray-400 mb-6">{error}</p>
-        <Link
-          href={`/${domain}/${country}`}
-          className="px-6 py-2 bg-yellow-400 hover:bg-yellow-500 rounded-lg transition text-black font-semibold"
+      <main className="min-h-screen bg-[#1b1b1b] text-white flex flex-col items-center justify-center px-4 font-mono">
+        <p className="text-red-500 mb-4 font-semibold">{error}</p>
+        <button
+          onClick={() => window.location.reload()}
+          className="px-6 py-2 bg-yellow-500 hover:brightness-110 text-black rounded-sm transition"
         >
-          Back to families
-        </Link>
+          Retry
+        </button>
       </main>
     );
   }
@@ -70,8 +78,8 @@ export default function FamilyPage({ params: rawParams }) {
   if (!content) return null;
 
   return (
-    <main className="min-h-screen bg-[#1b1b1b] text-white px-4 py-10">
-      <div className="max-w-[90%] md:max-w-[90%] lg:max-w-[80%] mx-auto space-y-8">
+    <main className="min-h-screen bg-[#121212] text-white px-6 py-12 tracking-tight">
+      <div className="max-w-[90%] md:max-w-[85%] mx-auto space-y-8">
         {/* Breadcrumb */}
         <Breadcrumb
           domain={domain}
@@ -81,8 +89,10 @@ export default function FamilyPage({ params: rawParams }) {
         />
 
         {/* Header */}
-        <header className="text-center space-y-4">
-          <h1 className={`text-4xl md:text-5xl font-bold mb-4 ${accentColor}`}>
+        <header className="text-center mb-12">
+          <h1
+            className={`text-5xl font-extrabold mb-3 ${accentColor} uppercase tracking-[0.2em]`}
+          >
             {content.title}
           </h1>
 
@@ -111,7 +121,7 @@ export default function FamilyPage({ params: rawParams }) {
             <h2
               className={`text-2xl font-semibold ${accentColor} mb-4 flex items-center`}
             >
-              <span className="w-1 h-6 bg-yellow-400 mr-3"></span>
+              <span className="w-1 h-6 bg-yellow-500 mr-3"></span>
               History
             </h2>
             <p className="text-gray-300 whitespace-pre-line leading-relaxed">
@@ -122,11 +132,11 @@ export default function FamilyPage({ params: rawParams }) {
 
         {/* Variants */}
         {content.variants?.length > 0 && (
-          <section className="border-t border-gray-700 pt-6">
+          <section className="border-t border-gray-700 pt-6 space-y-6">
             <h2
               className={`text-2xl font-semibold ${accentColor} mb-4 flex items-center`}
             >
-              <span className="w-1 h-6 bg-yellow-400 mr-3"></span>
+              <span className="w-1 h-6 bg-yellow-500 mr-3"></span>
               Variants
             </h2>
 
@@ -139,8 +149,14 @@ export default function FamilyPage({ params: rawParams }) {
               return (
                 <details
                   key={type}
-                  className="mb-6 bg-[#222] border border-gray-700 rounded-lg overflow-hidden"
-                  open
+                  open={openSections[type]}
+                  onClick={() =>
+                    setOpenSections((prev) => ({
+                      ...prev,
+                      [type]: !prev[type],
+                    }))
+                  }
+                  className="mb-4 bg-[#1e1e1e] border border-gray-700 rounded-sm overflow-hidden"
                 >
                   <summary className="cursor-pointer select-none px-4 py-3 text-lg font-semibold bg-[#2a2a2a] hover:bg-[#333] transition flex justify-between items-center">
                     <span className={accentColor}>{type}s</span>
@@ -153,9 +169,9 @@ export default function FamilyPage({ params: rawParams }) {
                       <Link
                         key={variant.slug}
                         href={`/${domain}/${country}/${slug}/${variant.slug}`}
-                        className="block px-4 py-3 hover:bg-[#333] transition"
+                        className={`block px-4 py-3 hover:bg-[#333] transition`}
                       >
-                        <h3 className="font-semibold text-yellow-300 text-base mb-1">
+                        <h3 className="font-semibold text-yellow-500 text-base mb-1">
                           {variant.name}
                         </h3>
                         <p className="text-gray-400 text-sm leading-relaxed">
@@ -171,18 +187,16 @@ export default function FamilyPage({ params: rawParams }) {
         )}
 
         {/* Navigation back */}
-        <div className="border-t border-gray-700 pt-8 flex gap-4 flex-wrap justify-center">
+        <div className="text-center mt-16">
           <Link
             href={`/${domain}/${country}`}
-            className="px-6 py-3 bg-gray-700 hover:bg-gray-600 rounded text-gray-300 hover:text-white transition"
+            className="inline-flex items-center space-x-2 px-6 py-3 border border-gray-700 hover:border-yellow-500 rounded-sm uppercase text-sm tracking-[0.2em] transition font-mono"
+            style={{
+              clipPath: "polygon(5% 0, 100% 0, 95% 100%, 0% 100%)",
+            }}
           >
-            ← Back to families
-          </Link>
-          <Link
-            href="/"
-            className="px-6 py-3 bg-blue-700 hover:bg-blue-600 rounded text-white transition"
-          >
-            Home
+            <span>←</span>
+            <span>Back to families</span>
           </Link>
         </div>
       </div>

@@ -24,7 +24,7 @@ export default function AirContent({ content, domain, country }) {
         {list.map((a, i) => (
           <div
             key={i}
-            className="p-4 bg-[#181818] rounded border border-gray-700"
+            className="p-4 bg-[#1e1e1e] rounded border border-gray-700"
           >
             <div className="text-sm text-gray-300 font-semibold mb-3">
               {a.Name || `${title.slice(0, -1)} ${i + 1}`}
@@ -118,23 +118,36 @@ export default function AirContent({ content, domain, country }) {
         <section>
           <SectionTitle>AVIONICS</SectionTitle>
           <div className="space-y-4">
-            {avionics.map((a, i) => (
-              <div
-                key={i}
-                className="p-4 bg-[#181818] rounded border border-gray-700"
-              >
-                <div className="text-sm text-gray-300 font-semibold mb-3">
-                  {a.Name || `Avionic ${i + 1}`}
+            {avionics.map((a, i) => {
+              const entries = Object.entries(a).filter(
+                ([_, v]) => v && v !== ""
+              );
+              const lastIndex = entries.length - 1;
+              return (
+                <div
+                  key={i}
+                  className="p-4 bg-[#1e1e1e] rounded border border-gray-700"
+                >
+                  <div className="text-sm text-gray-300 font-semibold mb-3">
+                    {a.Name || `Avionic ${i + 1}`}
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    {entries.map(([k, v], idx) => {
+                      const isLastOdd =
+                        entries.length % 2 === 1 && idx === lastIndex;
+                      return (
+                        <div
+                          key={k}
+                          className={isLastOdd ? "md:col-span-2" : ""}
+                        >
+                          <InfoRow label={k} value={v} />
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  {Object.entries(a)
-                    .filter(([_, v]) => v && v !== "")
-                    .map(([k, v]) => (
-                      <InfoRow key={k} label={k} value={v} />
-                    ))}
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
       )}
@@ -154,7 +167,7 @@ export default function AirContent({ content, domain, country }) {
       {/* SERVICE */}
       {content.service && (
         <section className="border-t border-gray-700 pt-6">
-          <h2 className="text-2xl font-semibold text-green-300 mb-4">
+          <h2 className="text-2xl font-semibold text-yellow-500 mb-4">
             Service History
           </h2>
           <div className="prose prose-invert max-w-none">
@@ -169,34 +182,39 @@ export default function AirContent({ content, domain, country }) {
       {users.length > 0 && (
         <section>
           <SectionTitle>USERS</SectionTitle>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            {users.map((user, index) => (
-              <InfoRow
-                key={index}
-                label={user.Country}
-                value={user.Description}
-              />
-            ))}
+          <div className="flex flex-col gap-3">
+            {users.map((user, index) => {
+              const isLastOdd =
+                users.length % 2 === 1 && index === users.length - 1;
+              return (
+                <div
+                  key={index}
+                  className={`${
+                    isLastOdd ? "w-full" : "w-full md:w-auto"
+                  } p-3 bg-[#1e1e1e] rounded border border-gray-700`}
+                >
+                  <InfoRow label={user.Country} value={user.Description} />
+                </div>
+              );
+            })}
           </div>
         </section>
       )}
 
       {/* NAVIGATION */}
-      <div className="border-t border-gray-700 pt-8 flex flex-wrap gap-4 justify-center">
+      <div className="border-t border-gray-700 pt-8 flex justify-center">
         {content.family && (
           <Link
             href={`/${domain}/${country}/${content.family}`}
-            className="px-6 py-3 bg-green-700 hover:bg-green-600 rounded-lg transition text-white"
+            className="inline-flex items-center space-x-2 px-6 py-3 border border-gray-700 hover:border-yellow-500 rounded-sm uppercase text-sm tracking-[0.2em] transition font-mono"
+            style={{
+              clipPath: "polygon(5% 0, 100% 0, 95% 100%, 0% 100%)",
+            }}
           >
-            ← Back to family
+            <span>←</span>
+            <span>Back to family</span>
           </Link>
         )}
-        <Link
-          href="/"
-          className="px-6 py-3 bg-blue-700 hover:bg-blue-600 rounded-lg transition text-white"
-        >
-          Home
-        </Link>
       </div>
     </article>
   );

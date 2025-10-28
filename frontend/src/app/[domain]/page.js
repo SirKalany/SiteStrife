@@ -70,144 +70,156 @@ export default function DomainPage({ params }) {
     fetchCountriesWithDomain();
   }, [domain]);
 
-  const accentColor = "text-yellow-400";
-  const accentBg = "bg-yellow-400";
-  const accentHover = "hover:text-yellow-300";
-  const accentShadow = "hover:shadow-yellow-400/20";
+  // Colors
+  const accentColor = "text-yellow-500";
+  const accentBg = "bg-yellow-500";
 
+  // Loader
   if (loading) {
     return (
-      <main className="min-h-screen bg-[#1b1b1b] text-white px-4 py-10 flex flex-col items-center">
-        <h1
-          className={`text-3xl font-semibold mb-8 ${accentColor} capitalize text-center`}
-        >
-          {decodeURIComponent(domain)}
-        </h1>
-        <div className="flex flex-col items-center space-y-4 mt-16">
-          <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-yellow-400"></div>
-          <p className="text-gray-400">Loading countries...</p>
-        </div>
+      <main className="min-h-screen bg-[#1b1b1b] text-white flex flex-col items-center justify-center font-mono">
+        <div className="animate-spin rounded-full h-10 w-10 border-2 border-yellow-500 border-t-transparent mb-4"></div>
+        <p className="text-gray-400 uppercase tracking-widest text-sm">
+          Loading tactical data...
+        </p>
       </main>
     );
   }
 
+  // Error
   if (error) {
     return (
-      <main className="min-h-screen bg-[#1b1b1b] text-white px-4 py-10 flex flex-col items-center">
-        <h1
-          className={`text-3xl font-semibold mb-8 ${accentColor} capitalize text-center`}
-        >
+      <main className="min-h-screen bg-[#1b1b1b] text-white px-4 py-10 flex flex-col items-center justify-center font-mono">
+        <h1 className={`text-3xl font-bold mb-6 ${accentColor} uppercase`}>
           {decodeURIComponent(domain)}
         </h1>
-        <div className="text-center mt-16 max-w-2xl mx-auto px-4">
-          <p className="text-red-400 mb-4">⚠️ Erreur de chargement</p>
-          <p className="text-gray-400 mb-6">{error}</p>
-          <button
-            onClick={() => window.location.reload()}
-            className="px-6 py-2 bg-yellow-400 hover:bg-yellow-500 rounded-lg transition text-black font-semibold"
-          >
-            Réessayer
-          </button>
-        </div>
+        <p className="text-red-500 mb-4 font-semibold">
+          ⚠ System failure: Data Unavailable
+        </p>
+        <p className="text-gray-400 mb-6">{error}</p>
+        <button
+          onClick={() => window.location.reload()}
+          className={`px-6 py-2 ${accentBg} text-black rounded-sm hover:brightness-110 transition`}
+        >
+          Retry
+        </button>
       </main>
     );
   }
 
   return (
-    <main className="min-h-screen bg-[#1b1b1b] text-white px-4 py-10">
-      <div className="max-w-[90%] md:max-w-[80%] lg:max-w-[80%] mx-auto">
-        {/* Breadcrumb */}
+    <main className="min-h-screen bg-[#121212] text-white px-6 py-12 tracking-tight">
+      <div className="max-w-[90%] md:max-w-[85%] mx-auto">
         <Breadcrumb domain={domain} />
 
         {/* Header */}
         <div className="text-center mb-12">
           <h1
-            className={`text-4xl md:text-5xl font-bold mb-4 ${accentColor} capitalize`}
+            className={`text-5xl font-extrabold mb-3 ${accentColor} uppercase tracking-[0.2em] transform inline-block`}
           >
-            {decodeURIComponent(domain)} Armament
+            {decodeURIComponent(domain)}
           </h1>
-          <p className="text-gray-300 text-lg">
-            Select a country to explore {decodeURIComponent(domain)} vehicle
-            families
+          <div className="w-28 h-[2px] mx-auto bg-yellow-500 mt-2 skew-x-12" />
+          <p className="mx-auto text-center text-gray-400 text-sm uppercase mt-4 tracking-widest font-mono">
+            Select a nation to review classified assets
           </p>
         </div>
 
+        {/* Stats */}
+        {countries.length > 0 && (
+          <div className="text-center mb-10 text-gray-500 uppercase text-xs tracking-[0.25em] font-mono">
+            {countries.length} countries •{" "}
+            {countries.reduce((t, c) => t + c.familiesCount, 0)} asset families
+          </div>
+        )}
+
+        {/* Grid */}
         {countries.length === 0 ? (
-          <div className="text-center mt-16">
-            <p className="text-gray-400 text-lg">
-              No countries available for {decodeURIComponent(domain)} domain.
-            </p>
+          <div className="text-center mt-16 text-gray-500 uppercase font-mono">
+            No available data for {decodeURIComponent(domain)}.
           </div>
         ) : (
-          <>
-            {/* Stats */}
-            <div className="text-center mb-10">
-              <p className="text-gray-400">
-                {countries.length} countries •{" "}
-                {countries.reduce((t, c) => t + c.familiesCount, 0)} families
-              </p>
-            </div>
-
-            {/* Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-              {countries.map((country) => (
-                <Link
-                  key={country.name}
-                  href={`/${encodeURIComponent(domain)}/${encodeURIComponent(
-                    country.name
-                  )}`}
-                  className="group block"
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-8">
+            {countries.map((country) => (
+              <Link
+                key={country.name}
+                href={`/${encodeURIComponent(domain)}/${encodeURIComponent(
+                  country.name
+                )}`}
+                className="group block"
+              >
+                {/* Container incliné */}
+                <div
+                  className="relative overflow-hidden bg-[#1e1e1e] border border-gray-700 rounded-sm transition-all duration-200 hover:border-yellow-500/80 hover:shadow-[0_0_15px_#c9b45840]"
+                  style={{
+                    clipPath: "polygon(6% 0, 100% 0, 94% 100%, 0% 100%)",
+                  }}
                 >
-                  <div
-                    className={`bg-[#2a2a2a] border border-gray-600 rounded-lg p-6 h-full hover:bg-[#333] hover:border-yellow-400 transition-all duration-200 ${accentShadow}`}
-                  >
+                  {/* Wrapper pour compenser le skew */}
+                  <div className="p-6 transform -skew-x-4">
+                    {/* Bande supérieure */}
+                    <div className="absolute top-0 left-0 w-full h-[2px] bg-yellow-500/40 skew-x-12" />
+
+                    {/* Nom du pays */}
                     <h3
-                      className={`text-xl font-bold mb-3 ${accentColor} group-hover:text-yellow-300`}
+                      className={`text-xl font-bold mb-2 ${accentColor} group-hover:text-yellow-400 transform skew-x-4`}
                     >
                       {country.displayName}
                     </h3>
-                    <p className="text-gray-400 mb-4">
+
+                    {/* Nombre de familles */}
+                    <p className="text-gray-400 mb-3 text-sm font-mono transform skew-x-4">
                       {country.familiesCount} famille
                       {country.familiesCount > 1 ? "s" : ""}
                     </p>
-                    <div className="space-y-2">
-                      <p className="text-xs text-gray-500 uppercase tracking-wide">
-                        Exemples :
+
+                    {/* Preview des familles */}
+                    <div className="space-y-1 text-sm">
+                      <p className="text-[#808080] uppercase text-xs mb-1 tracking-wide font-mono transform skew-x-4">
+                        Sample assets:
                       </p>
                       {country.preview.map((family, idx) => (
-                        <div key={idx} className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-yellow-400 rounded-full opacity-60"></div>
-                          <span className="text-sm text-gray-300 truncate">
+                        <div
+                          key={idx}
+                          className="flex items-center space-x-2 transform skew-x-4"
+                        >
+                          <div className="w-2 h-2 bg-yellow-500 rounded-sm opacity-70"></div>
+                          <span className="text-gray-300 truncate">
                             {family.name}
                           </span>
-                          <span className="text-xs text-gray-500">
+                          <span className="text-gray-500 text-xs font-mono">
                             ({family.type})
                           </span>
                         </div>
                       ))}
                       {country.familiesCount > 3 && (
-                        <p className="text-xs text-gray-500 italic">
-                          +{country.familiesCount - 3} autres...
+                        <p className="text-xs text-gray-500 italic font-mono transform skew-x-4">
+                          +{country.familiesCount - 3} more...
                         </p>
                       )}
                     </div>
-                    <div className="mt-4 pt-4 border-t border-gray-600 group-hover:border-yellow-400 transition-colors">
-                      <p className="text-sm text-gray-400 group-hover:text-yellow-400 transition-colors">
-                        Explore →
+
+                    {/* Bas de carte */}
+                    <div className="mt-4 pt-3 border-t border-gray-700 group-hover:border-yellow-500/60 transition transform skew-x-4">
+                      <p className="text-xs uppercase tracking-wide text-gray-400 group-hover:text-yellow-500 transition font-mono">
+                        Access dossier →
                       </p>
                     </div>
                   </div>
-                </Link>
-              ))}
-            </div>
-          </>
+                </div>
+              </Link>
+            ))}
+          </div>
         )}
 
-        {/* Back navigation */}
-        <div className="text-center mt-12">
+        {/* Back */}
+        <div className="text-center mt-16">
           <Link
             href="/"
-            className="inline-flex items-center space-x-2 px-6 py-3 bg-gray-700 hover:bg-gray-600 rounded-lg transition text-gray-300 hover:text-white"
+            className="inline-flex items-center space-x-2 px-6 py-3 border border-gray-700 hover:border-yellow-500 rounded-sm uppercase text-sm tracking-[0.2em] transition font-mono"
+            style={{
+              clipPath: "polygon(5% 0, 100% 0, 95% 100%, 0% 100%)",
+            }}
           >
             <span>←</span>
             <span>Back to all domains</span>

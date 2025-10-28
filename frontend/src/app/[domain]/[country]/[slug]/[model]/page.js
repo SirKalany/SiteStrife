@@ -105,7 +105,7 @@ export default function ModelPage({ params: paramsPromise }) {
   };
 
   return (
-    <main className="min-h-screen bg-[#1b1b1b] text-white px-4 py-10">
+    <main className="min-h-screen bg-[#121212] text-white px-4 py-10">
       <div className="max-w-[90%] md:max-w-[70%] lg:max-w-[80%] mx-auto">
         {renderContent()}
       </div>
