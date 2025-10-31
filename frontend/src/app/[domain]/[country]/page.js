@@ -9,6 +9,8 @@ export default function CountryPage({ params }) {
   const { domain, country } = use(params);
 
   const [families, setFamilies] = useState([]);
+  const [filteredFamilies, setFilteredFamilies] = useState([]);
+  const [filter, setFilter] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -27,7 +29,14 @@ export default function CountryPage({ params }) {
         if (!res.ok) throw new Error("Impossible de charger les familles");
 
         const data = await res.json();
-        setFamilies(data);
+
+        // Tri alphabétique dès réception
+        const sorted = data.sort((a, b) =>
+          a.name.localeCompare(b.name, "en", { sensitivity: "base" })
+        );
+
+        setFamilies(sorted);
+        setFilteredFamilies(sorted);
       } catch (err) {
         console.error("Erreur lors du chargement :", err);
         setError(err.message);
@@ -38,6 +47,14 @@ export default function CountryPage({ params }) {
 
     fetchFamilies();
   }, [country, domain]);
+
+  // Filtrage dynamique
+  useEffect(() => {
+    const result = families.filter((family) =>
+      family.name.toLowerCase().includes(filter.toLowerCase())
+    );
+    setFilteredFamilies(result);
+  }, [filter, families]);
 
   const accentColor = "text-yellow-500";
   const accentShadow = "hover:shadow-yellow-500/20";
@@ -81,15 +98,26 @@ export default function CountryPage({ params }) {
           <p className="mx-auto text-center text-gray-400 text-sm uppercase mt-4 tracking-widest font-mono">
             Select a family to explore {domain} vehicles
           </p>
+
+          {/* Champ de filtre */}
+          <div className="mt-8 flex justify-center">
+            <input
+              type="text"
+              placeholder="Filter by name..."
+              value={filter}
+              onChange={(e) => setFilter(e.target.value)}
+              className="bg-[#1b1b1b] border border-gray-700 text-gray-200 px-4 py-2 font-mono text-sm tracking-widest focus:outline-none focus:border-yellow-500 transition w-64 text-center"
+            />
+          </div>
         </div>
 
-        {families.length === 0 ? (
+        {filteredFamilies.length === 0 ? (
           <div className="text-center mt-16 text-gray-500 uppercase font-mono">
-            No families available for {country} in the {domain} domain.
+            No families match your search.
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {families.map((family) => (
+            {filteredFamilies.map((family) => (
               <Link
                 key={family.slug || family.id}
                 href={`/${encodeURIComponent(domain)}/${encodeURIComponent(
@@ -106,22 +134,18 @@ export default function CountryPage({ params }) {
                 >
                   {/* Wrapper pour compenser le skew */}
                   <div className="p-6 transform -skew-x-4">
-                    {/* Bande supérieure */}
                     <div className="absolute top-0 left-0 w-full h-[2px] bg-yellow-500/40 skew-x-12" />
 
-                    {/* Nom de la famille */}
                     <h3
                       className={`text-xl font-bold mb-2 ${accentColor} group-hover:text-yellow-500 transform skew-x-4`}
                     >
                       {family.name}
                     </h3>
 
-                    {/* Type */}
                     <p className="text-gray-400 mb-3 text-sm font-mono transform skew-x-4">
                       {family.type}
                     </p>
 
-                    {/* Image */}
                     {family.picture && (
                       <div className="overflow-hidden rounded mb-3 transform skew-x-1">
                         <img
@@ -132,14 +156,12 @@ export default function CountryPage({ params }) {
                       </div>
                     )}
 
-                    {/* Caption */}
                     {family.caption && (
                       <p className="text-gray-300 text-sm truncate transform skew-x-4">
                         {family.caption}
                       </p>
                     )}
 
-                    {/* Bas de carte */}
                     <div className="mt-4 pt-3 border-t border-gray-700 group-hover:border-yellow-500/60 transition transform skew-x-4">
                       <p className="text-xs uppercase tracking-wide text-gray-400 group-hover:text-yellow-500 transition font-mono">
                         Access dossier →

@@ -9,6 +9,8 @@ export default function DomainPage({ params }) {
   const { domain } = use(params);
 
   const [countries, setCountries] = useState([]);
+  const [filtered, setFiltered] = useState([]);
+  const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -58,7 +60,13 @@ export default function DomainPage({ params }) {
           }
         }
 
-        setCountries(countriesWithContent);
+        // Tri alphabétique
+        const sorted = countriesWithContent.sort((a, b) =>
+          a.displayName.localeCompare(b.displayName)
+        );
+
+        setCountries(sorted);
+        setFiltered(sorted);
       } catch (err) {
         console.error("Erreur lors du chargement:", err);
         setError(err.message);
@@ -70,7 +78,14 @@ export default function DomainPage({ params }) {
     fetchCountriesWithDomain();
   }, [domain]);
 
-  // Colors
+  // Filtrage live
+  useEffect(() => {
+    const query = search.toLowerCase();
+    setFiltered(
+      countries.filter((c) => c.displayName.toLowerCase().includes(query))
+    );
+  }, [search, countries]);
+
   const accentColor = "text-yellow-500";
   const accentBg = "bg-yellow-500";
 
@@ -113,7 +128,7 @@ export default function DomainPage({ params }) {
         <Breadcrumb domain={domain} />
 
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <h1
             className={`text-5xl font-extrabold mb-3 ${accentColor} uppercase tracking-[0.2em] transform inline-block`}
           >
@@ -125,22 +140,33 @@ export default function DomainPage({ params }) {
           </p>
         </div>
 
+        {/* Search bar */}
+        <div className="text-center mb-10">
+          <input
+            type="text"
+            placeholder="Filter by name..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="bg-[#1b1b1b] border border-gray-700 text-gray-200 text-sm px-4 py-2 w-64 rounded-sm focus:outline-none focus:border-yellow-500 font-mono text-center tracking-widest"
+          />
+        </div>
+
         {/* Stats */}
-        {countries.length > 0 && (
+        {filtered.length > 0 && (
           <div className="text-center mb-10 text-gray-500 uppercase text-xs tracking-[0.25em] font-mono">
-            {countries.length} countries •{" "}
-            {countries.reduce((t, c) => t + c.familiesCount, 0)} asset families
+            {filtered.length} countries •{" "}
+            {filtered.reduce((t, c) => t + c.familiesCount, 0)} asset families
           </div>
         )}
 
         {/* Grid */}
-        {countries.length === 0 ? (
+        {filtered.length === 0 ? (
           <div className="text-center mt-16 text-gray-500 uppercase font-mono">
-            No available data for {decodeURIComponent(domain)}.
+            No available data for "{search}".
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-8">
-            {countries.map((country) => (
+            {filtered.map((country) => (
               <Link
                 key={country.name}
                 href={`/${encodeURIComponent(domain)}/${encodeURIComponent(
@@ -148,32 +174,26 @@ export default function DomainPage({ params }) {
                 )}`}
                 className="group block"
               >
-                {/* Container incliné */}
                 <div
                   className="relative overflow-hidden bg-[#1e1e1e] border border-gray-700 rounded-sm transition-all duration-200 hover:border-yellow-500/80 hover:shadow-[0_0_15px_#c9b45840]"
                   style={{
                     clipPath: "polygon(6% 0, 100% 0, 94% 100%, 0% 100%)",
                   }}
                 >
-                  {/* Wrapper pour compenser le skew */}
                   <div className="p-6 transform -skew-x-4">
-                    {/* Bande supérieure */}
                     <div className="absolute top-0 left-0 w-full h-[2px] bg-yellow-500/40 skew-x-12" />
 
-                    {/* Nom du pays */}
                     <h3
                       className={`text-xl font-bold mb-2 ${accentColor} group-hover:text-yellow-400 transform skew-x-4`}
                     >
                       {country.displayName}
                     </h3>
 
-                    {/* Nombre de familles */}
                     <p className="text-gray-400 mb-3 text-sm font-mono transform skew-x-4">
                       {country.familiesCount} famille
                       {country.familiesCount > 1 ? "s" : ""}
                     </p>
 
-                    {/* Preview des familles */}
                     <div className="space-y-1 text-sm">
                       <p className="text-[#808080] uppercase text-xs mb-1 tracking-wide font-mono transform skew-x-4">
                         Sample assets:
@@ -199,7 +219,6 @@ export default function DomainPage({ params }) {
                       )}
                     </div>
 
-                    {/* Bas de carte */}
                     <div className="mt-4 pt-3 border-t border-gray-700 group-hover:border-yellow-500/60 transition transform skew-x-4">
                       <p className="text-xs uppercase tracking-wide text-gray-400 group-hover:text-yellow-500 transition font-mono">
                         Access dossier →
@@ -222,7 +241,7 @@ export default function DomainPage({ params }) {
             }}
           >
             <span>←</span>
-            <span>Back to all domains</span>
+            <span>Back to home</span>
           </Link>
         </div>
       </div>

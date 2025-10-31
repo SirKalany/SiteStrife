@@ -51,7 +51,7 @@ export default function HeavyContent({ content, domain, country }) {
       {/* SERVICE */}
       {service && (
         <section className="border-t border-gray-700 pt-6">
-          <h2 className="text-2xl font-semibold text-green-300 mb-4">
+          <h2 className="text-2xl font-semibold text-yellow-500 mb-4">
             Service History
           </h2>
           <div className="prose prose-invert max-w-none">
@@ -80,18 +80,18 @@ export default function HeavyContent({ content, domain, country }) {
 
       {/* NAVIGATION */}
       <div className="border-t border-gray-700 pt-8 flex flex-wrap gap-4 justify-center">
-        <Link
-          href={`/${domain}/${country}`}
-          className="px-6 py-3 bg-green-700 hover:bg-green-600 rounded-lg transition text-white"
-        >
-          ← Back to {country}
-        </Link>
-        <Link
-          href="/"
-          className="px-6 py-3 bg-blue-700 hover:bg-blue-600 rounded-lg transition text-white"
-        >
-          Home
-        </Link>
+        {content.family && (
+          <Link
+            href={`/${domain}/${country}/${content.family}`}
+            className="inline-flex items-center space-x-2 px-6 py-3 border border-gray-700 hover:border-yellow-500 rounded-sm uppercase text-sm tracking-[0.2em] transition font-mono"
+            style={{
+              clipPath: "polygon(5% 0, 100% 0, 95% 100%, 0% 100%)",
+            }}
+          >
+            <span>←</span>
+            <span>Back to family</span>
+          </Link>
+        )}
       </div>
     </article>
   );
