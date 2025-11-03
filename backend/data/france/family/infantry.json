@@ -1,72 +1,10 @@
 [
   {
     "id": "famas",
-    "name": "FAMAS F1",
-    "slug": "famas-f1",
-    "country": "France",
-    "domain": "Infantry",
-    "type": "assault rifle",
-    "tags": ["lightweight", "versatile", "bullpup"],
-    "picture": "/images/famas.jpg",
-    "author": "Author Name",
-    "date": "2025-06-10",
-    "description": "French assault rifle used by the armed forces since the 1970s.",
-    "content": "famas.json"
-  },
-  {
-    "id": "ak47",
-    "name": "AK-47",
-    "slug": "ak-47",
-    "country": "USSR",
-    "domain": "Infantry",
-    "type": "assault rifle",
-    "tags": ["robust", "reliable", "7.62mm"],
-    "picture": "/images/ak47.jpg",
-    "author": "Author Name",
-    "date": "2025-06-18",
-    "description": "One of the most mass-produced and widely used assault rifles in the world.",
-    "content": "ak47.md"
-  },
-  {
-    "id": "bazooka",
-    "name": "M1 Bazooka",
-    "slug": "m1-bazooka",
-    "country": "United States",
-    "domain": "Infantry",
-    "type": "anti-tank weapon",
-    "tags": ["recoilless", "WWII", "portable"],
-    "picture": "/images/bazooka.jpg",
-    "author": "Author Name",
-    "date": "2025-06-18",
-    "description": "American portable rocket launcher used during World War II.",
-    "content": "bazooka.md"
-  },
-  {
-    "id": "m67grenade",
-    "name": "M67 Grenade",
-    "slug": "grenade-m67",
-    "country": "United States",
-    "domain": "Infantry",
-    "type": "fragmentation grenade",
-    "tags": ["explosive", "manual", "NATO standard"],
-    "picture": "/images/m67.jpg",
-    "author": "Author Name",
-    "date": "2025-06-18",
-    "description": "Standard fragmentation hand grenade used by U.S. forces.",
-    "content": "m67grenade.md"
-  },
-  {
-    "id": "mg42",
-    "name": "MG 42",
-    "slug": "mg-42",
-    "country": "Germany",
-    "domain": "Infantry",
-    "type": "light machine gun",
-    "tags": ["WWII", "high rate of fire", "7.92mm"],
-    "picture": "/images/mg42.jpg",
-    "author": "Author Name",
-    "date": "2025-06-18",
-    "description": "Famous German machine gun known for its extremely high rate of fire.",
-    "content": "mg42.md"
+    "name": "FAMAS",
+    "slug": "famas",
+    "type": "Bullpup Assault Rifle",
+    "picture": "/images/France/family/famas.jpg",
+    "caption": "Primary modern French assault rifle."
   }
 ]
