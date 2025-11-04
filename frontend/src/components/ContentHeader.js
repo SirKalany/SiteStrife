@@ -13,7 +13,7 @@ export default function ContentHeader({ content, domain, country }) {
           family={content.family} // slug of the family
           familyTitle={content.familyData?.title} // display title of the family
           model={content.slug} // model slug (for URL)
-          modelTitle={content.name} // model name (displayed as last breadcrumb)
+          modelTitle={content.name} // model name
         />
 
         <h1 className="text-4xl md:text-5xl font-bold text-yellow-500">
@@ -21,21 +21,19 @@ export default function ContentHeader({ content, domain, country }) {
         </h1>
       </header>
 
-      {/* IMAGE */}
+      {/* MODEL PICTURE */}
       {content.picture && (
-        <div className="relative">
-          <img
-            src={content.picture}
-            alt={content.name}
-            className="w-full h-64 md:h-80 object-cover rounded-lg shadow-lg"
-            onError={(e) => (e.target.style.display = "none")}
-          />
-        </div>
+        <img
+          src={`http://localhost:4000${content.picture}`}
+          alt={content.name}
+          className="w-full h-64 md:h-100 object-cover rounded-lg shadow-lg"
+          onError={(e) => (e.currentTarget.style.display = "none")}
+        />
       )}
 
       {/* DESCRIPTION */}
       {content.description && (
-        <div className="prose prose-invert max-w-none">
+        <div className="prose prose-invert max-w-none mt-6">
           <p className="text-gray-300 text-lg leading-relaxed">
             {content.description}
           </p>
