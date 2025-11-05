@@ -1,17 +1,17 @@
 {
   "kind": "model",
   "family": "su-57",
-  "name": "Suhkoi Su-57",
-  "picture": "/images/Russia/models/su-57/su-57.jpg",
-  "description": "First model of Su-57",
+  "name": "Suhkoi Su-57M",
+  "picture": "/images/Russia/models/su-57/su-57m.jpg",
+  "description": "Modernized Su-57",
   "specifications": {
     "INFORMATIONS": {
-      "Name": "Suhkoi Su-57",
+      "Name": "Suhkoi Su-57M",
       "Type": "Stealth multirole fighter",
       "Manufacturer": "United Aircraft Corporation, Russian Federation",
-      "Design Period": "2002 - 2019",
-      "Manufacturing Period": "2019 - Present",
-      "Service Period": "2020 - Present"
+      "Design Period": "2019 - 2025",
+      "Manufacturing Period": "2025 - Present",
+      "Service Period": "2025 - Present"
     },
     "DIMENSIONS": {
       "Crew": "1",
@@ -128,7 +128,7 @@
       "Countermeasures": "L402 Himalayas, 101KS-O Laser DIRCM"
     },
     "AUTOMOTIVE": {
-      "Powerplant": "2 x Saturn AL-41F1 afterburning turbofan",
+      "Powerplant": "2 x Saturn AL-51F1 afterburning turbofan",
       "Thrust": "88,3 kN dry / 142,2 kN with afterburner",
       "Fuel Type": "Kerosene",
       "Fuel Capacity": "10,300 kg"

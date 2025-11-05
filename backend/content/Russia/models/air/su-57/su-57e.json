@@ -1,12 +1,12 @@
 {
   "kind": "model",
   "family": "su-57",
-  "name": "Suhkoi Su-57",
-  "picture": "/images/Russia/models/su-57/su-57.jpg",
-  "description": "First model of Su-57",
+  "name": "Suhkoi Su-57E",
+  "picture": "/images/Russia/models/su-57/su-57e.jpg",
+  "description": "Export model of Su-57",
   "specifications": {
     "INFORMATIONS": {
-      "Name": "Suhkoi Su-57",
+      "Name": "Suhkoi Su-57E",
       "Type": "Stealth multirole fighter",
       "Manufacturer": "United Aircraft Corporation, Russian Federation",
       "Design Period": "2002 - 2019",
