@@ -59,12 +59,10 @@ app.get("/countries/:country/domains", (req, res) => {
       .map((f) => f.replace(".json", ""));
     res.json(domains);
   } catch (err) {
-    res
-      .status(500)
-      .json({
-        error: `Impossible de lire les domaines pour ${country}`,
-        details: err.message,
-      });
+    res.status(500).json({
+      error: `Impossible de lire les domaines pour ${country}`,
+      details: err.message,
+    });
   }
 });
 
@@ -86,12 +84,10 @@ app.get("/countries/:country/:domain/families", async (req, res) => {
     );
     res.json(families);
   } catch (err) {
-    res
-      .status(404)
-      .json({
-        error: `Aucune famille trouvée pour ${country}/${domain}`,
-        details: err.message,
-      });
+    res.status(404).json({
+      error: `Aucune famille trouvée pour ${country}/${domain}`,
+      details: err.message,
+    });
   }
 });
 
@@ -133,12 +129,10 @@ app.get("/countries/:country/:domain/:family", async (req, res) => {
 
     res.json(familyData);
   } catch (err) {
-    res
-      .status(404)
-      .json({
-        error: `Famille ${country}/${domain}/${family} introuvable`,
-        details: err.message,
-      });
+    res.status(404).json({
+      error: `Famille ${country}/${domain}/${family} introuvable`,
+      details: err.message,
+    });
   }
 });
 
@@ -182,12 +176,10 @@ app.get("/countries/:country/:domain/:family/:model", async (req, res) => {
 
     res.json(modelData);
   } catch (err) {
-    res
-      .status(404)
-      .json({
-        error: `Modèle ${country}/${domain}/${family}/${model} introuvable`,
-        details: err.message,
-      });
+    res.status(404).json({
+      error: `Modèle ${country}/${domain}/${family}/${model} introuvable`,
+      details: err.message,
+    });
   }
 });
 

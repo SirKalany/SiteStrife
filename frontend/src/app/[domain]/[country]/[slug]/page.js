@@ -13,7 +13,7 @@ export default function FamilyPage({ params: rawParams }) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // State pour gérer l'ouverture des sections variantes
+  // State pour les sections variantes
   const [openSections, setOpenSections] = useState({
     Model: false,
     Prototype: false,
@@ -48,7 +48,6 @@ export default function FamilyPage({ params: rawParams }) {
   }, [country, domain, slug]);
 
   const accentColor = "text-yellow-500";
-  const accentShadow = "hover:shadow-yellow-500/20";
 
   if (loading) {
     return (
@@ -96,24 +95,25 @@ export default function FamilyPage({ params: rawParams }) {
             {content.title}
           </h1>
 
-          {/* Family picture */}
-          {content.picture && (
-            <img
-              src={`http://localhost:4000${content.picture}`}
-              alt={content.title}
-              className="w-full h-auto max-w-3xl mx-auto rounded-lg shadow-lg object-cover"
-            />
+          {/* Image */}
+          {content.picture ? (
+            <div className="overflow-hidden rounded mb-8 mx-auto shadow-lg border border-gray-700 max-w-[90%]">
+              <img
+                src={`http://localhost:4000${content.picture}`}
+                alt={content.name || content.title}
+                className="w-full h-80 md:h-[28rem] object-cover object-center"
+                onError={(e) => {
+                  e.currentTarget.style.display = "none";
+                  console.warn("Image introuvable :", content.picture);
+                }}
+              />
+            </div>
+          ) : (
+            <div className="text-gray-500 italic text-center mb-8">
+              No image available.
+            </div>
           )}
         </header>
-
-        {/* Description */}
-        {content.description && (
-          <div className="prose prose-invert max-w-none text-center md:text-left">
-            <p className="text-gray-300 text-lg leading-relaxed">
-              {content.description}
-            </p>
-          </div>
-        )}
 
         {/* History */}
         {content.history && (
@@ -169,7 +169,7 @@ export default function FamilyPage({ params: rawParams }) {
                       <Link
                         key={variant.slug}
                         href={`/${domain}/${country}/${slug}/${variant.slug}`}
-                        className={`block px-4 py-3 hover:bg-[#333] transition`}
+                        className="block px-4 py-3 hover:bg-[#333] transition"
                       >
                         <h3 className="font-semibold text-yellow-500 text-base mb-1">
                           {variant.name}
@@ -186,7 +186,7 @@ export default function FamilyPage({ params: rawParams }) {
           </section>
         )}
 
-        {/* Navigation back */}
+        {/* Back to families */}
         <div className="text-center mt-16">
           <Link
             href={`/${domain}/${country}`}

@@ -2,8 +2,9 @@
   "kind": "model",
   "family": "su-57",
   "name": "Suhkoi Su-57",
-  "picture": "/images/Russia/models/su-57/su-57.jpg",
-  "description": "First model of Su-57",
+  "picture": "/images/Russia/family/su-57.jpg",
+  "description": "First model of Su-57, the fifth-generation stealth multirole fighter designed to replace the MiG-29 and Su-27 in Russian service.",
+  "service": "The Su-57 officially entered service with the Russian Aerospace Forces in late 2020. Initially, a limited number of early production aircraft were deployed to evaluate operational performance, avionics integration, and stealth characteristics. Since 2023, serial production has increased steadily, and the aircraft has been observed participating in training exercises, limited deployments, and combat testing. The Su-57 serves as Russia's primary air superiority and strike platform, combining high maneuverability, low observability, and advanced sensor fusion.",
   "specifications": {
     "INFORMATIONS": {
       "Name": "Suhkoi Su-57",
@@ -15,121 +16,85 @@
     },
     "DIMENSIONS": {
       "Crew": "1",
-      "Length": "20,1 m",
-      "Wingspan": "14,1 m",
-      "Wing Area": "78,8 m²",
-      "Height": "4,6 m",
+      "Length": "20.1 m",
+      "Wingspan": "14.1 m",
+      "Wing Area": "78.8 m²",
+      "Height": "4.6 m",
       "Empty Weight": "18,500 kg",
       "Loaded Weight": "26,700 kg",
-      "Hardpoints": "12 (6 x internel / 6 x external)",
+      "Hardpoints": "12 (6 internal / 6 external)",
       "Max Takeoff Weight": "35,000 kg",
       "Max Hardpoints Weight": "7,500 kg"
     },
-    "INTERNAL ARMAMENT": [
-      {
-        "Name": "Gryazev-Shipunov GSh-30-1",
-        "Ammunition": "150",
-        "Rate Of Fire": "1,500 to 1,800 rpm",
-        "Effective Range": "200 - 1,800 m",
-        "Feed System": "Linked Belt"
-      }
-    ],
-    "AVAILABLE INTERNAL AMMUNITION": [
-      {
-        "Name": "Universal",
-        "Type": "AP-T / HEI / SAPHEI / HEI\t",
-        "Caliber": "30 x 165 mm"
-      },
-      {
-        "Name": "Air-to-air",
-        "Type": "AP-T / HEI / HEI",
-        "Caliber": "30 x 165 mm"
-      },
-      {
-        "Name": "Air-to-ground",
-        "Type": "AP-T / SAPHEI",
-        "Caliber": "30 x 165 mm"
-      }
-    ],
-    "AVAILABLE HARDPOINTS AMMUNITION": [
-      {
-        "Name": "R-77M",
-        "Type": "Air-to-air missile",
-        "Mass": "190 kg"
-      },
-      {
-        "Name": "R-74M2",
-        "Type": "Air-to-air missile",
-        "Mass": "105 kg"
-      },
-      {
-        "Name": "R-37M",
-        "Type": "Air-to-air missile",
-        "Mass": "110 kg"
-      },
-      {
-        "Name": "Kh-38M",
-        "Type": "Air-to-surface missile",
-        "Mass": "520 kg"
-      },
-      {
-        "Name": "Kh-59MK2",
-        "Type": "Air-launched cruise missile",
-        "Mass": "930 kg"
-      },
-      {
-        "Name": "Kh-69",
-        "Type": "Air-launched cruise missile",
-        "Mass": "800 kg"
-      },
-      {
-        "Name": "Kh-35U",
-        "Type": "Cruise anti-ship missile",
-        "Mass": "550 kg"
-      },
-      {
-        "Name": "Kh-31",
-        "Type": "Supersonic anti-ship missile",
-        "Mass": "610 kg"
-      },
-      {
-        "Name": "Kh-58UShKE",
-        "Type": "Air-launched anti-radiation missile",
-        "Mass": "650 kg"
-      },
-      {
-        "Name": "KAB-250LG",
-        "Type": "Laser-guided bomb",
-        "Mass": "265 kg"
-      },
-      {
-        "Name": "KAB-250S",
-        "Type": "Satellite-guided bomb",
-        "Mass": "265 kg"
-      },
-      {
-        "Name": "KAB-500Kr-M",
-        "Type": "TV-guided FNF bomb",
-        "Mass": "520 kg"
-      },
-      {
-        "Name": "KAB-500L",
-        "Type": "Laser-guided bomb",
-        "Mass": "525 kg"
-      },
-      {
-        "Name": "KAB-500S-E",
-        "Type": "Satellite-guided bomb",
-        "Mass": "560 kg"
-      }
-    ],
+    "ARMAMENT": {
+      "Guns": [
+        {
+          "Name": "Gryazev-Shipunov GSh-30-1",
+          "Ammunition": "150 rounds",
+          "Rate Of Fire": "1,500–1,800 rpm",
+          "Effective Range": "200–1,800 m",
+          "Feed System": "Linked Belt",
+          "Caliber": "30×165 mm"
+        }
+      ],
+      "Missiles": [
+        { "Name": "R-77M", "Type": "Air-to-air missile", "Mass": "190 kg" },
+        { "Name": "R-74M2", "Type": "Air-to-air missile", "Mass": "105 kg" },
+        { "Name": "R-37M", "Type": "Air-to-air missile", "Mass": "110 kg" },
+        {
+          "Name": "Kh-38M",
+          "Type": "Air-to-surface missile",
+          "Mass": "520 kg"
+        },
+        {
+          "Name": "Kh-59MK2",
+          "Type": "Air-launched cruise missile",
+          "Mass": "930 kg"
+        },
+        {
+          "Name": "Kh-69",
+          "Type": "Air-launched cruise missile",
+          "Mass": "800 kg"
+        },
+        {
+          "Name": "Kh-35U",
+          "Type": "Cruise anti-ship missile",
+          "Mass": "550 kg"
+        },
+        {
+          "Name": "Kh-31",
+          "Type": "Supersonic anti-ship missile",
+          "Mass": "610 kg"
+        },
+        {
+          "Name": "Kh-58UShKE",
+          "Type": "Anti-radiation missile",
+          "Mass": "650 kg"
+        }
+      ],
+      "Bombs": [
+        { "Name": "KAB-250LG", "Type": "Laser-guided bomb", "Mass": "265 kg" },
+        {
+          "Name": "KAB-250S",
+          "Type": "Satellite-guided bomb",
+          "Mass": "265 kg"
+        },
+        { "Name": "KAB-500Kr-M", "Type": "TV-guided bomb", "Mass": "520 kg" },
+        { "Name": "KAB-500L", "Type": "Laser-guided bomb", "Mass": "525 kg" },
+        {
+          "Name": "KAB-500S-E",
+          "Type": "Satellite-guided bomb",
+          "Mass": "560 kg"
+        }
+      ]
+    },
     "PROTECTION": {
-      "Armor": "N/A",
-      "Countermeasures": "L402 Himalayas, 101KS-O Laser DIRCM"
+      "Armor": "None (composite stealth airframe)",
+      "Countermeasures": "L402 Himalayas ECM suite, 101KS-O Laser DIRCM"
     },
     "AUTOMOTIVE": {
-      "Powerplant": "2 x Saturn AL-41F1 afterburning turbofan",
-      "Thrust": "88,3 kN dry / 142,2 kN with afterburner",
+      "Powerplant": "2 × Saturn AL-41F1 afterburning turbofan",
+      "Thrust": "88.3 kN dry / 142.2 kN with afterburner",
       "Fuel Type": "Kerosene",
       "Fuel Capacity": "10,300 kg"
     },
@@ -137,21 +102,21 @@
       {
         "Name": "Sh-121",
         "Type": "Multifunctional integrated radio electronic system",
-        "Functions": "Radar search, IFF"
+        "Functions": "Radar search, IFF, targeting"
       },
       {
         "Name": "101KS Atoll",
         "Type": "Electro-optical targeting system",
-        "Functions": "RWR, Tracking, Targeting, Thermal Imager, DIRCM"
+        "Functions": "RWR, tracking, targeting, thermal imaging, DIRCM"
       }
     ],
     "PERFORMANCES": {
       "Combat Range": "1,250 km",
-      "Ferry Range": "4,500 km with 2 hardpoint mounted fuel tanks",
-      "Climb Rate": "350 m/min",
+      "Ferry Range": "4,500 km (with 2 external tanks)",
+      "Climb Rate": "350 m/s",
       "Service Ceiling": "20,000 m",
-      "Maximum Speed Sea Level": "1,350 km/h",
-      "Maximum Speed High Altitude": "2,135 km/h"
+      "Maximum Speed (Sea Level)": "1,350 km/h",
+      "Maximum Speed (High Altitude)": "2,135 km/h"
     },
     "USERS": [
       {

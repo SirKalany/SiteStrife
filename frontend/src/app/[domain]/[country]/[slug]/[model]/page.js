@@ -43,8 +43,6 @@ export default function ModelPage({ params: paramsPromise }) {
     fetchData();
   }, [country, domain, slug, model]);
 
-  const accentColor = "text-yellow-400";
-
   if (loading)
     return (
       <main className="min-h-screen bg-[#1b1b1b] text-white flex items-center justify-center px-4 py-10">
@@ -91,11 +89,7 @@ export default function ModelPage({ params: paramsPromise }) {
         );
       case "infantry":
         return (
-          <InfantryContent
-            content={content}
-            domain={domain}
-            country={country}
-          />
+          <InfantryContent content={content} domain={domain} country={country} />
         );
       default:
         return (
