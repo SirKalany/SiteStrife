@@ -2,7 +2,7 @@
   "kind": "model",
   "family": "su-57",
   "name": "Suhkoi Su-57",
-  "picture": "/images/Russia/family/su-57.jpg",
+  "picture": "/images/Russia/models/su-57/su-57.jpg",
   "description": "First model of Su-57, the fifth-generation stealth multirole fighter designed to replace the MiG-29 and Su-27 in Russian service.",
   "service": "The Su-57 officially entered service with the Russian Aerospace Forces in late 2020. Initially, a limited number of early production aircraft were deployed to evaluate operational performance, avionics integration, and stealth characteristics. Since 2023, serial production has increased steadily, and the aircraft has been observed participating in training exercises, limited deployments, and combat testing. The Su-57 serves as Russia's primary air superiority and strike platform, combining high maneuverability, low observability, and advanced sensor fusion.",
   "specifications": {
