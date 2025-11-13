@@ -1,0 +1,15 @@
+{
+  "kind": "family",
+  "title": "Saint-Chamond",
+  "picture": "/images/France/family/saint-chamond.jpg",
+  "description": "The second French tank to enter service during the First World War",
+  "history": "The Saint-Chamond tank family was developed in France during the First World War as part of the French Army’s early efforts to create a heavy breakthrough vehicle. Its origins trace back to 1915, when the Compagnie des forges et aciéries de la marine et d’Homécourt (FAMH), located in Saint-Chamond, Loire, received authorization to produce a domestically designed armoured vehicle. Conceived in parallel with the Schneider CA1, it was intended to deliver heavier firepower and greater range, emphasizing gun capability over mobility.\n\nThe first prototype appeared in 1916, featuring a long, box-like hull designed to house a full-size 75 mm field gun and ammunition supply. The tank’s electric transmission system, designed by Crochat-Colardeau, was technically advanced for the time but complex and prone to overheating. To accommodate the 75 mm gun, the hull had to be extended far beyond the track base, resulting in poor trench-crossing ability and limited off-road performance. Despite these drawbacks, the French Army ordered 400 vehicles, leading to the creation of one of the largest and heaviest tanks of the war.\n\nSeveral production variants appeared between 1917 and 1918. Early models had flat roofs with two cylindrical cupolas and were equipped with the 75 mm TR Saint-Chamond gun. Later production incorporated numerous refinements, including improved ventilation, reworked vision ports, wider tracks, and, in some cases, replacement of the original gun with the 75 mm Mle 1897. Some vehicles were converted into Caisson variants, with the gun removed and the hull repurposed for armoured supply transport. These modifications reflected ongoing attempts to adapt the design to operational realities and extend its usefulness despite its mechanical and mobility limitations.\n\nAlthough ultimately overshadowed by more mobile and efficient tanks such as the Renault FT, the Saint-Chamond family played an important transitional role in the development of French armoured warfare. It demonstrated both the potential and the limitations of mounting heavy artillery on tracked platforms and helped guide future tank design toward more compact, maneuverable, and tactically flexible vehicles.",
+  "variants": [
+    {
+      "slug": "saint-chamond-m1",
+      "type": "Model",
+      "name": "Saint-Chamond (Early)",
+      "description": "First mass-produced version of the Saint-Chamond"
+    }
+  ]
+}

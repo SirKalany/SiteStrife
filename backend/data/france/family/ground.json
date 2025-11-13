@@ -22,5 +22,13 @@
     "type": "Light Tank",
     "picture": "/images/France/family/renaultft.jpg",
     "caption": "Light tank family."
+  },
+  {
+    "id": "saint-chamond",
+    "name": "Saint Chamond",
+    "slug": "saint-chamond",
+    "type": "Heavy Breakthrough Tank",
+    "picture": "/images/France/family/saint-chamond.jpg",
+    "caption": "Early heavy breakthrough tanks."
   }
 ]

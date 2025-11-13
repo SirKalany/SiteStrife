@@ -1,0 +1,88 @@
+{
+  "kind": "model",
+  "family": "saint-chamond",
+  "name": "Saint-Chamond (Early)",
+  "picture": "/images/France/models/saint-chammond/saint-chamond-m1.jpg",
+  "description": "First mass produced version of the Saint-Chamond heavy tank.",
+  "specifications": {
+    "INFORMATIONS": {
+      "Name": "Saint-Chamond (Early)",
+      "Type": "Heavy Breakthrough Tank",
+      "Manufacturer": "Compagnie des forges et aciéries de la marine et d'Homécourt (FAMH)",
+      "Design Period": "1915 - 1917",
+      "Manufacturing Period": "1917 - 1918",
+      "Service Period": "1917 - 1918"
+    },
+    "DIMENSIONS": {
+      "Mass": "23 t",
+      "Crew": "8",
+      "Ground Clearance": "0,41 m",
+      "Ground Pressure": "0.79 kg/cm²",
+      "Length": "7,91 m",
+      "Barrel Overhang": "0,78 m",
+      "Width": "2,67 m",
+      "Height": "2,36 m"
+    },
+    "SENSORS": [],
+    "ARMAMENT": {
+      "Guns": [
+        {
+          "Name": "75 TR Saint Chamond (Mle 1915)",
+          "Vertical Guidance": "-8 / +17°",
+          "Horizontal Guidance": "-5 / +5°",
+          "Caliber": "75 mm",
+          "Reserve": "106 rounds",
+          "Muzzle Velocity": "550 m/s",
+          "Effective Range": "6,500 m",
+          "Feed System": "Breech",
+          "Rate of Fire": "15 - 18 rounds/min",
+          "Type": "Field gun"
+        },
+        {
+          "Name": "4 x Hotchkiss Mle 1914",
+          "Type": "Heavy machine gun",
+          "Caliber": "8x50mmR Lebel",
+          "Muzzle Velocity": "724 m/s",
+          "Rate of Fire": "450 - 600 rounds/min",
+          "Effective Range": "3,800 m",
+          "Feed System": "250-round articulated metal belt",
+          "Reserve": "7000 (1750 x 4) rounds",
+          "Vertical Guidance": "-5 / +5°",
+          "Horizontal Guidance": "39° right / 39° left"
+        }
+      ],
+      "Rockets": [],
+      "Missiles": [],
+      "Others": []
+    },
+    "PROTECTION": {
+      "Armor": "11 mm",
+      "Appliqué Armor": "None",
+      "Passive Protection Devices": "None",
+      "Active Protection Devices": "None"
+    },
+    "AUTOMOTIVE": {
+      "Engine": "4-cylinder Panhard-Levassor",
+      "Horsepower": "90 hp",
+      "Power/Weight Ratio": "3,75 hp/ton",
+      "Transmission": "Crochat-Colardeau electric",
+      "Gearbox": "N/A",
+      "Suspension": "Vertical volute spring",
+      "Fuel Type": "Petrol",
+      "Fuel Capacity": "265 L"
+    },
+    "PERFORMANCES": {
+      "Operational Range": "60 km",
+      "On Road Speed": "8 km/h",
+      "Cross-Country Speed": "4 km/h",
+      "Amphibious": "No"
+    },
+    "USERS": [
+      {
+        "Country": "France",
+        "Description": "Primary operator. France used this model alongside later variants to break through German trenches."
+      }
+    ],
+    "SERVICE": "The early production model of the Saint-Chamond heavy breakthrough tank entered service with the French Army in 1917 and remained in use through 1918. Conceived and built by the Compagnie des forges et aciéries de la marine et d’Homécourt (FAMH) in Saint-Chamond, Loire, the vehicle was the second French armoured fighting vehicle to enter service during the First World War.\\n\\nIn its operational role, the Saint-Chamond was deployed primarily for breakthrough tasks. Its large 75 mm front-mounted field gun allowed it to engage enemy strongpoints, machine-gun nests, and trench systems from a distance, while its four Hotchkiss machine guns provided close-in protection against infantry. However, despite its formidable firepower, the design suffered from poor mobility, particularly when crossing the cratered and mud-choked terrain of the Western Front, many units became bogged down before even reaching combat. Early model protection was also limited, with armour thickness of only 11 mm, leaving it vulnerable to concentrated machine-gun fire and the new German anti-tank rifles. As a result, many early Saint-Chamonds were later converted into Caisson variants, their guns removed and the hulls repurposed as armoured supply carriers.\\n\\nDespite these limitations, the tank saw active service during the major French offensives of 1917–1918, supporting infantry advances and contributing to the early doctrine of armoured warfare. Its design shortcomings, especially its overly long hull, short track run, and inadequate suspension—meant that it was gradually superseded by more mobile vehicles. Yet by 1918, during the war’s final “war of movement” phase and the collapse of German lines, the Saint-Chamond’s long-range 75 mm gun allowed it to continue serving effectively in a direct-fire artillery role, engaging enemy batteries and fortified positions behind the front."
+  }
+}

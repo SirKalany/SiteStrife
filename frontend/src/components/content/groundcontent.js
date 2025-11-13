@@ -14,13 +14,14 @@ export default function GroundContent({ content, domain, country }) {
   const protection = specs["PROTECTION"] || {};
   const automotive = specs["AUTOMOTIVE"] || {};
   const performances = specs["PERFORMANCES"] || {};
-  const users = specs["USERS"] || {};
+  const users = specs["USERS"] || [];
+  const service = specs["SERVICE"] || [];
 
   const renderArmamentCategory = (title, list) => {
     if (!list || list.length === 0) return null;
     return (
       <div className="space-y-4">
-        <h4 className="text-md font-semibold text-blue-400 mb-2">{title}</h4>
+        <h4 className="text-md font-semibold text-yellow-500 mb-2">{title}</h4>
         {list.map((a, i) => (
           <div
             key={i}
@@ -147,16 +148,15 @@ export default function GroundContent({ content, domain, country }) {
       )}
 
       {/* SERVICE */}
-      {content.service && (
+      {service && (
         <section className="border-t border-gray-700 pt-6">
-          <h2 className="text-2xl font-semibold text-yellow-500 mb-4">
+          <h2 className="text-2xl font-semibold text-yellow-500 mb-4 flex items-center">
+            <span className="w-1 h-6 bg-yellow-500 mr-3"></span>
             Service History
           </h2>
-          <div className="prose prose-invert max-w-none">
-            <p className="text-gray-300 whitespace-pre-line leading-relaxed">
-              {content.service}
-            </p>
-          </div>
+          <p className="text-gray-300 whitespace-pre-line leading-relaxed text-justify">
+            {service.replace(/\\n/g, "\n")}
+          </p>
         </section>
       )}
 

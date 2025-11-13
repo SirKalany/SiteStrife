@@ -36,9 +36,7 @@
       }
     ],
     "ARMAMENT": [
-      {
-
-      },
+      {},
       {
         "Category": "Machine Gun",
         "Name": "7.5 mm MAC 31 coaxial MG",
@@ -99,7 +97,21 @@
       "On Road Speed": "60 km/h",
       "Cross-Country Speed": "35 km/h",
       "Amphibious": "No"
-    }
+    },
+    "USERS": [
+      {
+        "Country": "Russian Federation",
+        "Description": "Primary operator. Approximately 22 aircraft in service as of 2025, with an estimated total of 76 to be delivered by 2028. Entered service in 2020."
+      },
+      {
+        "Country": "India",
+        "Description": "Initially a co-developer under the FGFA project, later withdrew. As of 2025, India is evaluating a renewed partnership for potential future acquisition."
+      },
+      {
+        "Country": "Algeria",
+        "Description": "Unconfirmed reports suggest an order for 14 aircraft placed in 2021, deliveries expected between 2026 and 2030."
+      }
+    ]
   },
   "service": "Deployed by French armored units during the Cold War."
 }
