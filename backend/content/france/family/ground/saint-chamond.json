@@ -10,6 +10,18 @@
       "type": "Model",
       "name": "Saint-Chamond (Early)",
       "description": "First mass-produced version of the Saint-Chamond"
+    },
+    {
+      "slug": "saint-chamond-m2",
+      "type": "Model",
+      "name": "Saint-Chamond (Mid)",
+      "description": "Second mass-produced version of the Saint-Chamond"
+    },
+    {
+      "slug": "saint-chamond-m3",
+      "type": "Model",
+      "name": "Saint-Chamond (Late)",
+      "description": "Final mass-produced version of the Saint-Chamond"
     }
   ]
 }

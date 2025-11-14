@@ -1,10 +1,26 @@
 [
   {
     "id": "saint-chamond-m1",
-    "name": "AMX-13 DCA 40",
+    "name": "Saint-Chamond (Early)",
     "slug": "saint-chamond-m1",
     "family": "saint-chamond",
     "type": "Heavy Breakthrough Tank",
     "picture": "/images/saint-chamond-m1.jpg"
+  },
+  {
+    "id": "saint-chamond-m2",
+    "name": "Saint-Chamond (Mid)",
+    "slug": "saint-chamond-m2",
+    "family": "saint-chamond",
+    "type": "Heavy Breakthrough Tank",
+    "picture": "/images/saint-chamond-m2.jpg"
+  },
+  {
+    "id": "saint-chamond-m3",
+    "name": "Saint-Chamond (Late)",
+    "slug": "saint-chamond-m3",
+    "family": "saint-chamond",
+    "type": "Heavy Breakthrough Tank",
+    "picture": "/images/saint-chamond-m3.jpg"
   }
 ]
