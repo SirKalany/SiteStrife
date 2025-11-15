@@ -1,14 +1,15 @@
 {
   "kind": "family",
-  "title": "2A36 'Giatsint-B'",
-  "description": "The 2A36 'Giatsint-B' is a Soviet towed 152 mm field gun which entered service in 1976.",
-  "history": "It was first seen in public during a parade held in Moscow in May 1985.",
+  "title": "2A36 Giatsint-B",
+  "picture": "/images/Russia/family/2a36.jpg",
+  "description": "The 2A36 Giatsint-B is a Soviet towed 152 mm field gun which entered service in 1976.",
+  "history": "It is currently the latest field gun made by the Russian Federation.",
   "variants": [
     {
       "slug": "2a36",
       "type": "Model",
-      "name": "2A36 'Giatsint-B'",
-      "description": "Main production version of the 2A36 'Giatsint-B'"
+      "name": "2A36 Giatsint-B",
+      "description": "Main and only version of the field gun."
     }
   ]
 }

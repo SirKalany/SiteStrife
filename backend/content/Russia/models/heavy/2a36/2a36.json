@@ -1,0 +1,75 @@
+{
+  "family": "2a36",
+  "title": "2A36 Giatsint-B",
+  "picture": "/images/2a36.jpg",
+
+  "specifications": {
+    "INFORMATIONS": {
+      "Name": "2A36 Giatsint-B",
+      "Type": "Field Gun",
+      "Manufacturer": "Perm Machine Works",
+      "Design Period": "1968 − 1975",
+      "Manufacturing Period": "1976 - 1980s",
+      "Service Period": "1976 - Today"
+    },
+    "DIMENSIONS": {
+      "Length": "12.3 m",
+      "Barrel Length": "8.2 m",
+      "Calibre": "152 mm",
+      "Width": "2.8 m",
+      "Height": "2.8 m",
+      "Mass": "9.8 t",
+      "Breech": "Horizontal sliding-block"
+    },
+    "PERFORMANCES": {
+      "Elevation": "57°",
+      "Traverse": "25°",
+      "Average Rate of Fire": "N/A",
+      "Maximum Rate of Fire": "6 rpm",
+      "Maximum Range": "27 - 40 km",
+      "Crew": "8"
+    },
+    "SERVICE": "TESTING",
+    "USERS": [
+      { "Country": "Armenia", "Description": "Current operator, 26 units." },
+      {
+        "Country": "Artsahk",
+        "Description": "Former operator, taken by Azerbaijan after the 2023 Azerbaijani offensive in Nagorno-Karabakh."
+      },
+      { "Country": "Azerbaijan", "Description": "Current operator, 49 units." },
+      {
+        "Country": "Belarus",
+        "Description": "Former operator, 50 in reserve."
+      },
+      {
+        "Country": "Finland",
+        "Description": "Current operator, 24 units under the designation 152 K-89."
+      },
+      { "Country": "Georgia", "Description": "Current operator, 3 units." },
+      { "Country": "Iraq", "Description": "Former operator, 180 in reserve." },
+      {
+        "Country": "Kazakhstan",
+        "Description": "Former operator, 180 in reserve."
+      },
+      { "Country": "Lebanon", "Description": "Former operator, 6 in reserve." },
+      { "Country": "Moldova", "Description": "Current operator, 20 units." },
+      {
+        "Country": "Russian Federation",
+        "Description": "Current operator, 600 units."
+      },
+      {
+        "Country": "Soviet Union",
+        "Description": "Former operator, all units given to successor states."
+      },
+      {
+        "Country": "Turkmenistan",
+        "Description": "Current operator, 6 units."
+      },
+      {
+        "Country": "Ukraine",
+        "Description": "Current operator, at least 75 units."
+      },
+      { "Country": "Uzbekistan", "Description": "Current operator, 140 units." }
+    ]
+  }
+}
