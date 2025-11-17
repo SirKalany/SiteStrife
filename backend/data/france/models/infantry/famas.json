@@ -1,0 +1,10 @@
+[
+  {
+    "id": "famas-f1",
+    "name": "FAMAS F1",
+    "slug": "famas-f1",
+    "family": "famas",
+    "type": "Bullpup Assault Rifle",
+    "picture": "/images/famas-f1.jpg"
+  }
+]

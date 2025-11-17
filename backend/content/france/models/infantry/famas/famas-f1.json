@@ -1,0 +1,95 @@
+{
+  "kind": "model",
+  "family": "famas",
+  "name": "FAMAS F1",
+  "picture": "/images/France/models/saint-chammond/famas-f1.jpg",
+  "description": "First model of the FAMAS rifle, with the 25 rounds magazine.",
+  "specifications": {
+    "INFORMATIONS": {
+      "Name": "FAMAS F1",
+      "Type": "Bullpup assault rifle",
+      "Manufacturer": "Groupement des Industries de l'Armée de Terre (GIAT)",
+      "Design Period": "1967 - 1976",
+      "Manufacturing Period": "1978 - 1994",
+      "Service Period": "1978 - Present"
+    },
+    "DIMENSIONS": {
+      "Length": "757 mm",
+      "Mass": "3,61 kg",
+      "Barrel Length": "488 mm"
+    },
+    "MECHANICS": {
+      "Action": "Lever-delayed blowback",
+      "Feed System": "25-round detachable box magazine"
+    },
+    "PERFORMANCES": {
+      "Calibre": "5.56×45mm NATO",
+      "Rate of Fire": "1000 rpm",
+      "Muzzle Velocity": "960 m/s",
+      "Firing Range": "300 m"
+    },
+    "SERVICE": "",
+    "USERS": [
+      {
+        "Country": "Argentina",
+        "Description": "Used by special forces."
+      },
+      {
+        "Country": "Côte d'Ivoire",
+        "Description": "Unconfirmed report, used by Ivorian rebels."
+      },
+      {
+        "Country": "Djibouti",
+        "Description": "Used in training by Djibouti officer cadets."
+      },
+      {
+        "Country": "France",
+        "Description": "Only producer, used by many agencies including the GIGN."
+      },
+      {
+        "Country": "Gabon",
+        "Description": "Used in training by Gabonese officer cadets."
+      },
+      {
+        "Country": "Indonesia",
+        "Description": "Used by special forces."
+      },
+      {
+        "Country": "Lebanon",
+        "Description": "Used by the government and insurgent groups."
+      },
+      {
+        "Country": "Papua New Guinea",
+        "Description": "Used during the 2012 Papua New Guinea Defence Force mutiny."
+      },
+      {
+        "Country": "Philippines",
+        "Description": "Used by the Philippine Marine Corps."
+      },
+      {
+        "Country": "Senegal",
+        "Description": "Used by the Senegalese armed forces."
+      },
+      {
+        "Country": "Serbia",
+        "Description": "Most likely taken from NATO forces during the Bosnian War."
+      },
+      {
+        "Country": "Tunisia",
+        "Description": "Used by government agencies."
+      },
+      {
+        "Country": "Ukraine",
+        "Description": "Used by the Ukrainian Armed Forces since the start of the Russo-Ukrainian War."
+      },
+      {
+        "Country": "United Arab Emirates",
+        "Description": "Used by government agencies."
+      },
+      {
+        "Country": "Vanuatu",
+        "Description": "Used by the Vanuatu Mobile Forces."
+      }
+    ]
+  }
+}

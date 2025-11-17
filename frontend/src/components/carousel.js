@@ -36,7 +36,6 @@ export default function Carousel() {
             priority={i === 0}
             className="object-cover"
           />
-          {/* overlay sombre pour lisibilité */}
           <div className="absolute inset-0 bg-black/50" />
         </div>
       ))}
