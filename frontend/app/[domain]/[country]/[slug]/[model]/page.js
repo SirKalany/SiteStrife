@@ -23,7 +23,7 @@ export default function ModelPage({ params: paramsPromise }) {
         setError(null);
 
         const res = await fetch(
-          `http://localhost:4000/countries/${country}/${domain}/${slug}/${model}`
+          `${process.env.NEXT_PUBLIC_API_URL}/countries/${country}/${domain}/${slug}/${model}`
         );
 
         if (!res.ok) {
@@ -89,7 +89,11 @@ export default function ModelPage({ params: paramsPromise }) {
         );
       case "infantry":
         return (
-          <InfantryContent content={content} domain={domain} country={country} />
+          <InfantryContent
+            content={content}
+            domain={domain}
+            country={country}
+          />
         );
       default:
         return (

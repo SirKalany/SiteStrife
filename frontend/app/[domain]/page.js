@@ -20,7 +20,7 @@ export default function DomainPage({ params }) {
         setLoading(true);
         setError(null);
 
-        const countriesRes = await fetch("http://localhost:4000/countries");
+        const countriesRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/countries`);
         if (!countriesRes.ok) throw new Error("Impossible de charger les pays");
         const allCountries = await countriesRes.json();
 
@@ -29,7 +29,7 @@ export default function DomainPage({ params }) {
         for (const country of allCountries) {
           try {
             const res = await fetch(
-              `http://localhost:4000/countries/${encodeURIComponent(
+              `${process.env.NEXT_PUBLIC_API_URL}/countries/${encodeURIComponent(
                 country
               )}/domains`
             );
@@ -38,7 +38,7 @@ export default function DomainPage({ params }) {
             const domains = await res.json();
             if (domains.includes(domain)) {
               const famRes = await fetch(
-                `http://localhost:4000/countries/${encodeURIComponent(
+                `${process.env.NEXT_PUBLIC_API_URL}/countries/${encodeURIComponent(
                   country
                 )}/${encodeURIComponent(domain)}/families`
               );

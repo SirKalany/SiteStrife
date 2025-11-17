@@ -20,7 +20,7 @@ const chakra = Chakra_Petch({
 
 const shareMono = Share_Tech_Mono({
   variable: "--font-sharetechmono",
-  weight: ["400"], // ✅ poids obligatoire
+  weight: ["400"],
   subsets: ["latin"],
 });
 

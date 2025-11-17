@@ -12,19 +12,14 @@ const domains = [
 export default function Home() {
   return (
     <main className="relative min-h-screen bg-[#1b1b1b]">
-      {/* Hero = Carousel */}
       <Carousel />
 
-      {/* Titre fixé en haut */}
       <div className="absolute top-6 w-full text-center">
         <h1 className="text-5xl md:text-7xl font-extrabold text-yellow-500 tracking-wide drop-shadow-lg">
           Military Equipment Database
         </h1>
       </div>
-
-      {/* Boutons centrés pile au milieu */}
       <div className="absolute inset-0 flex flex-col items-center justify-center">
-        {/* Ligne du haut (3 boutons) */}
         <div className="flex gap-6 mb-8">
           {domains.slice(0, 3).map(({ name, path, img }, index) => (
             <DomainButton
@@ -37,7 +32,6 @@ export default function Home() {
           ))}
         </div>
 
-        {/* Ligne du bas (2 boutons) */}
         <div className="flex gap-6">
           {domains.slice(3).map(({ name, path, img }, index) => (
             <DomainButton
@@ -62,16 +56,14 @@ function DomainButton({ name, path, img, index }) {
       className="group relative w-96 h-72"
       style={{ transform: `skew(-10deg, 0deg)` }}
     >
-      {/* Bloc visuel */}
       <div
         className="absolute inset-0 bg-center bg-cover transition-all duration-300 group-hover:scale-105 border border-gray-600 group-hover:border-yellow-500"
         style={{
-          backgroundImage: `url('${img}')`
+          backgroundImage: `url('${img}')`,
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-transparent to-black/90 group-hover:from-green-900/40 group-hover:to-black/80 transition-all duration-300" />
 
-        {/* Overlay grille */}
         <div
           className="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity"
           style={{
@@ -84,7 +76,6 @@ function DomainButton({ name, path, img, index }) {
         />
       </div>
 
-      {/* Contenu textuel */}
       <div
         className="relative h-full flex flex-col justify-center items-center"
         style={{ transform: `skew(10deg, 0deg)` }}
@@ -101,7 +92,6 @@ function DomainButton({ name, path, img, index }) {
           </div>
         </div>
 
-        {/* Coin accent */}
         <div
           className="absolute top-2 right-2 w-3 h-3 bg-yellow-500 opacity-60 group-hover:opacity-100 transition-opacity"
           style={{ clipPath: "polygon(0 0, 100% 0, 0 100%)" }}
@@ -110,4 +100,3 @@ function DomainButton({ name, path, img, index }) {
     </Link>
   );
 }
-
