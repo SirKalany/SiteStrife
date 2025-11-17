@@ -1,6 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Chakra+Petch:wght@700&display=swap");
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
-@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Chakra+Petch:wght@700&display=swap");
 
 :root {
   --font-heading: "Chakra Petch", sans-serif;
@@ -39,5 +39,5 @@ body {
 
 .font-mono {
   font-family: var(--font-mono);
-  font-weight: 400; /* obligatoire pour Share Tech Mono */
+  font-weight: 400;
 }

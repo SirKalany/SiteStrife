@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import ContentHeader from "@/components/ContentHeader";
-import InfoRow from "@/components/ui/InfoRow";
-import SectionTitle from "@/components/ui/SectionTitle";
+import ContentHeader from "@/components/contentHeader";
+import InfoRow from "@/components/ui/infoRow";
+import SectionTitle from "@/components/ui/sectionTitle";
 
 export default function NavalContent({ content, domain, country }) {
   const specs = content?.specifications || {};

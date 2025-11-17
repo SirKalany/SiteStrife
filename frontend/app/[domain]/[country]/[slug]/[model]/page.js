@@ -2,11 +2,11 @@
 
 import { use } from "react";
 import { useState, useEffect } from "react";
-import GroundContent from "@/components/content/groundcontent";
-import AirContent from "@/components/content/aircontent";
-import NavalContent from "@/components/content/navalcontent";
-import HeavyContent from "@/components/content/heavycontent";
-import InfantryContent from "@/components/content/infantrycontent";
+import GroundContent from "@/components/content/groundContent";
+import AirContent from "@/components/content/airContent";
+import NavalContent from "@/components/content/navalContent";
+import HeavyContent from "@/components/content/heavyContent";
+import InfantryContent from "@/components/content/infantryContent";
 
 export default function ModelPage({ params: paramsPromise }) {
   const params = use(paramsPromise);
