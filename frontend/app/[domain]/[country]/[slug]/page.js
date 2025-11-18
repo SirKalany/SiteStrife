@@ -13,7 +13,6 @@ export default function FamilyPage({ params: rawParams }) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // State pour les sections variantes
   const [openSections, setOpenSections] = useState({
     Model: false,
     Prototype: false,
@@ -84,7 +83,7 @@ export default function FamilyPage({ params: rawParams }) {
           domain={domain}
           country={country}
           family={slug}
-          familyTitle={content.title}
+          familyTitle={content.title || "Unknown Family"}
         />
 
         {/* Header */}
@@ -92,16 +91,16 @@ export default function FamilyPage({ params: rawParams }) {
           <h1
             className={`text-5xl font-extrabold mb-3 ${accentColor} uppercase tracking-[0.2em]`}
           >
-            {content.title}
+            {content.title || slug}
           </h1>
 
           {/* Image */}
           {content.picture ? (
             <div className="overflow-hidden rounded mb-8 mx-auto shadow-lg border border-gray-700 max-w-[90%]">
               <img
-                src={`http://localhost:4000${content.picture}`}
-                alt={content.name || content.title}
-                className="w-full h-80 md:h-[28rem] object-cover object-center"
+                src={`${process.env.NEXT_PUBLIC_API_URL}${content.picture}`}
+                alt={content.title || "family"}
+                className="w-full h-80 md:h-112 object-cover object-center"
                 onError={(e) => {
                   e.currentTarget.style.display = "none";
                   console.warn("Image introuvable :", content.picture);
@@ -167,15 +166,17 @@ export default function FamilyPage({ params: rawParams }) {
                   <div className="divide-y divide-gray-700">
                     {variantsOfType.map((variant) => (
                       <Link
-                        key={variant.slug}
-                        href={`/${domain}/${country}/${slug}/${variant.slug}`}
+                        key={variant.slug || variant.id}
+                        href={`/${domain}/${country}/${slug}/${
+                          variant.slug || variant.id
+                        }`}
                         className="block px-4 py-3 hover:bg-[#333] transition"
                       >
                         <h3 className="font-semibold text-yellow-500 text-base mb-1">
-                          {variant.name}
+                          {variant.name || "Unnamed"}
                         </h3>
                         <p className="text-gray-400 text-sm leading-relaxed">
-                          {variant.description}
+                          {variant.description || "No description available"}
                         </p>
                       </Link>
                     ))}

@@ -62,7 +62,7 @@ function DomainButton({ name, path, img, index }) {
           backgroundImage: `url('${img}')`,
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-transparent to-black/90 group-hover:from-green-900/40 group-hover:to-black/80 transition-all duration-300" />
+        <div className="absolute inset-0 bg-linear-to-br from-black/70 via-transparent to-black/90 group-hover:from-green-900/40 group-hover:to-black/80 transition-all duration-300" />
 
         <div
           className="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity"

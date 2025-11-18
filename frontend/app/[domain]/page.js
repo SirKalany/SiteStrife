@@ -20,7 +20,9 @@ export default function DomainPage({ params }) {
         setLoading(true);
         setError(null);
 
-        const countriesRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/countries`);
+        const countriesRes = await fetch(
+          `${process.env.NEXT_PUBLIC_API_URL}/countries`
+        );
         if (!countriesRes.ok) throw new Error("Impossible de charger les pays");
         const allCountries = await countriesRes.json();
 
@@ -29,18 +31,22 @@ export default function DomainPage({ params }) {
         for (const country of allCountries) {
           try {
             const res = await fetch(
-              `${process.env.NEXT_PUBLIC_API_URL}/countries/${encodeURIComponent(
-                country
-              )}/domains`
+              `${
+                process.env.NEXT_PUBLIC_API_URL
+              }/countries/${encodeURIComponent(country)}/domains`
             );
             if (!res.ok) continue;
 
             const domains = await res.json();
-            if (domains.includes(domain)) {
+            if (
+              domains.map((d) => d.toLowerCase()).includes(domain.toLowerCase())
+            ) {
               const famRes = await fetch(
-                `${process.env.NEXT_PUBLIC_API_URL}/countries/${encodeURIComponent(
-                  country
-                )}/${encodeURIComponent(domain)}/families`
+                `${
+                  process.env.NEXT_PUBLIC_API_URL
+                }/countries/${encodeURIComponent(country)}/${encodeURIComponent(
+                  domain
+                )}/families`
               );
               if (!famRes.ok) continue;
 
@@ -65,6 +71,7 @@ export default function DomainPage({ params }) {
           a.displayName.localeCompare(b.displayName)
         );
 
+        console.log("Filtered countries:", sorted);
         setCountries(sorted);
         setFiltered(sorted);
       } catch (err) {
@@ -89,7 +96,6 @@ export default function DomainPage({ params }) {
   const accentColor = "text-yellow-500";
   const accentBg = "bg-yellow-500";
 
-  // Loader
   if (loading) {
     return (
       <main className="min-h-screen bg-[#1b1b1b] text-white flex flex-col items-center justify-center font-mono">
@@ -101,7 +107,6 @@ export default function DomainPage({ params }) {
     );
   }
 
-  // Error
   if (error) {
     return (
       <main className="min-h-screen bg-[#1b1b1b] text-white px-4 py-10 flex flex-col items-center justify-center font-mono">
@@ -134,7 +139,7 @@ export default function DomainPage({ params }) {
           >
             {decodeURIComponent(domain)}
           </h1>
-          <div className="w-28 h-[2px] mx-auto bg-yellow-500 mt-2 skew-x-12" />
+          <div className="w-28 h-0.5 mx-auto bg-yellow-500 mt-2 skew-x-12" />
           <p className="mx-auto text-center text-gray-400 text-sm uppercase mt-4 tracking-widest font-mono">
             Select a nation to review classified assets
           </p>
@@ -181,7 +186,7 @@ export default function DomainPage({ params }) {
                   }}
                 >
                   <div className="p-6 transform -skew-x-4">
-                    <div className="absolute top-0 left-0 w-full h-[2px] bg-yellow-500/40 skew-x-12" />
+                    <div className="absolute top-0 left-0 w-full h-0.5 bg-yellow-500/40 skew-x-12" />
 
                     <h3
                       className={`text-xl font-bold mb-2 ${accentColor} group-hover:text-yellow-400 transform skew-x-4`}
@@ -198,17 +203,17 @@ export default function DomainPage({ params }) {
                       <p className="text-[#808080] uppercase text-xs mb-1 tracking-wide font-mono transform skew-x-4">
                         Sample assets:
                       </p>
-                      {country.preview.map((family, idx) => (
+                      {country.preview?.map((family, idx) => (
                         <div
                           key={idx}
                           className="flex items-center space-x-2 transform skew-x-4"
                         >
                           <div className="w-2 h-2 bg-yellow-500 rounded-sm opacity-70"></div>
                           <span className="text-gray-300 truncate">
-                            {family.name}
+                            {family.name || family.slug || "Unknown"}
                           </span>
                           <span className="text-gray-500 text-xs font-mono">
-                            ({family.type})
+                            ({family.type || "N/A"})
                           </span>
                         </div>
                       ))}

@@ -50,11 +50,11 @@ app.get("/countries", (req, res) => {
 app.get("/countries/:country/domains", (req, res) => {
   const { country } = req.params;
   try {
-    const familyPath = path.join(rootDir, "data", country, "family");
-    if (!fs.existsSync(familyPath)) return res.json([]);
+    const familyDataDir = path.join(rootDir, "data", country, "family");
+    if (!fs.existsSync(familyDataDir)) return res.json([]);
 
     const domains = fs
-      .readdirSync(familyPath)
+      .readdirSync(familyDataDir)
       .filter((f) => f.endsWith(".json"))
       .map((f) => f.replace(".json", ""));
     res.json(domains);
@@ -95,7 +95,8 @@ app.get("/countries/:country/:domain/families", async (req, res) => {
 app.get("/countries/:country/:domain/:family", async (req, res) => {
   const { country, domain, family } = req.params;
 
-  const familyPath = path.join(
+  // Lire le contenu de la famille
+  const familyContentPath = path.join(
     rootDir,
     "content",
     country,
@@ -103,30 +104,32 @@ app.get("/countries/:country/:domain/:family", async (req, res) => {
     domain,
     `${family}.json`
   );
+
   try {
     const familyData = await getCachedData(
       `family_${country}_${domain}_${family}`,
-      familyPath
+      familyContentPath
     );
 
-    // Charger les modèles liés
-    const modelsDir = path.join(
+    // Charger les modèles depuis data
+    const modelsFilePath = path.join(
       rootDir,
       "data",
       country,
       "models",
       domain,
-      family
+      `${family}.json`
     );
-    let models = [];
-    if (fs.existsSync(modelsDir)) {
-      models = fs
-        .readdirSync(modelsDir)
-        .filter((f) => f.endsWith(".json"))
-        .map((f) => f.replace(".json", ""));
-    }
-    familyData.models = models;
 
+    let models = [];
+    if (fs.existsSync(modelsFilePath)) {
+      models = await getCachedData(
+        `models_${country}_${domain}_${family}`,
+        modelsFilePath
+      );
+    }
+
+    familyData.models = models;
     res.json(familyData);
   } catch (err) {
     res.status(404).json({
@@ -149,6 +152,7 @@ app.get("/countries/:country/:domain/:family/:model", async (req, res) => {
     family,
     `${model}.json`
   );
+
   try {
     const modelData = await getCachedData(
       `model_${country}_${domain}_${family}_${model}`,
@@ -209,11 +213,12 @@ app.get("/stats", (req, res) => {
 
       const domains = fs
         .readdirSync(familyDir)
+        .filter((f) => f.endsWith(".json"))
         .map((f) => f.replace(".json", ""));
+
       domains.forEach((domain) => {
-        if (!domainCounts[domain]) {
+        if (!domainCounts[domain])
           domainCounts[domain] = { families: 0, models: 0 };
-        }
 
         // Familles
         const familyFile = path.join(familyDir, `${domain}.json`);
@@ -224,18 +229,18 @@ app.get("/stats", (req, res) => {
         }
 
         // Modèles
-        const modelsDir = path.join(rootDir, "data", country, "models", domain);
-        if (fs.existsSync(modelsDir)) {
-          const familiesDirs = fs
-            .readdirSync(modelsDir)
-            .filter((f) => fs.lstatSync(path.join(modelsDir, f)).isDirectory());
-          familiesDirs.forEach((family) => {
-            const familyModels = fs
-              .readdirSync(path.join(modelsDir, family))
-              .filter((f) => f.endsWith(".json"));
-            domainCounts[domain].models += familyModels.length;
-            stats.totalModels += familyModels.length;
-          });
+        const modelsFile = path.join(
+          rootDir,
+          "data",
+          country,
+          "models",
+          domain,
+          `${domain}.json`
+        );
+        if (fs.existsSync(modelsFile)) {
+          const models = JSON.parse(fs.readFileSync(modelsFile, "utf-8"));
+          domainCounts[domain].models += models.length;
+          stats.totalModels += models.length;
         }
       });
     });

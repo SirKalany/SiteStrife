@@ -32,7 +32,9 @@ export default function CountryPage({ params }) {
 
         // Tri alphabétique dès réception
         const sorted = data.sort((a, b) =>
-          a.name.localeCompare(b.name, "en", { sensitivity: "base" })
+          (a.name || "").localeCompare(b.name || "", "en", {
+            sensitivity: "base",
+          })
         );
 
         setFamilies(sorted);
@@ -51,7 +53,7 @@ export default function CountryPage({ params }) {
   // Filtrage dynamique
   useEffect(() => {
     const result = families.filter((family) =>
-      family.name.toLowerCase().includes(filter.toLowerCase())
+      (family.name || "").toLowerCase().includes(filter.toLowerCase())
     );
     setFilteredFamilies(result);
   }, [filter, families]);
@@ -94,7 +96,7 @@ export default function CountryPage({ params }) {
           >
             {country} - {domain} Families
           </h1>
-          <div className="w-28 h-[2px] mx-auto bg-yellow-500 mt-2 skew-x-12" />
+          <div className="w-28 h-0.5 mx-auto bg-yellow-500 mt-2 skew-x-12" />
           <p className="mx-auto text-center text-gray-400 text-sm uppercase mt-4 tracking-widest font-mono">
             Select a family to explore {domain} vehicles
           </p>
@@ -125,32 +127,30 @@ export default function CountryPage({ params }) {
                 )}/${encodeURIComponent(family.slug || family.id)}`}
                 className="group block"
               >
-                {/* Container incliné */}
                 <div
                   className={`relative overflow-hidden bg-[#1e1e1e] border border-gray-700 rounded-sm transition-all duration-200 hover:border-yellow-500/80 ${accentShadow}`}
                   style={{
                     clipPath: "polygon(6% 0, 100% 0, 94% 100%, 0% 100%)",
                   }}
                 >
-                  {/* Wrapper pour compenser le skew */}
                   <div className="p-6 transform -skew-x-4">
-                    <div className="absolute top-0 left-0 w-full h-[2px] bg-yellow-500/40 skew-x-12" />
+                    <div className="absolute top-0 left-0 w-full h-0.5 bg-yellow-500/40 skew-x-12" />
 
                     <h3
                       className={`text-xl font-bold mb-2 ${accentColor} group-hover:text-yellow-500 transform skew-x-4`}
                     >
-                      {family.name}
+                      {family.name || "Unknown"}
                     </h3>
 
                     <p className="text-gray-400 mb-3 text-sm font-mono transform skew-x-4">
-                      {family.type}
+                      {family.type || "N/A"}
                     </p>
 
                     {family.picture && (
                       <div className="overflow-hidden rounded mb-3 transform skew-x-1">
                         <img
-                          src={`http://localhost:4000${family.picture}`}
-                          alt={family.name}
+                          src={`${process.env.NEXT_PUBLIC_API_URL}${family.picture}`}
+                          alt={family.name || "family"}
                           className="w-full h-40 object-cover"
                         />
                       </div>
