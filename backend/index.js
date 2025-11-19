@@ -36,8 +36,7 @@ app.get("/countries", (req, res) => {
       .readdirSync(path.join(rootDir, "content"))
       .filter((f) =>
         fs.lstatSync(path.join(rootDir, "content", f)).isDirectory()
-      )
-      .map((c) => c.toLowerCase());
+      );
     res.json(countries);
   } catch (err) {
     res
@@ -49,14 +48,22 @@ app.get("/countries", (req, res) => {
 // Liste des domaines pour un pays
 app.get("/countries/:country/domains", (req, res) => {
   const { country } = req.params;
+
   try {
-    const familyDataDir = path.join(rootDir, "data", country, "family");
+    const dataRoot = path.join(rootDir, "data");
+
+    const realCountry = fs.readdirSync(dataRoot).find((c) => c === country);
+
+    if (!realCountry) return res.json([]);
+
+    const familyDataDir = path.join(dataRoot, realCountry, "family");
     if (!fs.existsSync(familyDataDir)) return res.json([]);
 
     const domains = fs
       .readdirSync(familyDataDir)
       .filter((f) => f.endsWith(".json"))
       .map((f) => f.replace(".json", ""));
+
     res.json(domains);
   } catch (err) {
     res.status(500).json({

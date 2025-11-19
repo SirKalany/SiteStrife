@@ -31,22 +31,19 @@ export default function DomainPage({ params }) {
         for (const country of allCountries) {
           try {
             const res = await fetch(
-              `${
-                process.env.NEXT_PUBLIC_API_URL
-              }/countries/${encodeURIComponent(country)}/domains`
+              `${process.env.NEXT_PUBLIC_API_URL}/countries/${encodeURIComponent(
+                country
+              )}/domains`
             );
             if (!res.ok) continue;
 
             const domains = await res.json();
-            if (
-              domains.map((d) => d.toLowerCase()).includes(domain.toLowerCase())
-            ) {
+
+            if (domains.includes(domain)) {
               const famRes = await fetch(
-                `${
-                  process.env.NEXT_PUBLIC_API_URL
-                }/countries/${encodeURIComponent(country)}/${encodeURIComponent(
-                  domain
-                )}/families`
+                `${process.env.NEXT_PUBLIC_API_URL}/countries/${encodeURIComponent(
+                  country
+                )}/${encodeURIComponent(domain)}/families`
               );
               if (!famRes.ok) continue;
 
@@ -54,8 +51,7 @@ export default function DomainPage({ params }) {
               if (families && families.length > 0) {
                 countriesWithContent.push({
                   name: country,
-                  displayName:
-                    country.charAt(0).toUpperCase() + country.slice(1),
+                  displayName: country,
                   familiesCount: families.length,
                   preview: families.slice(0, 3),
                 });
@@ -89,7 +85,9 @@ export default function DomainPage({ params }) {
   useEffect(() => {
     const query = search.toLowerCase();
     setFiltered(
-      countries.filter((c) => c.displayName.toLowerCase().includes(query))
+      countries.filter((c) =>
+        c.displayName.toLowerCase().includes(query)
+      )
     );
   }, [search, countries]);
 
