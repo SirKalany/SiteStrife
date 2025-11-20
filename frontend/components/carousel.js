@@ -3,10 +3,12 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 
 const images = [
-  "/carousel/bf109.webp",
-  "/carousel/grenadier.jpg",
-  "/carousel/roosevelt.jpg",
-  "/carousel/stryker.jpg",
+  "/carousel/usarmy.webp",
+  "/carousel/t80.webp",
+  "/carousel/ka52.webp",
+  "/carousel/forest.webp",
+  "/carousel/caesar.webp",
+  "/carousel/jason.webp",
 ];
 
 export default function Carousel() {

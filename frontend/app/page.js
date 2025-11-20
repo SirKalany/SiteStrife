@@ -2,11 +2,11 @@ import Link from "next/link";
 import Carousel from "@/components/carousel";
 
 const domains = [
-  { name: "Air", path: "/air", img: "/airimage.jpg" },
-  { name: "Naval", path: "/naval", img: "/navalimage.jpg" },
-  { name: "Ground", path: "/ground", img: "/groundimage.jpg" },
-  { name: "Infantry", path: "/infantry", img: "/infantryimage.jpg" },
-  { name: "Heavy", path: "/heavy", img: "/heavyimage.jpg" },
+  { name: "Air", path: "/air", img: "/airimage.webp" },
+  { name: "Naval", path: "/naval", img: "/navalimage.webp" },
+  { name: "Ground", path: "/ground", img: "/groundimage.webp" },
+  { name: "Infantry", path: "/infantry", img: "/infantryimage.webp" },
+  { name: "Heavy", path: "/heavy", img: "/heavyimage.webp" },
 ];
 
 export default function Home() {
