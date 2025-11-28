@@ -23,5 +23,12 @@
       "name": "Saint-Chamond (Late)",
       "description": "Final mass-produced version of the Saint-Chamond"
     }
+  ],
+  "related": [
+    {
+      "family": "schneider-ca1",
+      "name": "Schneider CA 1",
+      "description": "Developed in parallel with the Saint-Chamond; shares early French WW1 tank lineage."
+    }
   ]
 }

@@ -187,6 +187,37 @@ export default function FamilyPage({ params: rawParams }) {
           </section>
         )}
 
+        {/* Related Families */}
+        {content.related?.length > 0 && (
+          <section className="border-t border-gray-700 pt-6 space-y-4">
+            <h2
+              className={`text-2xl font-semibold ${accentColor} mb-4 flex items-center`}
+            >
+              <span className="w-1 h-6 bg-yellow-500 mr-3"></span>
+              Related Families
+            </h2>
+
+            <div className="space-y-3">
+              {content.related.map((rel) => (
+                <Link
+                  key={rel.family}
+                  href={`/${domain}/${country}/${rel.family}`}
+                  className="block px-4 py-3 bg-[#1e1e1e] hover:bg-[#2a2a2a] border border-gray-700 rounded-sm transition"
+                >
+                  <h3 className="font-semibold text-yellow-500 text-base mb-1">
+                    {rel.name}
+                  </h3>
+                  {rel.description && (
+                    <p className="text-gray-400 text-sm leading-relaxed">
+                      {rel.description}
+                    </p>
+                  )}
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
+
         {/* Back to families */}
         <div className="text-center mt-16">
           <Link
