@@ -1,0 +1,170 @@
+{
+  "kind": "family",
+  "title": "AMX-30",
+  "picture": "/images/France/family/amx-30.jpg",
+  "description": "The AMX-30 was a French main battle tank designed during the 1960s.",
+  "history": "It was created after a failed project with Germany to produce a common tank between the two nations.",
+  "variants": [
+    {
+      "slug": "amx-30-prototype-1",
+      "type": "Prototype",
+      "name": "AMX-30 (1st Prototype)",
+      "description": "First prototype of the AMX-30"
+    },
+    {
+      "slug": "amx-30-prototype-2",
+      "type": "Prototype",
+      "name": "AMX-30 (2nd Prototype)",
+      "description": "Second prototype of the AMX-30"
+    },
+    {
+      "slug": "amx-30a",
+      "type": "Prototype",
+      "name": "AMX-30A",
+      "description": "Final pre-production prototype of the AMX-30"
+    },
+    {
+      "slug": "amx-30b",
+      "type": "Model",
+      "name": "AMX-30B",
+      "description": "First production series of the AMX-30"
+    },
+    {
+      "slug": "amx-30b1",
+      "type": "Model",
+      "name": "AMX-30B1",
+      "description": "Improved export version used by Chile"
+    },
+    {
+      "slug": "amx-30b2",
+      "type": "Model",
+      "name": "AMX-30B2",
+      "description": "Upgraded model of the AMX-30B, featuring a new turret, engine, transmission and suspension"
+    },
+    {
+      "slug": "amx-30-acra",
+      "type": "Modification",
+      "name": "AMX-30 ACRA",
+      "description": "AMX-30 with a 142 mm ACRA gun, inspired by the M60A2 'Starship'"
+    },
+    {
+      "slug": "amx-30b2-brenus",
+      "type": "Model",
+      "name": "AMX-30B2 Brenus",
+      "description": "Up-armored AMX-30B2, covered in ERA bricks to defeat HEAT projectiles"
+    },
+    {
+      "slug": "amx-30-entrainement",
+      "type": "Modification",
+      "name": "AMX-30 Entrainement",
+      "description": "AMX-30 with it's turret removed to make space for an instructor cabin, used to train new pilots"
+    },
+    {
+      "slug": "amx-30b2-forad",
+      "type": "Model",
+      "name": "AMX-30B2 FORAD",
+      "description": "AMX-30B2 modified to appear as an enemy tank for training"
+    },
+    {
+      "slug": "amx-30b2-brenus-forad",
+      "type": "Model",
+      "name": "AMX-30B2 Brenus FORAD",
+      "description": "AMX-30B2 Brenus modified to appear as an enemy tank for training"
+    },
+    {
+      "slug": "amx-30-basic",
+      "type": "Model",
+      "name": "AMX-30 Basic",
+      "description": "Simplified model made for exports"
+    },
+    {
+      "slug": "amx-30s",
+      "type": "Model",
+      "name": "AMX-30S",
+      "description": "Tropicalized export model of the AMX-30B, sold to Saudi Arabia and Qatar"
+    },
+    {
+      "slug": "amx-30c2",
+      "type": "Prototype",
+      "name": "AMX-30C2",
+      "description": "Modernized AMX-30B meant for export"
+    },
+    {
+      "slug": "amx-30e",
+      "type": "Prototype",
+      "name": "AMX-30E",
+      "description": "Initial licensed AMX-30 manufactured by Spain"
+    },
+    {
+      "slug": "amx-30e-m1",
+      "type": "Model",
+      "name": "AMX-30E M1",
+      "description": "Improved AMX-30E with a new transmission"
+    },
+    {
+      "slug": "amx-30e-m2",
+      "type": "Model",
+      "name": "AMX-30E M2",
+      "description": "Improved AMX-30E M1 with a new power plant, rangefinder and ammunition"
+    },
+    {
+      "slug": "amx-30v",
+      "type": "Model",
+      "name": "AMX-30V",
+      "description": "AMX-30B sold to Venezuela, with a new engine"
+    },
+    {
+      "slug": "amx-30sa",
+      "type": "Prototype",
+      "name": "AMX-30SA",
+      "description": "Anti-air vehicle based on the AMX-30 featuring two 30 mm guns"
+    },
+    {
+      "slug": "amx-30-javelot",
+      "type": "Prototype",
+      "name": "AMX-30 Javelot",
+      "description": "Anti-air prototype based on the AMX-30 featuring a unique multiple rocket launcher"
+    },
+    {
+      "slug": "amx-30c1-shahine",
+      "type": "Prototype",
+      "name": "AMX-30C1 Shahine",
+      "description": "Anti-air vehicle based on the AMX-30 using the SA-10 Shahine"
+    },
+    {
+      "slug": "amx-30R",
+      "type": "Modification",
+      "name": "AMX-30R",
+      "description": "Anti-air vehicle based on the AMX-30 using the Roland missile system"
+    },
+    {
+      "slug": "amx-30-ebg-f1",
+      "type": "Modification",
+      "name": "AMX-30 EBG F1",
+      "description": "Military engineering vehicle based on the AMX-30"
+    },
+    {
+      "slug": "amx-30-ebg-val",
+      "type": "Modification",
+      "name": "AMX-30 EBG VAL",
+      "description": "Modernized AMX-30 EBG F1, based on the AMX-30"
+    }
+  ],
+  "related": [
+    {
+      "family": "auf1",
+      "name": "AMX-30 AuF1",
+      "description": "Self-propelled gun based on the AMX-30 chassis"
+    },
+    {
+      "family": "amx-32",
+      "name": "AMX-32",
+      "description": "Proposed export version, with two prototypes"
+    },
+    {
+      "family": "amx-40",
+      "name": "AMX-40",
+      "description": "Last attempt from GIAT to export the AMX-30 chassis"
+    }
+  ]
+}
