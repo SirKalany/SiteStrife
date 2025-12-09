@@ -1,0 +1,45 @@
+{
+  "kind": "family",
+  "title": "Char B1",
+  "picture": "/images/France/family/char-b1.jpg",
+  "description": "The Char B1 was a French heavy tank built on the eve of the Second World War",
+  "history": "It was used against the German forces during the war and proved effective in direct combat",
+  "variants": [
+    {
+      "slug": "char-b1",
+      "type": "Model",
+      "name": "Char B1",
+      "description": "Original model of the Char B1 with the older 47 mm gun and 40 mm thick armor"
+    },
+    {
+      "slug": "char-b1-bis",
+      "type": "Model",
+      "name": "Char B1 Bis",
+      "description": "Improved Char B1 with 60 mm of armor and a longer 47 mm SA 35 gun"
+    },
+    {
+      "slug": "char-b1-ter",
+      "type": "Prototype",
+      "name": "Char B1 Ter",
+      "description": "Prototype up-armored version of the Char B1 Bis with better mobility"
+    },
+    {
+      "slug": "schulfahrzeug-b2-740",
+      "type": "Modification",
+      "name": "Panzerkampfwagen B-2 740(f) als Schulfahrzeug",
+      "description": "Captured Char B1 with the turret removed to be used as training vehicles"
+    },
+    {
+      "slug": "flammpanzer-b2",
+      "type": "Modification",
+      "name": "Flammwagen auf Panzerkampfwagen B-2(f)",
+      "description": "Captured Char B1 Bis converted to a flame tank with the 75 mm gun switched to a flamethrower"
+    },
+    {
+      "slug": "105-b2-740",
+      "type": "Modification",
+      "name": "10.5 cm leFH18/3 (Sf) auf Geschützwagen B-2(f)",
+      "description": "Captured Char B1 Bis modified to use the German 10.5 cm leFH 18 field gun in place of the turret"
+    }
+  ]
+}

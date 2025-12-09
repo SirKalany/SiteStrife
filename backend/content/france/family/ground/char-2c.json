@@ -5,7 +5,23 @@
   "description": "The Char 2C was a heavy landship tank produced before the Second World War",
   "history": "It served with the French Army and featured a very large number of crew members",
   "variants": [
-    { "slug": "amx-13-dca-40", "name": "AMX-13 DCA 40" },
-    { "slug": "amx-13-hot", "name": "AMX-13 (HOT)" }
+    {
+      "slug": "fcm-2c",
+      "type": "Model",
+      "name": "Char 2C",
+      "description": "Super heavy tank made by FCM, originally made for the First World War"
+    },
+    {
+      "slug": "fcm-2c-bis",
+      "type": "Modification",
+      "name": "Char 2C Bis",
+      "description": "Modified Char 2C replacing the main gun with a 155 mm howitzer"
+    },
+    {
+      "slug": "fcm-2c-surblindé",
+      "type": "Modification",
+      "name": "Char 2C Surblindé",
+      "description": "Up-armored version of the Char 2C meant to counter German anti-tank guns"
+    }
   ]
 }
