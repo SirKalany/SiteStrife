@@ -1,0 +1,111 @@
+{
+  "kind": "family",
+  "title": "Type 74",
+  "picture": "/images/Japan/family/type-74.jpg",
+  "description": "Japan’s second-generation main battle tank, optimized for domestic terrain and Cold War defense.",
+  "history": "The Type 74 tank family emerged from Japan’s effort to develop a more capable successor to the Type 61, addressing its shortcomings in firepower, protection, and fire control. During the early 1960s, the Japan Ground Self-Defense Force recognized the need for a modern main battle tank capable of countering contemporary Soviet armor while remaining compatible with Japan’s restrictive infrastructure and mountainous terrain.\n\nDevelopment began under the STB (Special Type B) program, led primarily by Mitsubishi Heavy Industries. The program emphasized advanced fire control, improved crew survivability, and superior mobility. Between the late 1960s and early 1970s, multiple STB prototypes were constructed, each incrementally refining suspension systems, armor layout, gun stabilization, and automotive performance. A distinctive feature introduced during development was the hydropneumatic suspension, allowing the tank to adjust its ride height and tilt for improved gun depression and firing positions.\n\nThe finalized design was accepted into service in 1974 as the Type 74. Armed with a 105 mm rifled gun and equipped with an advanced fire control system for its era, the tank represented a significant leap forward for Japanese armored forces. While relatively lightly armored compared to contemporary NATO and Warsaw Pact tanks, it was well-suited to Japan’s defensive doctrine and terrain.\n\nOver its long service life, the Type 74 underwent numerous incremental modernization programs, designated as Modification (Mod) variants, which improved optics, electronics, ammunition compatibility, and crew comfort. In addition to the main battle tank, several specialized support vehicles were developed on the same chassis, further extending the family’s operational utility. The Type 74 served as the backbone of Japanese armored units until gradually replaced by the Type 90 and later the Type 10.",
+  "variants": [
+    {
+      "slug": "stb-1",
+      "type": "Prototype",
+      "name": "STB-1",
+      "description": "Initial prototype establishing the basic layout and hydropneumatic suspension concept."
+    },
+    {
+      "slug": "stb-2",
+      "type": "Prototype",
+      "name": "STB-2",
+      "description": "Refined prototype with improved fire control and automotive components."
+    },
+    {
+      "slug": "stb-3",
+      "type": "Prototype",
+      "name": "STB-3",
+      "description": "Development vehicle focusing on suspension reliability and crew ergonomics."
+    },
+    {
+      "slug": "stb-4",
+      "type": "Prototype",
+      "name": "STB-4",
+      "description": "Further testing model incorporating revised armor layout and systems integration."
+    },
+    {
+      "slug": "stb-5",
+      "type": "Prototype",
+      "name": "STB-5",
+      "description": "Advanced prototype nearing production standard with finalized turret design."
+    },
+    {
+      "slug": "stb-6",
+      "type": "Prototype",
+      "name": "STB-6",
+      "description": "Final pre-production vehicle serving as the direct basis for the Type 74."
+    },
+    {
+      "slug": "type-74-first",
+      "type": "Model",
+      "name": "Type 74 (Early)",
+      "description": "Initial production variant entering service in 1974."
+    },
+    {
+      "slug": "type-74-mod-b",
+      "type": "Model",
+      "name": "Type 74 Mod B",
+      "description": "Early upgrade improving fire control components and reliability."
+    },
+    {
+      "slug": "type-74-mod-c",
+      "type": "Model",
+      "name": "Type 74 Mod C",
+      "description": "Incremental modernization with minor electronics and system refinements."
+    },
+    {
+      "slug": "type-74-mod-d",
+      "type": "Model",
+      "name": "Type 74 Mod D",
+      "description": "Upgraded sights and improved night-fighting capability."
+    },
+    {
+      "slug": "type-74-mod-e",
+      "type": "Model",
+      "name": "Type 74 Mod E",
+      "description": "Enhanced fire control system and compatibility with newer ammunition."
+    },
+    {
+      "slug": "type-74-mod-f",
+      "type": "Model",
+      "name": "Type 74 Mod F",
+      "description": "Further electronics upgrades and crew survivability improvements."
+    },
+    {
+      "slug": "type-74-mod-g",
+      "type": "Model",
+      "name": "Type 74 Mod G",
+      "description": "Final and most advanced modernization package applied late in service."
+    },
+    {
+      "slug": "type-78-arv",
+      "type": "Modification",
+      "name": "Type 78 ARV",
+      "description": "Armoured recovery vehicle developed on the Type 74 chassis."
+    },
+    {
+      "slug": "type-91-avib",
+      "type": "Modification",
+      "name": "Type 91 AVLB",
+      "description": "Armoured vehicle-launched bridge variant derived from the Type 74."
+    }
+  ],
+  "related": [
+    {
+      "family": "type-87-spaa",
+      "name": "Type 87 SPAA",
+      "description": "Self-propelled anti-aircraft variant developed on the Type 74 chassis."
+    },
+    {
+      "family": "type-90",
+      "name": "Type 90",
+      "description": "Successor main battle tank featuring a 120 mm gun and advanced digital systems."
+    }
+  ]
+}

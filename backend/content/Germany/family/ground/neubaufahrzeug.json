@@ -1,0 +1,28 @@
+{
+  "kind": "family",
+  "title": "Neubaufahrzeug",
+  "picture": "/images/Germany/family/neubaufahrzeug.jpg",
+  "description": "Germany’s multi-turreted heavy tank prototype developed in the early 1930s.",
+  "history": "The Neubaufahrzeug (NbFz) was an experimental German heavy tank designed in the early 1930s as part of Germany’s initial rearmament program. Intended to explore multi-turret layouts and heavy armament for breakthrough operations, the vehicle served primarily as a testbed for automotive and weapons concepts rather than a production combat system. Only a handful of vehicles were built, and they saw limited action for propaganda and training purposes.",
+  "variants": [
+    {
+      "slug": "neubaufahrzeug-krupp",
+      "type": "Prototype",
+      "name": "Neubaufahrzeug (Krupp)",
+      "description": "Prototype constructed by Krupp featuring a multi-turreted layout with a 75 mm main gun."
+    },
+    {
+      "slug": "neubaufahrzeug-rheinmetall",
+      "type": "Prototype",
+      "name": "Neubaufahrzeug (Rheinmetall)",
+      "description": "Prototype built by Rheinmetall, similar layout with minor design differences."
+    }
+  ],
+  "related": [
+    {
+      "family": "pz-kpfw-iv",
+      "name": "Pz.Kpfw. IV",
+      "description": "Later German medium tank that benefited from lessons learned on the Neubaufahrzeug program."
+    }
+  ]
+}

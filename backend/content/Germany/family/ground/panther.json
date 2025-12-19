@@ -1,0 +1,87 @@
+{
+  "kind": "family",
+  "title": "Pz.Kpfw. V Panther",
+  "picture": "/images/Germany/family/panther.jpg",
+  "description": "Germany’s premier medium tank of the Second World War, designed to counter Soviet armor.",
+  "history": "The Pz.Kpfw. V Panther family was developed by Germany during the Second World War in response to the unexpected battlefield appearance of the Soviet T-34 in 1941. The T-34’s combination of sloped armor, high mobility, and effective armament prompted the German Army to urgently seek a new medium tank that could restore qualitative superiority on the Eastern Front.\n\nEarly design studies were undertaken under the VK 30 series, with competing proposals from Daimler-Benz and MAN. Daimler-Benz favored a design heavily inspired by the T-34, while MAN proposed a more conventionally German layout incorporating sloped armor and a high-velocity 75 mm gun. After evaluation, MAN’s design was selected in 1942, leading to the VK 30.02 (MAN) and the rapid transition into series production.\n\nThe Panther entered service in 1943 as the Ausf. D. Rushed development and insufficient testing resulted in significant mechanical reliability issues during its combat debut at Kursk, particularly with the drivetrain and engine cooling. Despite these early problems, the Panther quickly proved to be one of the most effective tanks of the war once refined, combining excellent frontal armor protection with the highly lethal 7.5 cm KwK 42 L/70 gun.\n\nSubsequent variants introduced incremental improvements to reliability, crew ergonomics, and production efficiency. The Ausf. A and Ausf. G became the most widely produced and operationally effective versions, while late-war designs explored further refinements and simplifications. Experimental and paper projects, including the Panther II and Ausf. F, reflected Germany’s attempts to further modernize the platform under increasingly constrained wartime conditions. The Panther family left a lasting influence on post-war tank design through its emphasis on sloped armor and firepower.",
+  "variants": [
+    {
+      "slug": "vk-3001-d",
+      "type": "Prototype",
+      "name": "VK 30.01 (D)",
+      "description": "Early Daimler-Benz medium tank prototype developed prior to the Panther program."
+    },
+    {
+      "slug": "vk-3002-man",
+      "type": "Prototype",
+      "name": "VK 30.02 (MAN)",
+      "description": "Winning MAN prototype that directly led to the Panther production design."
+    },
+    {
+      "slug": "vk-3002-d",
+      "type": "Prototype",
+      "name": "VK 30.02 (D)",
+      "description": "Competing Daimler-Benz design influenced by the Soviet T-34 layout."
+    },
+    {
+      "slug": "panther-d1",
+      "type": "Model",
+      "name": "Panther Ausf. D1",
+      "description": "Early production vehicles used for trials and initial training."
+    },
+    {
+      "slug": "panther-d2",
+      "type": "Model",
+      "name": "Panther Ausf. D",
+      "description": "First full-scale combat production version deployed in 1943."
+    },
+    {
+      "slug": "panther-a-early",
+      "type": "Model",
+      "name": "Panther Ausf. A (Early)",
+      "description": "Improved variant introducing a redesigned commander’s cupola and reliability upgrades."
+    },
+    {
+      "slug": "panther-a-late",
+      "type": "Model",
+      "name": "Panther Ausf. A (Late)",
+      "description": "Later Ausf. A vehicles with incremental production and mechanical refinements."
+    },
+    {
+      "slug": "panther-g-early",
+      "type": "Model",
+      "name": "Panther Ausf. G (Early)",
+      "description": "Redesigned hull with simplified armor layout and improved manufacturing efficiency."
+    },
+    {
+      "slug": "panther-g-late",
+      "type": "Model",
+      "name": "Panther Ausf. G (Late)",
+      "description": "Final wartime production standard with late-war simplifications."
+    },
+    {
+      "slug": "panther-f",
+      "type": "Prototype",
+      "name": "Panther Ausf. F",
+      "description": "Late-war development featuring the Schmalturm narrow turret concept."
+    },
+    {
+      "slug": "panther-2",
+      "type": "Prototype",
+      "name": "Panther II",
+      "description": "Heavily redesigned Panther concept intended to improve protection and parts commonality."
+    }
+  ],
+  "related": [
+    {
+      "family": "t-34",
+      "name": "T-34",
+      "description": "Soviet medium tank whose battlefield performance directly inspired the Panther’s development."
+    },
+    {
+      "family": "jagdpanther",
+      "name": "Jagdpanzerjäger V jagdpanther",
+      "description": "Medium tank destroyer based on the Panther chassis, using a long 88 mm gun."
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "kind": "family",
+  "title": "Type 61",
+  "picture": "/images/Japan/family/type-61.jpg",
+  "description": "Japan’s first domestically developed post-war main battle tank family.",
+  "history": "The Type 61 tank family represents Japan’s return to indigenous armored vehicle development following the end of the Second World War and the establishment of the Japan Ground Self-Defense Force (JGSDF). During the early 1950s, Japan relied primarily on American-supplied tanks such as the M24 Chaffee and M4 Sherman, which were increasingly inadequate for the country’s terrain and defensive requirements.\n\nIn 1954, the Japanese Defense Agency initiated a domestic development program for a new medium tank, designated the STA (Special Type A) series. The program emphasized compatibility with Japan’s infrastructure, including weight limits for bridges and rail transport, while maintaining sufficient firepower to counter contemporary armored threats. Mitsubishi Heavy Industries led development, with technical assistance and influence from American tank design principles.\n\nMultiple STA prototypes were produced between 1956 and 1959, each refining layout, suspension, fire control, and automotive components. These vehicles progressively evolved toward a production-ready design, culminating in the adoption of the Type 61 in 1961. Armed with a 90 mm rifled gun and featuring a relatively light and compact design, the Type 61 was well-suited to Japan’s mountainous terrain, though it lagged behind foreign contemporaries in protection and growth potential.\n\nWhile never exported or used in combat, the Type 61 served as a critical stepping stone for Japan’s armored industry. Its development established domestic expertise that directly enabled later and more capable designs, including the Type 74 and Type 90 main battle tanks. The family stands as a foundational chapter in modern Japanese armored vehicle development.",
+  "variants": [
+    {
+      "slug": "sta-1",
+      "type": "Prototype",
+      "name": "STA-1",
+      "description": "Initial prototype exploring basic layout, suspension, and automotive solutions."
+    },
+    {
+      "slug": "sta-2",
+      "type": "Prototype",
+      "name": "STA-2",
+      "description": "Refined prototype featuring an improved powertrain and suspension configuration."
+    },
+    {
+      "slug": "sta-3",
+      "type": "Prototype",
+      "name": "STA-3",
+      "description": "Further development model incorporating fire control and crew ergonomics improvements."
+    },
+    {
+      "slug": "sta-4",
+      "type": "Prototype",
+      "name": "STA-4",
+      "description": "Final pre-production prototype serving as the direct basis for the Type 61."
+    },
+    {
+      "slug": "type-61",
+      "type": "Model",
+      "name": "Type 61",
+      "description": "First production model, armed with a 90 mm gun and entering service in 1961."
+    },
+    {
+      "slug": "type-67-avlb",
+      "type": "Modification",
+      "name": "Type 67 AVLB",
+      "description": "Armoured vehicle-launched bridge variant based on the Type 61 chassis."
+    },
+    {
+      "slug": "type-70-arv",
+      "type": "Modification",
+      "name": "Type 70 ARV",
+      "description": "Armoured recovery vehicle derived from the Type 61 to support armored units."
+    }
+  ],
+  "related": [
+    {
+      "family": "type-74",
+      "name": "Type 74",
+      "description": "Successor tank incorporating more advanced fire control, suspension, and protection."
+    },
+    {
+      "family": "m47-patton",
+      "name": "M47 Patton",
+      "description": "Contemporary US tank that influenced early post-war Japanese armored doctrine."
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "kind": "family",
+  "title": "SAAB JAS‑39 Gripen",
+  "picture": "/images/Sweden/family/jas‑39‑gripen.jpg",
+  "description": "Sweden’s lightweight multirole fighter aircraft, designed for air superiority, attack, and reconnaissance missions.",
+  "history": "The SAAB JAS‑39 Gripen was developed by Sweden in the 1980s–1990s as a flexible multirole combat aircraft to replace the Saab 35 Draken and Saab 37 Viggen. Its name reflects its unified mission roles: Jakt (fighter), Attack (strike), and Spaning (reconnaissance). Development emphasized agility, low operating cost, and adaptability to operate from short runways and dispersed bases. The first prototype flew in 1988 and the initial production version entered Swedish service in the mid‑1990s. Over time the platform has evolved through multiple upgrades and an advanced next‑generation follow‑on designed to incorporate modern avionics, radar, propulsion, and weapons integration.\n\nEarly developmental efforts used a demonstrator aircraft to test avionics and future growth technologies, feeding into later improvements. Production variants expanded capability, NATO interoperability, and export appeal. The most recent evolution, known as Gripen NG (Next Generation), serves as the baseline for the modern JAS‑39E and JAS‑39F variants with enhanced sensors, engine, and payload capability. The Gripen family has been exported to several air forces and continues to serve as a backbone of Sweden’s air defense and multirole mission sets.",
+  "variants": [
+    {
+      "slug": "jas-39a",
+      "type": "Model",
+      "name": "JAS‑39A",
+      "description": "Initial single‑seat production version that entered Swedish service in the mid‑1990s."
+    },
+    {
+      "slug": "jas-39b",
+      "type": "Model",
+      "name": "JAS‑39B",
+      "description": "Two‑seat version of the JAS‑39A for training and specialized missions, with modified fuselage and systems."
+    },
+    {
+      "slug": "jas-39c",
+      "type": "Model",
+      "name": "JAS‑39C",
+      "description": "Enhanced single‑seat NATO‑compatible version with improved avionics, weapons integration, and in‑flight refueling capability. :contentReference[oaicite:0]{index=0}"
+    },
+    {
+      "slug": "jas-39d",
+      "type": "Model",
+      "name": "JAS‑39D",
+      "description": "Two‑seat version of the JAS‑39C, retaining the advanced systems of the C model for training and dual‑crew roles. :contentReference[oaicite:1]{index=1}"
+    },
+    {
+      "slug": "jas-39e",
+      "type": "Model",
+      "name": "JAS‑39E",
+      "description": "Next‑generation single‑seat production variant with a more powerful engine, AESA radar, greater fuel capacity, and increased payload. :contentReference[oaicite:2]{index=2}"
+    },
+    {
+      "slug": "jas-39f",
+      "type": "Model",
+      "name": "JAS‑39F",
+      "description": "Next‑generation two‑seat production variant based on the JAS‑39E, optimized for training and advanced mission roles. :contentReference[oaicite:3]{index=3}"
+    },
+    {
+      "slug": "gripen-demo",
+      "type": "Prototype",
+      "name": "Gripen Demo",
+      "description": "Technology demonstrator aircraft used to test advanced systems later incorporated into the Gripen NG program."
+    },
+    {
+      "slug": "gripen-ng",
+      "type": "Development",
+      "name": "Gripen NG",
+      "description": "Next Generation technology baseline for the JAS‑39E/F, incorporating advanced radar, propulsion, avionics, and increased payload capability. :contentReference[oaicite:4]{index=4}"
+    }
+  ],
+  "related": [
+    {
+      "family": "saab-35-draken",
+      "name": "SAAB 35 Draken",
+      "description": "Earlier Swedish fighter that the Gripen was designed to replace."
+    },
+    {
+      "family": "saab-37-viggen",
+      "name": "SAAB 37 Viggen",
+      "description": "Predecessor multirole fighter/attack aircraft in Swedish service before the Gripen. "
+    }
+  ]
+}

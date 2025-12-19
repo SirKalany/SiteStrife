@@ -1,0 +1,45 @@
+{
+  "kind": "family",
+  "title": "AEC Armoured Car",
+  "picture": "/images/UK/family/aec.jpg",
+  "description": "Heavy British 4×4 armoured car used during the Second World War, combining strong armour with substantial firepower for reconnaissance and fire support.",
+  "history": "The AEC Armoured Car was developed by the Associated Equipment Company (AEC) in the early 1940s as a private venture to provide the British Army with a heavy wheeled reconnaissance vehicle capable of withstanding battlefield threats and engaging armoured targets. The design used a robust 4×4 chassis and progressed through a series of increasingly powerful turret configurations. Over 600 vehicles were produced, and AEC armoured cars served in multiple theatres including North Africa and northwest Europe. Their heavy armament and protection distinguished them from lighter armoured cars of the era. An anti‑aircraft prototype was also built but did not reach production.",
+  "variants": [
+    {
+      "slug": "aec-mk1",
+      "type": "Model",
+      "name": "AEC Mk I",
+      "description": "Original production variant armed with a QF 2 pdr (40 mm) gun in a turret taken from a Valentine tank; served in reconnaissance and support roles."
+    },
+    {
+      "slug": "aec-mk2",
+      "type": "Model",
+      "name": "AEC Mk II",
+      "description": "Improved production model with a larger turret mounting a QF 6 pdr (57 mm) gun and revised hull; crew increased to four."
+    },
+    {
+      "slug": "aec-mk3",
+      "type": "Model",
+      "name": "AEC Mk III",
+      "description": "Up‑gunned close support variant of the Mk II fitted with the OQF 75 mm gun for greater firepower; became the most heavily armed production version."
+    },
+    {
+      "slug": "aec-aa",
+      "type": "Prototype",
+      "name": "AEC AA",
+      "description": "Anti‑aircraft prototype fitted with a twin 20 mm Oerlikon‑type turret; built for air defence trials but never adopted for service."
+    }
+  ],
+  "related": [
+    {
+      "family": "humber-armoured-car",
+      "name": "Humber Armoured Car",
+      "description": "Contemporary British armoured car that served alongside the AEC in reconnaissance units."
+    },
+    {
+      "family": "alvis-saladin",
+      "name": "Alvis Saladin",
+      "description": "Post‑war British armoured car that succeeded AEC vehicles in armoured reconnaissance roles."
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "kind": "family",
+  "title": "Type 87 SPAA",
+  "picture": "/images/Japan/family/type-87-spaa.jpg",
+  "description": "Japan’s primary self-propelled anti-aircraft gun system of the late Cold War.",
+  "history": "The Type 87 self-propelled anti-aircraft gun (SPAA) family was developed to provide the Japan Ground Self-Defense Force with a modern, mobile air-defense system capable of protecting armored and mechanized units against low-flying aircraft and helicopters. During the 1970s, the increasing threat posed by attack aircraft and rotary-wing platforms highlighted the limitations of towed and static air-defense weapons then in Japanese service.\n\nDevelopment began with the AWX experimental program, which sought to integrate a radar-guided anti-aircraft turret onto a tracked armored chassis capable of operating alongside main battle tanks. Early prototypes focused on evaluating radar performance, turret stabilization, and fire control integration. The Type 74 tank chassis was selected as the basis for the vehicle, offering sufficient mobility, protection, and logistical commonality with existing armored units.\n\nTwo major prototype stages were produced, designated AWX-1978 and AWX-1983, reflecting progressive improvements in radar systems, electronics, and turret layout. These trials culminated in the adoption of the Type 87 SPAA in 1987. The production vehicle mounted a twin 35 mm Oerlikon-based cannon system paired with an integrated search and tracking radar, enabling autonomous target detection and engagement.\n\nAlthough limited in numbers and never used in combat, the Type 87 provided the JGSDF with a credible short-range air-defense capability throughout the late Cold War and post-Cold War periods. It remains a specialized but important component of Japan’s layered ground-based air-defense network.",
+  "variants": [
+    {
+      "slug": "awx-1978",
+      "type": "Prototype",
+      "name": "AWX-1978",
+      "description": "Initial experimental vehicle evaluating radar-guided anti-aircraft systems on a tracked chassis."
+    },
+    {
+      "slug": "awx-1983",
+      "type": "Prototype",
+      "name": "AWX-1983",
+      "description": "Refined prototype featuring improved radar, fire control, and turret integration."
+    },
+    {
+      "slug": "type-87",
+      "type": "Model",
+      "name": "Type 87 SPAA",
+      "description": "Production self-propelled anti-aircraft gun armed with twin 35 mm cannons and integrated radar."
+    }
+  ],
+  "related": [
+    {
+      "family": "type-74",
+      "name": "Type 74",
+      "description": "Shared chassis and automotive components with Japan’s second-generation main battle tank."
+    },
+    {
+      "family": "gepard",
+      "name": "Flakpanzer Gepard",
+      "description": "Contemporary Western SPAA with a similar twin 35 mm gun and radar-based concept."
+    }
+  ]
+}

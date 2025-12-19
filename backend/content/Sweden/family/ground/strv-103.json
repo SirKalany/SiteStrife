@@ -1,0 +1,63 @@
+{
+  "kind": "family",
+  "title": "Strv-103",
+  "picture": "/images/Sweden/family/strv-103.jpg",
+  "description": "Sweden’s innovative turretless main battle tank, emphasizing low profile and defensive combat.",
+  "history": "The Stridsvagn 103 (Strv-103), often called the S-Tank, was developed by Sweden in the 1950s–1960s as a uniquely defensive main battle tank concept. Seeking a vehicle optimized for Sweden’s hilly and forested terrain, Swedish designers prioritized a low silhouette, excellent frontal armor, and fixed gun design with hydraulic suspension for gun elevation and depression. The tank dispensed with a traditional turret, relying instead on hull traverse, suspension tilt, and precise gun laying to engage targets.\n\nEarly experimental vehicles, including the Strv-1030 series, tested the core concept, powertrain, and suspension mechanisms. Lessons learned were incorporated into the main production variants, which entered service in the 1960s and 1970s. Throughout its service life, the Strv-103 underwent incremental upgrades to fire control, armor protection, and electronics, producing multiple variants optimized for Swedish defense needs. The S-Tank remained in frontline service until the early 2000s, distinguished by its unconventional design and impressive mobility and protection for its era.",
+  "variants": [
+    {
+      "slug": "strv-1030",
+      "type": "Prototype",
+      "name": "Strv-103-0",
+      "description": "Zero-series production used for testing"
+    },
+    {
+      "slug": "strv-103a",
+      "type": "Model",
+      "name": "Strv-103A",
+      "description": "Early production variant with basic fire control and armor configuration."
+    },
+    {
+      "slug": "strv-103b",
+      "type": "Model",
+      "name": "Strv-103B",
+      "description": "Upgraded armor and fire control improvements for enhanced defensive capability."
+    },
+    {
+      "slug": "strv-103c",
+      "type": "Model",
+      "name": "Strv-103C",
+      "description": "Further modernization including improved optics and electronics."
+    },
+    {
+      "slug": "strv-103d",
+      "type": "Model",
+      "name": "Strv-103D",
+      "description": "Final production upgrade incorporating digital fire control and advanced sensors."
+    },
+    {
+      "slug": "strv-s1",
+      "type": "Model",
+      "name": "Strv S1",
+      "description": "Experimental variant exploring alternative powertrain and control systems."
+    },
+    {
+      "slug": "strv-s2",
+      "type": "Model",
+      "name": "Strv S2",
+      "description": "Further advanced prototype for future S-Tank concepts, leading to the Zero-series."
+    }
+  ],
+  "related": [
+    {
+      "family": "strv-101",
+      "name": "Strv-101/102",
+      "description": "Earlier Swedish armored vehicles providing design and operational lessons for the Strv-103."
+    },
+    {
+      "family": "bandkanon-1",
+      "name": "Bandkanon 1",
+      "description": "Swedish self-propelled artillery system based on the Strv-103 chassis."
+    }
+  ]
+}

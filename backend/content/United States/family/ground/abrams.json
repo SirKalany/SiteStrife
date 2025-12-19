@@ -1,0 +1,195 @@
+{
+  "kind": "family",
+  "title": "M1 Abrams",
+  "picture": "/images/USA/family/m1-abrams.jpg",
+  "description": "The primary main battle tank family of the United States and its allies since the late Cold War.",
+  "history": "The M1 Abrams tank family was developed by the United States during the 1970s to replace the aging M60 Patton series and to counter advanced Soviet armored threats expected in a high-intensity European conflict. Its origins trace back to the failed MBT-70 program, a joint US–German project that collapsed due to excessive cost, technical complexity, and diverging national requirements. Following its cancellation, the US Army initiated the XM1 program to produce a more practical and survivable main battle tank.\n\nCompeting prototypes were submitted by Chrysler Defense and General Motors, with Chrysler’s design ultimately selected in 1976. The resulting M1 Abrams entered service in 1980, introducing several groundbreaking features, including a gas turbine engine, advanced composite armor later known as Chobham-type armor, and a highly sophisticated fire control system. Early models were armed with a 105 mm rifled gun, but later variants adopted the German-designed 120 mm smoothbore gun to improve lethality against modern armor.\n\nThroughout its service life, the Abrams family has undergone continuous modernization. Major upgrades focused on firepower, protection, digital networking, and crew survivability, leading to successive M1A1 and M1A2 variants and the extensive System Enhancement Package (SEP) programs. Export versions and specialized configurations were developed for allied nations, while experimental platforms explored radical concepts such as unmanned turrets and reduced crew sizes.\n\nCombat-proven during the Gulf War, Iraq War, and numerous modern conflicts, the Abrams has demonstrated exceptional survivability and battlefield dominance, albeit with high logistical demands. Today, the Abrams family remains a cornerstone of US and allied armored forces, representing the evolution of Western main battle tank design from the Cold War into the 21st century.",
+  "variants": [
+    {
+      "slug": "xm1-chrysler",
+      "type": "Prototype",
+      "name": "XM1 (Chrysler)",
+      "description": "Winning XM1 prototype developed by Chrysler Defense, forming the basis of the production M1 Abrams."
+    },
+    {
+      "slug": "xm1-general-motors",
+      "type": "Prototype",
+      "name": "XM1 (General Motors)",
+      "description": "Competing XM1 prototype featuring a diesel engine and alternative automotive layout."
+    },
+    {
+      "slug": "xm1-fsed",
+      "type": "Prototype",
+      "name": "XM1 FSED",
+      "description": "Full-Scale Engineering Development vehicles used for final testing before production."
+    },
+    {
+      "slug": "m1-abrams",
+      "type": "Model",
+      "name": "M1 Abrams",
+      "description": "Initial production version armed with a 105 mm gun and early composite armor."
+    },
+    {
+      "slug": "imp1-abrams",
+      "type": "Model",
+      "name": "IPM1 Abrams",
+      "description": "Improved Performance M1 with enhanced armor protection and survivability upgrades."
+    },
+    {
+      "slug": "m1a1-abrams",
+      "type": "Model",
+      "name": "M1A1 Abrams",
+      "description": "Upgraded variant introducing the 120 mm smoothbore gun and improved NBC protection."
+    },
+    {
+      "slug": "m1a1ha",
+      "type": "Model",
+      "name": "M1A1HA",
+      "description": "Heavy Armor variant incorporating depleted uranium armor inserts."
+    },
+    {
+      "slug": "m1a1h",
+      "type": "Model",
+      "name": "M1A1H",
+      "description": "Designation used for certain heavy armor-equipped M1A1 configurations."
+    },
+    {
+      "slug": "m1a1d",
+      "type": "Model",
+      "name": "M1A1D",
+      "description": "Digitally enhanced M1A1 with improved command-and-control systems."
+    },
+    {
+      "slug": "m1a1-aimv1",
+      "type": "Model",
+      "name": "M1A1 AIM v1",
+      "description": "Abrams Integrated Management rebuild standard for refurbished M1A1s."
+    },
+    {
+      "slug": "m1a1sa",
+      "type": "Model",
+      "name": "M1A1SA",
+      "description": "Situational Awareness upgrade adding thermal sights and digital networking."
+    },
+    {
+      "slug": "m1a1sa-ukr",
+      "type": "Model",
+      "name": "M1A1SA (Ukraine)",
+      "description": "Export configuration supplied to Ukraine, adapted from refurbished US stocks."
+    },
+    {
+      "slug": "m1a1-fep",
+      "type": "Model",
+      "name": "M1A1 FEP",
+      "description": "Firepower Enhancement Package developed for the US Marine Corps."
+    },
+    {
+      "slug": "m1a1kvt",
+      "type": "Training",
+      "name": "M1A1 KVT",
+      "description": "Krasnovian Variant Tank used for opposing force training."
+    },
+    {
+      "slug": "m1a1m",
+      "type": "Export",
+      "name": "M1A1M",
+      "description": "Export variant produced for Iraq with modified armor and systems."
+    },
+    {
+      "slug": "m1a1-aidats",
+      "type": "Upgrade",
+      "name": "M1A1 AIDATS",
+      "description": "Experimental integration of advanced diagnostic and targeting systems."
+    },
+    {
+      "slug": "m1a2-abrams",
+      "type": "Model",
+      "name": "M1A2 Abrams",
+      "description": "Major redesign featuring a commander’s independent thermal viewer and improved electronics."
+    },
+    {
+      "slug": "m1a2-sep",
+      "type": "Model",
+      "name": "M1A2 SEP",
+      "description": "System Enhancement Package introducing digital architecture and improved survivability."
+    },
+    {
+      "slug": "m1a2-sep-v2",
+      "type": "Model",
+      "name": "M1A2 SEP v2",
+      "description": "Further electronics, thermal, and crew comfort improvements."
+    },
+    {
+      "slug": "m1a2-sep-v3",
+      "type": "Model",
+      "name": "M1A2 SEP v3",
+      "description": "Enhanced lethality, power generation, and network integration."
+    },
+    {
+      "slug": "m1a2-sep-v4",
+      "type": "Model",
+      "name": "M1A2 SEP v4",
+      "description": "Cancelled latest planned SEP iteration focusing on sensors, targeting, and survivability."
+    },
+    {
+      "slug": "m1a2s",
+      "type": "Model",
+      "name": "M1A2S",
+      "description": "Export variant tailored for Saudi Arabia."
+    },
+    {
+      "slug": "m1a2t",
+      "type": "Model",
+      "name": "M1A2T",
+      "description": "Export version developed for Taiwan with localized systems."
+    },
+    {
+      "slug": "m1a2k",
+      "type": "Model",
+      "name": "M1A2K",
+      "description": "Export configuration produced for Kuwait."
+    },
+    {
+      "slug": "m1a2r",
+      "type": "Model",
+      "name": "M1A2R",
+      "description": "Export configuration produced for Romania."
+    },
+    {
+      "slug": "cattb",
+      "type": "Protoype",
+      "name": "CATTB",
+      "description": "Component Advanced Technology Test Bed exploring an unmanned turret concept and a 140 mm gun."
+    },
+    {
+      "slug": "m1-ttb",
+      "type": "Protoype",
+      "name": "M1 TTB",
+      "description": "Tank Test Bed featuring a radically reworked turret and crew layout."
+    },
+    {
+      "slug": "m1-thumper",
+      "type": "Protoype",
+      "name": "M1 Thumper",
+      "description": "Test vehicle used for trials of future tank technologies."
+    },
+    {
+      "slug": "abrams-x",
+      "type": "Protoype",
+      "name": "AbramsX",
+      "description": "Next-generation technology demonstrator featuring a hybrid powerpack and unmanned turret."
+    }
+  ],
+  "related": [
+    {
+      "family": "mbt-70",
+      "name": "MBT-70",
+      "description": "Predecessor program whose cancellation led directly to the XM1 Abrams."
+    },
+    {
+      "family": "leopard-2",
+      "name": "Leopard 2",
+      "description": "Contemporary Western main battle tank developed in parallel during the Cold War."
+    }
+  ]
+}
