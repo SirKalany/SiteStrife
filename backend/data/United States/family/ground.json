@@ -1,0 +1,10 @@
+[
+  {
+    "id": "abrams",
+    "name": "M1 Abrams",
+    "slug": "abrams",
+    "type": "Main Battle Tank",
+    "picture": "/images/United States/family/abrams.webp",
+    "caption": "Third generation American MBT"
+  }
+]

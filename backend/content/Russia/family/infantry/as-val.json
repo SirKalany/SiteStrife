@@ -1,0 +1,15 @@
+{
+  "kind": "family",
+  "title": "AS 'Val'",
+  "picture": "/images/Russia/family/as-val.webp",
+  "description": "The AS 'Val' (Автомат Специальный Вал, Avtomat Special'nyj Val, meaning \"Special Automatic Rifle\") is a Soviet-designed integrally suppressed assault rifle chambered for the subsonic 9×39 mm cartridge. It features a built-in suppressor and was developed to provide special forces with a compact, quiet automatic weapon capable of effective operation at short to medium ranges. The Val shares many components with the VSS Vintorez sniper rifle but is configured for full-auto assault use, and it has been widely used by Russian Spetsnaz and other security units in covert and urban operations.",
+  "history": "Development of the AS Val began in the mid-1980s at TsNIITochMash alongside the VSS Vintorez to replace earlier modified small arms for clandestine missions. Based on the prototype RG-036 and optimized around the 9×39 mm subsonic round, the Val was adopted into Soviet service in 1987 and later by Russian forces, including the Army, FSB, MVD, and other special operations units. Its integral suppressor, heavy subsonic ammunition, and compact design made it well suited to special operations, reconnaissance, and close quarters battle roles, and it remains in use and variously modernized to this day.",
+  "variants": [
+    {
+      "slug": "as-val",
+      "type": "Model",
+      "name": "AS 'Val'",
+      "description": "Standard integrally suppressed assault rifle."
+    }
+  ]
+}

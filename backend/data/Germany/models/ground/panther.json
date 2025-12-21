@@ -1,0 +1,90 @@
+[
+  {
+    "id": "vk-3001-d",
+    "name": "VK 30.01 (D)",
+    "slug": "vk-3001-d",
+    "family": "panther",
+    "type": "Prototype",
+    "picture": "/images/panther/vk-3001-d.webp"
+  },
+  {
+    "id": "vk-3002-man",
+    "name": "VK 30.02 (MAN)",
+    "slug": "vk-3002-man",
+    "family": "panther",
+    "type": "Prototype",
+    "picture": "/images/panther/vk-3002-man.webp"
+  },
+  {
+    "id": "vk-3002-d",
+    "name": "VK 30.02 (D)",
+    "slug": "vk-3002-d",
+    "family": "panther",
+    "type": "Prototype",
+    "picture": "/images/panther/vk-3002-d.webp"
+  },
+  {
+    "id": "panther-d1",
+    "name": "Panther Ausf. D1",
+    "slug": "panther-d1",
+    "family": "panther",
+    "type": "Model",
+    "picture": "/images/panther/panther-d1.webp"
+  },
+  {
+    "id": "panther-d2",
+    "name": "Panther Ausf. D",
+    "slug": "panther-d2",
+    "family": "panther",
+    "type": "Model",
+    "picture": "/images/panther/panther-d2.webp"
+  },
+  {
+    "id": "panther-a-early",
+    "name": "Panther Ausf. A (Early)",
+    "slug": "panther-a-early",
+    "family": "panther",
+    "type": "Model",
+    "picture": "/images/panther/panther-a-early.webp"
+  },
+  {
+    "id": "panther-a-late",
+    "name": "Panther Ausf. A (Late)",
+    "slug": "panther-a-late",
+    "family": "panther",
+    "type": "Model",
+    "picture": "/images/panther/panther-a-late.webp"
+  },
+  {
+    "id": "panther-g-early",
+    "name": "Panther Ausf. G (Early)",
+    "slug": "panther-g-early",
+    "family": "panther",
+    "type": "Model",
+    "picture": "/images/panther/panther-g-early.webp"
+  },
+  {
+    "id": "panther-g-late",
+    "name": "Panther Ausf. G (Late)",
+    "slug": "panther-g-late",
+    "family": "panther",
+    "type": "Model",
+    "picture": "/images/panther/panther-g-late.webp"
+  },
+  {
+    "id": "panther-f",
+    "name": "Panther Ausf. F",
+    "slug": "panther-f",
+    "family": "panther",
+    "type": "Prototype",
+    "picture": "/images/panther/panther-f.webp"
+  },
+  {
+    "id": "panther-2",
+    "name": "Panther II",
+    "slug": "panther-2",
+    "family": "panther",
+    "type": "Prototype",
+    "picture": "/images/panther/panther-2.webp"
+  }
+]

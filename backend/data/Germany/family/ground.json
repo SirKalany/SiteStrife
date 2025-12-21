@@ -1,0 +1,18 @@
+[
+  {
+    "id": "neubaufahrzeug",
+    "name": "Pz.Kpfw. Neubaufahrzeug",
+    "slug": "neubaufahrzeug",
+    "type": "Medium Tank",
+    "picture": "/images/Germany/family/neubaufahrzeug.webp",
+    "caption": "Prototype medium tanks"
+  },
+  {
+    "id": "panther",
+    "name": "Pz.Kpfw. V 'Panther'",
+    "slug": "panther",
+    "type": "Medium Tank",
+    "picture": "/images/Germany/family/panther.webp",
+    "caption": "Last mass-produced medium tank of Germany during WW2"
+  }
+]

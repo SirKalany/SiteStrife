@@ -1,0 +1,234 @@
+[
+  {
+    "id": "xm1-chrysler",
+    "name": "XM1 (Chrysler)",
+    "slug": "xm1-chrysler",
+    "family": "abrams",
+    "type": "Prototype",
+    "picture": "/images/abrams/xm1-chrysler.webp"
+  },
+  {
+    "id": "xm1-general-motors",
+    "name": "XM1 (General Motors)",
+    "slug": "xm1-general-motors",
+    "family": "abrams",
+    "type": "Prototype",
+    "picture": "/images/abrams/xm1-general-motors.webp"
+  },
+  {
+    "id": "xm1-fsed",
+    "name": "XM1 FSED",
+    "slug": "xm1-fsed",
+    "family": "abrams",
+    "type": "Prototype",
+    "picture": "/images/abrams/xm1-fsed.webp"
+  },
+  {
+    "id": "m1-abrams",
+    "name": "M1 Abrams",
+    "slug": "m1-abrams",
+    "family": "abrams",
+    "type": "Model",
+    "picture": "/images/abrams/m1-abrams.webp"
+  },
+  {
+    "id": "imp1-abrams",
+    "name": "IPM1 Abrams",
+    "slug": "imp1-abrams",
+    "family": "abrams",
+    "type": "Model",
+    "picture": "/images/abrams/imp1-abrams.webp"
+  },
+  {
+    "id": "m1a1-abrams",
+    "name": "M1A1 Abrams",
+    "slug": "m1a1-abrams",
+    "family": "abrams",
+    "type": "Model",
+    "picture": "/images/abrams/m1a1-abrams.webp"
+  },
+  {
+    "id": "m1a1ha",
+    "name": "M1A1HA",
+    "slug": "m1a1ha",
+    "family": "abrams",
+    "type": "Model",
+    "picture": "/images/abrams/m1a1ha.webp"
+  },
+  {
+    "id": "m1a1h",
+    "name": "M1A1H",
+    "slug": "m1a1h",
+    "family": "abrams",
+    "type": "Model",
+    "picture": "/images/abrams/m1a1h.webp"
+  },
+  {
+    "id": "m1a1d",
+    "name": "M1A1D",
+    "slug": "m1a1d",
+    "family": "abrams",
+    "type": "Model",
+    "picture": "/images/abrams/m1a1d.webp"
+  },
+  {
+    "id": "m1a1-aimv1",
+    "name": "M1A1 AIM v1",
+    "slug": "m1a1-aimv1",
+    "family": "abrams",
+    "type": "Model",
+    "picture": "/images/abrams/m1a1-aimv1.webp"
+  },
+  {
+    "id": "m1a1sa",
+    "name": "M1A1SA",
+    "slug": "m1a1sa",
+    "family": "abrams",
+    "type": "Model",
+    "picture": "/images/abrams/m1a1sa.webp"
+  },
+  {
+    "id": "m1a1sa-ukr",
+    "name": "M1A1SA (Ukraine)",
+    "slug": "m1a1sa-ukr",
+    "family": "abrams",
+    "type": "Model",
+    "picture": "/images/abrams/m1a1sa-ukr.webp"
+  },
+  {
+    "id": "m1a1-fep",
+    "name": "M1A1 FEP",
+    "slug": "m1a1-fep",
+    "family": "abrams",
+    "type": "Model",
+    "picture": "/images/abrams/m1a1-fep.webp"
+  },
+  {
+    "id": "m1a1kvt",
+    "name": "M1A1 KVT",
+    "slug": "m1a1kvt",
+    "family": "abrams",
+    "type": "Training",
+    "picture": "/images/abrams/m1a1kvt.webp"
+  },
+  {
+    "id": "m1a1m",
+    "name": "M1A1M",
+    "slug": "m1a1m",
+    "family": "abrams",
+    "type": "Export",
+    "picture": "/images/abrams/m1a1m.webp"
+  },
+  {
+    "id": "m1a1-aidats",
+    "name": "M1A1 AIDATS",
+    "slug": "m1a1-aidats",
+    "family": "abrams",
+    "type": "Upgrade",
+    "picture": "/images/abrams/m1a1-aidats.webp"
+  },
+  {
+    "id": "m1a2-abrams",
+    "name": "M1A2 Abrams",
+    "slug": "m1a2-abrams",
+    "family": "abrams",
+    "type": "Model",
+    "picture": "/images/abrams/m1a2-abrams.webp"
+  },
+  {
+    "id": "m1a2-sep",
+    "name": "M1A2 SEP",
+    "slug": "m1a2-sep",
+    "family": "abrams",
+    "type": "Model",
+    "picture": "/images/abrams/m1a2-sep.webp"
+  },
+  {
+    "id": "m1a2-sep-v2",
+    "name": "M1A2 SEP v2",
+    "slug": "m1a2-sep-v2",
+    "family": "abrams",
+    "type": "Model",
+    "picture": "/images/abrams/m1a2-sep-v2.webp"
+  },
+  {
+    "id": "m1a2-sep-v3",
+    "name": "M1A2 SEP v3",
+    "slug": "m1a2-sep-v3",
+    "family": "abrams",
+    "type": "Model",
+    "picture": "/images/abrams/m1a2-sep-v3.webp"
+  },
+  {
+    "id": "m1a2-sep-v4",
+    "name": "M1A2 SEP v4",
+    "slug": "m1a2-sep-v4",
+    "family": "abrams",
+    "type": "Model",
+    "picture": "/images/abrams/m1a2-sep-v4.webp"
+  },
+  {
+    "id": "m1a2s",
+    "name": "M1A2S",
+    "slug": "m1a2s",
+    "family": "abrams",
+    "type": "Model",
+    "picture": "/images/abrams/m1a2s.webp"
+  },
+  {
+    "id": "m1a2t",
+    "name": "M1A2T",
+    "slug": "m1a2t",
+    "family": "abrams",
+    "type": "Model",
+    "picture": "/images/abrams/m1a2t.webp"
+  },
+  {
+    "id": "m1a2k",
+    "name": "M1A2K",
+    "slug": "m1a2k",
+    "family": "abrams",
+    "type": "Model",
+    "picture": "/images/abrams/m1a2k.webp"
+  },
+  {
+    "id": "m1a2r",
+    "name": "M1A2R",
+    "slug": "m1a2r",
+    "family": "abrams",
+    "type": "Model",
+    "picture": "/images/abrams/m1a2r.webp"
+  },
+  {
+    "id": "cattb",
+    "name": "CATTB",
+    "slug": "cattb",
+    "family": "abrams",
+    "type": "Prototype",
+    "picture": "/images/abrams/cattb.webp"
+  },
+  {
+    "id": "m1-ttb",
+    "name": "M1 TTB",
+    "slug": "m1-ttb",
+    "family": "abrams",
+    "type": "Prototype",
+    "picture": "/images/abrams/m1-ttb.webp"
+  },
+  {
+    "id": "m1-thumper",
+    "name": "M1 Thumper",
+    "slug": "m1-thumper",
+    "family": "abrams",
+    "type": "Prototype",
+    "picture": "/images/abrams/m1-thumper.webp"
+  },
+  {
+    "id": "abrams-x",
+    "name": "AbramsX",
+    "slug": "abrams-x",
+    "family": "abrams",
+    "type": "Prototype",
+    "picture": "/images/abrams/abrams-x.webp"
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "kind": "family",
+  "title": "VSS 'Vintorez'",
+  "picture": "/images/Russia/family/vss-vintorez.webp",
+  "description": "The VSS \"Vintorez\" (Винтовка Снайперская Специальная, Vintovka Snayperskaya Spetsialnaya, meaning \"Special Sniper Rifle\") is a Soviet-designed integrally suppressed designated marksman and sniper rifle chambered for the subsonic 9×39 mm cartridge. Designed for covert operations, the Vintorez combines effective accuracy, low acoustic signature, and armor-penetrating capability at short to medium ranges. It is closely related to the AS Val assault rifle, sharing the same action, suppressor system, and ammunition, but is optimized for precision fire rather than sustained automatic fire.",
+  "history": "Development of the VSS Vintorez began in the early 1980s at TsNIITochMash as part of a Soviet program to equip special forces with a purpose-built silent sniper weapon. Earlier solutions relied on modified standard rifles with suppressors, which proved inadequate in terms of accuracy, durability, and concealment. The Vintorez was designed from the outset around the 9×39 mm subsonic cartridge, allowing it to deliver effective terminal performance while remaining extremely quiet.\n\nAdopted into service in 1987, the VSS was issued to Soviet Spetsnaz units and later to Russian military intelligence, internal security forces, and law enforcement special units, including the FSB and MVD. Its ability to defeat body armor and lightly protected targets while remaining difficult to detect made it particularly valuable in reconnaissance, counter-terrorism, and urban combat roles. Despite its age, the VSS Vintorez remains in active service and continues to be produced and modernized, cementing its reputation as one of the most iconic suppressed precision weapons ever fielded.",
+  "variants": [
+    {
+      "slug": "vss-vintorez",
+      "type": "Model",
+      "name": "VSS 'Vintorez'",
+      "description": "Standard integrally suppressed sniper and designated marksman rifle optimized for silent precision fire."
+    }
+  ]
+}

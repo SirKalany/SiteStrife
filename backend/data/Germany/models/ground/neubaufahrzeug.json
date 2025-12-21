@@ -1,0 +1,18 @@
+[
+  {
+    "id": "neubaufahrzeug-krupp",
+    "name": "Neubaufahrzeug (Krupp)",
+    "slug": "neubaufahrzeug-krupp",
+    "family": "neubaufahrzeug",
+    "type": "Prototype",
+    "picture": "/images/neubaufahrzeug/neubaufahrzeug-krupp.webp"
+  },
+  {
+    "id": "neubaufahrzeug-rheinmetall",
+    "name": "Neubaufahrzeug (Rheinmetall)",
+    "slug": "neubaufahrzeug-rheinmetall",
+    "family": "neubaufahrzeug",
+    "type": "Prototype",
+    "picture": "/images/neubaufahrzeug/neubaufahrzeug-rheinmetall.webp"
+  }
+]

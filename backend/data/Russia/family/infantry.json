@@ -1,10 +1,18 @@
 [
   {
-    "id": "ak-74",
-    "name": "AK-74",
-    "slug": "ak-74",
+    "id": "as-val",
+    "name": "AS 'Val'",
+    "slug": "as-val",
     "type": "Assault rifle",
-    "picture": "/images/ak-74.jpg",
-    "caption": "Successor of the AKM assault rifle"
+    "picture": "/images/as-val.webp",
+    "caption": "Silenced special forces assault rifle."
+  },
+  {
+    "id": "vss-vintorez",
+    "name": "VSS 'Vintorez'",
+    "slug": "vss-vintorez",
+    "type": "Assault rifle",
+    "picture": "/images/vss-vintorez.webp",
+    "caption": "Silenced special forces marksman rifle."
   }
 ]

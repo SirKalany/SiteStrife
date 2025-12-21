@@ -2,12 +2,32 @@
   "kind": "family",
   "title": "Kirov-class Battlecruiser",
   "picture": "/images/Russia/family/kirov-battlecruiser.jpg",
-  "description": "The Kirov class, Soviet designation Project 1144 Orlan, is a class of nuclear-powered guided-missile heavy cruisers of the Soviet Navy and Russian Navy, the largest and heaviest surface combatant warships (i.e. not an aircraft carrier or amphibious assault ship) in operation in the world. Among modern warships, they are second in size only to large aircraft carriers; they are similar in size to a World War I-era battleship. Defence commentators in the West often refer to these ships as battlecruisers – due to their size and general appearance. The Soviet classification of the ship-type is heavy nuclear-powered guided-missile cruiser.",
-  "history": "It served with the French Air Force and was exported widely.",
+  "description": "The Kirov class, Soviet designation Project 1144 Orlan, is a class of nuclear-powered guided-missile heavy cruisers developed by the Soviet Navy during the Cold War. They are the largest and most heavily armed surface combatants built since World War II, excluding aircraft carriers and amphibious assault ships. Western analysts often classify them as battlecruisers due to their size, displacement, and concentration of offensive and defensive weaponry, although their official Soviet designation was heavy nuclear-powered guided-missile cruiser.",
+  "history": "The Kirov-class originated in the late 1960s and early 1970s as part of the Soviet Union’s effort to counter U.S. carrier strike groups and assert blue-water naval power. Designed around a nuclear propulsion system to provide extended endurance and global reach, the class combined long-range anti-ship missiles, layered air defense systems, and significant anti-submarine warfare capabilities.\n\nThe lead ship, Kirov, entered service in 1980, followed by three improved vessels constructed through the late Cold War period. Each successive unit incorporated refinements in sensors, missile systems, and electronics, reflecting evolving naval doctrine and technological advances. After the collapse of the Soviet Union, the class suffered from funding shortages, leading to long-term deactivations and incomplete modernization programs.\n\nIn the post-Soviet era, the Russian Navy pursued selective modernization rather than full fleet reactivation. Admiral Nakhimov underwent an extensive refit aimed at transforming the class into modern multi-role surface combatants equipped with contemporary missile systems. Despite high operating costs and limited numbers, the Kirov-class remains a powerful symbol of Russian naval ambition and continues to represent one of the most formidable surface warship designs ever constructed.",
   "variants": [
-    { "slug": "kirov-ushakov", "name": "Kirov / Admiral Ushakov" },
-    { "slug": "frunze-lazarev", "name": "Frunze / Admiral Lazarev" },
-    { "slug": "kalinin-nakhimov", "name": "Kalinin / Admiral Nakhimov" },
-    { "slug": "yuri-andropov", "name": "Yuri Andropov / Pyotr Velikiy" }
+    {
+      "slug": "kirov-ushakov",
+      "type": "Model",
+      "name": "Kirov / Admiral Ushakov",
+      "description": "Lead ship of the class, commissioned in 1980 as Kirov and later renamed Admiral Ushakov. It served as the prototype for the class but was laid up in the post-Soviet period and never fully modernized."
+    },
+    {
+      "slug": "frunze-lazarev",
+      "type": "Model",
+      "name": "Frunze / Admiral Lazarev",
+      "description": "Second ship of the class, originally named Frunze and later Admiral Lazarev. It featured incremental improvements over the lead ship but was placed in reserve following the collapse of the Soviet Union and remains inactive."
+    },
+    {
+      "slug": "kalinin-nakhimov",
+      "type": "Model",
+      "name": "Kalinin / Admiral Nakhimov",
+      "description": "Third ship of the class, renamed Admiral Nakhimov after the Soviet collapse. Selected for a deep modernization program intended to replace most legacy weapon systems with modern missile and sensor suites."
+    },
+    {
+      "slug": "yuri-andropov",
+      "type": "Model",
+      "name": "Yuri Andropov / Pyotr Velikiy",
+      "description": "Fourth and final ship of the class, commissioned as Pyotr Velikiy. It incorporated the most advanced systems of the series and remains the only Kirov-class vessel in active service for much of the post-Cold War period."
+    }
   ]
 }

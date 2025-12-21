@@ -1,7 +1,7 @@
 {
   "kind": "family",
   "title": "M1 Abrams",
-  "picture": "/images/USA/family/m1-abrams.jpg",
+  "picture": "/images/USA/family/abrams.webp",
   "description": "The primary main battle tank family of the United States and its allies since the late Cold War.",
   "history": "The M1 Abrams tank family was developed by the United States during the 1970s to replace the aging M60 Patton series and to counter advanced Soviet armored threats expected in a high-intensity European conflict. Its origins trace back to the failed MBT-70 program, a joint US–German project that collapsed due to excessive cost, technical complexity, and diverging national requirements. Following its cancellation, the US Army initiated the XM1 program to produce a more practical and survivable main battle tank.\n\nCompeting prototypes were submitted by Chrysler Defense and General Motors, with Chrysler’s design ultimately selected in 1976. The resulting M1 Abrams entered service in 1980, introducing several groundbreaking features, including a gas turbine engine, advanced composite armor later known as Chobham-type armor, and a highly sophisticated fire control system. Early models were armed with a 105 mm rifled gun, but later variants adopted the German-designed 120 mm smoothbore gun to improve lethality against modern armor.\n\nThroughout its service life, the Abrams family has undergone continuous modernization. Major upgrades focused on firepower, protection, digital networking, and crew survivability, leading to successive M1A1 and M1A2 variants and the extensive System Enhancement Package (SEP) programs. Export versions and specialized configurations were developed for allied nations, while experimental platforms explored radical concepts such as unmanned turrets and reduced crew sizes.\n\nCombat-proven during the Gulf War, Iraq War, and numerous modern conflicts, the Abrams has demonstrated exceptional survivability and battlefield dominance, albeit with high logistical demands. Today, the Abrams family remains a cornerstone of US and allied armored forces, representing the evolution of Western main battle tank design from the Cold War into the 21st century.",
   "variants": [
@@ -97,7 +97,7 @@
     },
     {
       "slug": "m1a1-aidats",
-      "type": "Upgrade",
+      "type": "Model",
       "name": "M1A1 AIDATS",
       "description": "Experimental integration of advanced diagnostic and targeting systems."
     },
