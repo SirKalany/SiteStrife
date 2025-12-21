@@ -20,10 +20,11 @@ export default function CountryPage({ params }) {
         setLoading(true);
         setError(null);
 
+        const urlCountry = encodeURIComponent(country.replace(/\s/g, "-"));
         const res = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/countries/${encodeURIComponent(
-            country
-          )}/${encodeURIComponent(domain)}/families`
+          `${
+            process.env.NEXT_PUBLIC_API_URL
+          }/countries/${urlCountry}/${encodeURIComponent(domain)}/families`
         );
 
         if (!res.ok) throw new Error("Impossible de charger les familles");
