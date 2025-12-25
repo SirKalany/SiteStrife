@@ -5,6 +5,10 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Breadcrumb from "@/components/breadcrumb";
 
+function formatCountryTitle(value) {
+  return decodeURIComponent(value).replace(/-/g, " ");
+}
+
 export default function CountryPage({ params }) {
   const { domain, country } = use(params);
 
@@ -20,18 +24,16 @@ export default function CountryPage({ params }) {
         setLoading(true);
         setError(null);
 
-        const urlCountry = encodeURIComponent(country.replace(/\s/g, "-"));
         const res = await fetch(
-          `${
-            process.env.NEXT_PUBLIC_API_URL
-          }/countries/${urlCountry}/${encodeURIComponent(domain)}/families`
+          `${process.env.NEXT_PUBLIC_API_URL}/countries/${encodeURIComponent(
+            country
+          )}/${encodeURIComponent(domain)}/families`
         );
 
         if (!res.ok) throw new Error("Impossible de charger les familles");
 
         const data = await res.json();
 
-        // Tri alphabétique dès réception
         const sorted = data.sort((a, b) =>
           (a.name || "").localeCompare(b.name || "", "en", {
             sensitivity: "base",
@@ -95,14 +97,14 @@ export default function CountryPage({ params }) {
           <h1
             className={`text-5xl font-extrabold mb-3 ${accentColor} uppercase tracking-[0.2em] transform inline-block`}
           >
-            {country} - {domain} Families
+            {formatCountryTitle(country)} - {domain} Families
           </h1>
           <div className="w-28 h-0.5 mx-auto bg-yellow-500 mt-2 skew-x-12" />
           <p className="mx-auto text-center text-gray-400 text-sm uppercase mt-4 tracking-widest font-mono">
             Select a family to explore {domain} vehicles
           </p>
 
-          {/* Champ de filtre */}
+          {/* Filter */}
           <div className="mt-8 flex justify-center">
             <input
               type="text"
@@ -175,7 +177,7 @@ export default function CountryPage({ params }) {
           </div>
         )}
 
-        {/* Back to domain */}
+        {/* Back */}
         <div className="text-center mt-16">
           <Link
             href={`/${domain}`}

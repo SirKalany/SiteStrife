@@ -53,8 +53,9 @@ export default function DomainPage({ params }) {
               if (families && families.length > 0) {
                 countriesWithContent.push({
                   name: country,
-                  displayName:
-                    country.charAt(0).toUpperCase() + country.slice(1),
+                  displayName: country
+                    .replace(/-/g, " ")
+                    .replace(/\b\w/g, (c) => c.toUpperCase()),
                   familiesCount: families.length,
                   preview: families.slice(0, 3),
                 });

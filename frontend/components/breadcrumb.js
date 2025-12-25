@@ -2,6 +2,10 @@
 
 import Link from "next/link";
 
+function formatLabel(value) {
+  return decodeURIComponent(value).replace(/-/g, " ");
+}
+
 export default function Breadcrumb({
   domain,
   country,
@@ -49,11 +53,11 @@ export default function Breadcrumb({
                 )}`}
                 className="hover:text-yellow-500 transition capitalize"
               >
-                {decodeURIComponent(country)}
+                {formatLabel(country)}
               </Link>
             ) : (
               <span className="text-yellow-500 capitalize">
-                {decodeURIComponent(country)}
+                {formatLabel(country)}
               </span>
             )}
           </>
@@ -70,11 +74,11 @@ export default function Breadcrumb({
                 )}/${encodeURIComponent(family)}`}
                 className="hover:text-yellow-500 transition"
               >
-                {familyTitle || decodeURIComponent(family)}
+                {familyTitle || formatLabel(family)}
               </Link>
             ) : (
               <span className="text-yellow-500">
-                {familyTitle || decodeURIComponent(family)}
+                {familyTitle || formatLabel(family)}
               </span>
             )}
           </>
