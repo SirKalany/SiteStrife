@@ -1,0 +1,50 @@
+[
+  {
+    "id": "ebr-51",
+    "name": "EBR-51",
+    "slug": "ebr-51",
+    "family": "ebr",
+    "type": "Armored Reconnaissance Vehicle",
+    "picture": "/images/ebr-51.jpg"
+  },
+  {
+    "id": "ebr-54",
+    "name": "EBR-54",
+    "slug": "ebr-54",
+    "family": "ebr",
+    "type": "Armored Reconnaissance Vehicle",
+    "picture": "/images/ebr-54.jpg"
+  },
+  {
+    "id": "ebr-90",
+    "name": "EBR-90",
+    "slug": "ebr-90",
+    "family": "ebr",
+    "type": "Armored Reconnaissance Vehicle",
+    "picture": "/images/ebr-90.jpg"
+  },
+  {
+    "id": "ebr-ett",
+    "name": "EBR-ETT",
+    "slug": "ebr-ett",
+    "family": "ebr",
+    "type": "Troop Transport",
+    "picture": "/images/ebr-ett.jpg"
+  },
+  {
+    "id": "ebr-ett-por",
+    "name": "EBR-ETT (Portugal)",
+    "slug": "ebr-ett-por",
+    "family": "ebr",
+    "type": "Troop Transport",
+    "picture": "/images/ebr-ett-por.jpg"
+  },
+  {
+    "id": "type-212",
+    "name": "EBR Type-212",
+    "slug": "type-212",
+    "family": "ebr",
+    "type": "Armored Reconnaissance Vehicle",
+    "picture": "/images/type-212.jpg"
+  }
+]

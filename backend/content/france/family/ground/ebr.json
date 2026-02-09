@@ -1,0 +1,45 @@
+{
+  "kind": "family",
+  "title": "Panhard EBR",
+  "picture": "/images/France/family/ebr.jpg",
+  "description": "The Panhard EBR was a French eight-wheeled armored reconnaissance vehicle developed after the Second World War.",
+  "history": "Designed by Panhard in the late 1940s, the EBR (Engin Blindé de Reconnaissance) became one of the most recognizable French armored vehicles of the Cold War. Featuring a unique eight-wheel configuration with retractable metal wheels and an oscillating turret, it served extensively in reconnaissance roles with the French Army and in overseas deployments, particularly during the Algerian War. Several variants were produced with different turret and armament configurations.",
+  "variants": [
+    {
+      "slug": "ebr-51",
+      "type": "Model",
+      "name": "EBR-51",
+      "description": "Early production model equipped with the FL-11 turret and a 75 mm SA 49 gun."
+    },
+    {
+      "slug": "ebr-54",
+      "type": "Model",
+      "name": "EBR-54",
+      "description": "Improved reconnaissance model featuring the FL-10 oscillating turret with a 75 mm SA 50 gun."
+    },
+    {
+      "slug": "ebr-90",
+      "type": "Model",
+      "name": "EBR-90",
+      "description": "Modernized variant armed with a 90 mm gun for improved anti-armor capability."
+    },
+    {
+      "slug": "ebr-ett",
+      "type": "Modification",
+      "name": "EBR-ETT",
+      "description": "Troop transport version of the EBR."
+    },
+    {
+      "slug": "ebr-ett-por",
+      "type": "Modification",
+      "name": "EBR-ETT (Portugal)",
+      "description": "Portuguese-operated version of the ETT, fielding a machine gun."
+    },
+    {
+      "slug": "type-212",
+      "type": "Prototype",
+      "name": "EBR Type 212",
+      "description": "Experimental or early designation associated with the EBR development program."
+    }
+  ]
+}

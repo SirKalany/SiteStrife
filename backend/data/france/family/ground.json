@@ -30,5 +30,13 @@
     "type": "Heavy Breakthrough Tank",
     "picture": "/images/France/family/saint-chamond.jpg",
     "caption": "Early heavy breakthrough tanks."
+  },
+  {
+    "id": "ebr",
+    "name": "Engin blindé de reconnaissance",
+    "slug": "ebr",
+    "type": "Reconnaissance armored car",
+    "picture": "/images/France/family/ebr.jpg",
+    "caption": "Early cold war reconnaissance armored car."
   }
 ]
